@@ -69,5 +69,6 @@ public class XJDBC {
 	      throw new RuntimeException(e);
 	    } 
 	  }
-	
-}
+          
+}// end class
+

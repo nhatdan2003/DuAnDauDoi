@@ -32,13 +32,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 jPanel1 = new javax.swing.JPanel();
                 jLabel1 = new javax.swing.JLabel();
                 lblUser = new javax.swing.JLabel();
-                btnOder = new innitButton.button();
-                btnBill = new innitButton.button();
-                btnSales = new innitButton.button();
-                btnMenu = new innitButton.button();
-                btnPromo = new innitButton.button();
-                btnUser = new innitButton.button();
-                btnLogOut = new innitButton.button();
+                btnOrder = new javax.swing.JButton();
+                btnBill = new javax.swing.JButton();
+                btnSales = new javax.swing.JButton();
+                btnMenu = new javax.swing.JButton();
+                btnPromo = new javax.swing.JButton();
+                btnUser = new javax.swing.JButton();
+                jButton1 = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setTitle("Diamonds Place - Main");
@@ -77,77 +77,44 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addContainerGap())
                 );
 
-                btnOder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
-                btnOder.setText("ORDER");
-                btnOder.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnOder.setColorClick(new java.awt.Color(248, 236, 242));
-                btnOder.setColorOver(new java.awt.Color(248, 236, 242));
-                btnOder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnOder.setPreferredSize(new java.awt.Dimension(107, 33));
-                btnOder.setRadius(10);
-                btnOder.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btnOderActionPerformed(evt);
-                        }
-                });
+                btnOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
+                btnOrder.setText("ORDER");
+                btnOrder.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnOrder.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnOrder.setPreferredSize(new java.awt.Dimension(111, 51));
 
                 btnBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Bill.png"))); // NOI18N
                 btnBill.setText("BILL");
-                btnBill.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnBill.setColorClick(new java.awt.Color(248, 236, 242));
-                btnBill.setColorOver(new java.awt.Color(248, 236, 242));
-                btnBill.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnBill.setMaximumSize(new java.awt.Dimension(103, 33));
-                btnBill.setMinimumSize(new java.awt.Dimension(103, 33));
-                btnBill.setPreferredSize(new java.awt.Dimension(107, 33));
-                btnBill.setRadius(10);
+                btnBill.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnBill.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnBill.setPreferredSize(new java.awt.Dimension(111, 51));
 
                 btnSales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Sale (2).png"))); // NOI18N
                 btnSales.setText("SALES");
-                btnSales.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnSales.setColorClick(new java.awt.Color(248, 236, 242));
-                btnSales.setColorOver(new java.awt.Color(248, 236, 242));
-                btnSales.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnSales.setMaximumSize(new java.awt.Dimension(103, 33));
-                btnSales.setMinimumSize(new java.awt.Dimension(103, 33));
-                btnSales.setPreferredSize(new java.awt.Dimension(107, 33));
-                btnSales.setRadius(10);
+                btnSales.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnSales.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnSales.setPreferredSize(new java.awt.Dimension(111, 51));
 
                 btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Search.png"))); // NOI18N
                 btnMenu.setText("MENU");
-                btnMenu.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnMenu.setColorClick(new java.awt.Color(248, 236, 242));
-                btnMenu.setColorOver(new java.awt.Color(248, 236, 242));
-                btnMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnMenu.setMaximumSize(new java.awt.Dimension(103, 33));
-                btnMenu.setMinimumSize(new java.awt.Dimension(103, 33));
-                btnMenu.setPreferredSize(new java.awt.Dimension(107, 33));
-                btnMenu.setRadius(10);
+                btnMenu.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnMenu.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnMenu.setPreferredSize(new java.awt.Dimension(111, 51));
 
                 btnPromo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/promo (1).png"))); // NOI18N
                 btnPromo.setText("PROMO");
-                btnPromo.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnPromo.setColorClick(new java.awt.Color(248, 236, 242));
-                btnPromo.setColorOver(new java.awt.Color(248, 236, 242));
-                btnPromo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnPromo.setMaximumSize(new java.awt.Dimension(103, 33));
-                btnPromo.setMinimumSize(new java.awt.Dimension(103, 33));
-                btnPromo.setRadius(10);
+                btnPromo.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnPromo.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnPromo.setPreferredSize(new java.awt.Dimension(111, 51));
 
                 btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/User (1).png"))); // NOI18N
                 btnUser.setText("USER");
-                btnUser.setBoderC0lor(new java.awt.Color(179, 0, 134));
-                btnUser.setColorClick(new java.awt.Color(248, 236, 242));
-                btnUser.setColorOver(new java.awt.Color(248, 236, 242));
-                btnUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                btnUser.setMaximumSize(new java.awt.Dimension(103, 33));
-                btnUser.setMinimumSize(new java.awt.Dimension(103, 33));
-                btnUser.setPreferredSize(new java.awt.Dimension(107, 33));
-                btnUser.setRadius(10);
+                btnUser.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnUser.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnUser.setPreferredSize(new java.awt.Dimension(111, 51));
 
-                btnLogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logout (1).png"))); // NOI18N
-                btnLogOut.setText("LOG OUT");
-                btnLogOut.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+                jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logout (1).png"))); // NOI18N
+                jButton1.setText("LOGOUT");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
@@ -156,43 +123,45 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnOder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btnBill, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(8, 8, 8))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(btnPromo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(btnSales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(34, 34, 34)
+                                                        .addComponent(btnSales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnPromo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                                                        .addComponent(btnUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(btnLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addContainerGap())))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(38, 38, 38)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(btnBill, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                                                        .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
                 );
                 layout.setVerticalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnOder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnSales, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(60, 60, 60)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnPromo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(136, 136, 136)
-                                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
 
                 pack();
@@ -202,10 +171,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
-
-    private void btnOderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,13 +209,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private innitButton.button btnBill;
-        private innitButton.button btnLogOut;
-        private innitButton.button btnMenu;
-        private innitButton.button btnOder;
-        private innitButton.button btnPromo;
-        private innitButton.button btnSales;
-        private innitButton.button btnUser;
+        private javax.swing.JButton btnBill;
+        private javax.swing.JButton btnMenu;
+        private javax.swing.JButton btnOrder;
+        private javax.swing.JButton btnPromo;
+        private javax.swing.JButton btnSales;
+        private javax.swing.JButton btnUser;
+        private javax.swing.JButton jButton1;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JPanel jPanel1;
         private javax.swing.JLabel lblUser;
