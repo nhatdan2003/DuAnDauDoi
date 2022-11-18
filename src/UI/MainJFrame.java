@@ -16,8 +16,11 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFame
      */
     public MainJFrame() {
+
         initComponents();
-	init();
+        OpenChao();
+        openLogin();
+        init();
     }
 
     /**
@@ -203,6 +206,7 @@ public class MainJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 new MainJFrame().setVisible(true);
             }
         });
@@ -221,8 +225,15 @@ public class MainJFrame extends javax.swing.JFrame {
         private javax.swing.JLabel lblUser;
         // End of variables declaration//GEN-END:variables
 
-	private void init() {
-		this.getContentPane().setBackground( Color.WHITE );
-	}
+    private void init() {
+        this.getContentPane().setBackground(Color.WHITE);
+    }
 
-}
+    void OpenChao() {
+        new ChaoJDialog(this, true).setVisible(true);
+    }
+
+    void openLogin() {
+        new DangNhapJDialog(this, true).setVisible(true);
+    }
+}// end class

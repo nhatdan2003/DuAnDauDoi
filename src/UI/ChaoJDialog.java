@@ -8,14 +8,14 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
-import javax.swing.UIManager;
 
 /**
  *
  * @author dantr
  */
 public class ChaoJDialog extends javax.swing.JDialog {
-
+ 
+  
     /**
      * Creates new form ChaoJDialog
      */
@@ -146,9 +146,7 @@ public class ChaoJDialog extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     private void init() {
-//        UIManager.put("ProgressBar.selectionBackground", Color.black);
-//        UIManager.put("ProgressBar.selectionForeground", Color.white);
-//        UIManager.put("ProgressBar.foreground", new Color(197, 40, 247));
+
         this.setLocationRelativeTo(null);
         new Timer(10, new ActionListener() {
             @Override
@@ -160,10 +158,12 @@ public class ChaoJDialog extends javax.swing.JDialog {
                     progressBar.setValue(value + 1);
                 } else {
                     ChaoJDialog.this.dispose();
+                 
                 }
             }
         }).start();
 
     }
 
-}
+   
+}// end class

@@ -8,7 +8,6 @@ import DAO.AccountDao;
 import Entity.Account;
 import Utils.Auth;
 import Utils.MsgBox;
-
 /**
  *
  * @author dantr
@@ -248,10 +247,12 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         }else if(!matKhau.equals(ac.getPassWord())){
             MsgBox.alert(this,"Sai mật khẩu!");
         }else{
+            MsgBox.alert(this, "Đăng Nhập Thành Công!");
             Auth.userName = ac;
             this.dispose();
+//           new MainJFrame().setVisible(true);
         }
     }
 
-
+ 
 }
