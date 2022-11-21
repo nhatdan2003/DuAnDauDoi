@@ -248,6 +248,11 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 txtSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
                 txtSearch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
+                txtSearch.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                txtSearchActionPerformed(evt);
+                        }
+                });
                 txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
                         public void keyReleased(java.awt.event.KeyEvent evt) {
                                 txtSearchKeyReleased(evt);
@@ -358,8 +363,13 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
         private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
                 // TODO add your handling code here:
-		searchProduct();
+                searchProduct();
         }//GEN-LAST:event_txtSearchKeyReleased
+
+        private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+                // TODO add your handling code here:
+                searchProduct();
+        }//GEN-LAST:event_txtSearchActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -452,35 +462,32 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 			for (Product pd : list) {
 				Object[] row = {pd.getIdProduct(), pd.getProductName(), pd.getTypePro(), Double.valueOf(pd.getPrice()), pd.getDescreption()};
 				model.addRow(row);
-				tblSearchProduct.setModel(model);
+				
 			}
+			tblSearchProduct.setModel(model);
 		} catch (Exception e) {
 			MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
 		}
 	}
 
 	private void searchProduct() {
-		String search;
-		if(txtSearch.getText().length() > 0){
-			search = txtSearch.getText();
-		} else {
-			search = "";
-		}
+		String search = txtSearch.getText();
 		double num;
 		try {
-			num = Double.parseDouble(txtSearch.getText());
+			num = Double.parseDouble(search);
 		} catch (Exception e) {
 			num = 0;
 		}
-		
+		System.out.println(num);
 		model.setRowCount(0);
 		try {
 			List<Product> list = this.dao.searchSQL(search, num);
 			for (Product pd : list) {
 				Object[] row = {pd.getIdProduct(), pd.getProductName(), pd.getTypePro(), Double.valueOf(pd.getPrice()), pd.getDescreption()};
 				model.addRow(row);
-				tblSearchProduct.setModel(model);
 			}
+			tblSearchProduct.setModel(model);
+
 		} catch (Exception e) {
 			MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
 		}
