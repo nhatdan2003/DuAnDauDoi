@@ -315,19 +315,18 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         String mkxacnhan = txtMKXacNhan.getText();
         try {
             List<Account> list = dao.selectAll();
-            for (Account ac : list) {
+            for (Account ac : list) { 
                 if(ac.getUserName().equals(username) && ac.getPassWord().equals(matKhau)){
                     if(mkmoi.equals(mkxacnhan)){
                         ac.setPassWord(mkmoi);
                         dao.update(ac);
                         MsgBox.alert(this, "Doi mat khau thanh cong!");
-                    }else{
-                        MsgBox.alert(this, "Xac nhan mat khau khong dung!");
+                        clearForm();
+                        return;
                     }
-                }else{
-                    MsgBox.alert(this, "Username hoac mat khau khong dung!");
                 }
             }
+            MsgBox.alert(this, "Username hoac password không đúng!");
         } catch (Exception e) {
             MsgBox.alert(this, "Loi truy van du lieu!");
         }
@@ -340,6 +339,14 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         }
     }
 
+// clear form 
+    void clearForm(){
+        txtTenDangNhap.setText("");
+        txtMKCu.setText("");
+        txtMKMoi.setText("");
+        txtMKXacNhan.setText("");
+        txtTenDangNhap.requestFocus();
+            
+    }
 
-
-}
+}// end class
