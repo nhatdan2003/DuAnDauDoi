@@ -275,7 +275,9 @@ public class MainJFrame extends javax.swing.JFrame {
 		this.dispose();
 	}
 
-	class back {
-
+	private void PhamGiaHao(){
+		if (rootPaneCheckingEnabled) {
+			
+		}//endif
 	}
 }
