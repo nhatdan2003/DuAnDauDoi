@@ -18,9 +18,10 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     public MainJFrame() {
         initComponents();
-	init();
+        init(true,true);
     }
 
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -199,8 +200,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
         private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
-                // TODO add your handling code here:
-		openOrder();
+            // TODO add your handling code here:
+            openOrder();
         }//GEN-LAST:event_btnOrderActionPerformed
 
     /**
@@ -252,16 +253,20 @@ public class MainJFrame extends javax.swing.JFrame {
         private javax.swing.JLabel lblUser;
         // End of variables declaration//GEN-END:variables
 
-	private void init() {
-		this.getContentPane().setBackground( Color.WHITE );
-                new ChaoJDialog(this, true).setVisible(true);
-                new DangNhapJDialog(this, true).setVisible(true);
-                lblUser.setText(String.valueOf(Auth.userName));
-	}
+    private void init(boolean a, boolean b) {
+        this.getContentPane().setBackground(Color.WHITE);
+        new ChaoJDialog(this, true).setVisible(a);
+        new DangNhapJDialog(this, true).setVisible(a);
+        lblUser.setText(String.valueOf(Auth.userName));
+    }
 
-	private void openOrder() {
-		new OderJFrame(this, true).setVisible(true);
-		this.dispose();
-	}
-
+    private void openOrder() {
+        new OderJFrame(this, true).setVisible(true);
+        this.dispose();
+    }
+ 
+     class back{
+         
+         
+     }
 }
