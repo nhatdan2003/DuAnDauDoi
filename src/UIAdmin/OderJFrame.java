@@ -5,6 +5,9 @@
 package UIAdmin;
 
 import java.awt.Color;
+import Utils.*;
+import DAO.*;
+import Entity.*;
 
 /**
  *
@@ -22,6 +25,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
 	OderJFrame(MainJFrame aThis, boolean b) {
 		initComponents();
+		init();
 	}
 
     /**
@@ -278,7 +282,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
         private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
                 // TODO add your handling code here:
-                this.dispose();    
+               btnBack();
                
         }//GEN-LAST:event_btnBackActionPerformed
 
@@ -344,6 +348,12 @@ public class OderJFrame extends javax.swing.JFrame {
 
 	private void init() {
 		this.getContentPane().setBackground( Color.WHITE ); // set backgrounf
+		lblUser.setText(String.valueOf(Auth.userName));
+	}
+
+	private void btnBack() {
+		this.dispose();    
+		new MainJFrame(this, true).setVisible(true);
 	}
         
        
