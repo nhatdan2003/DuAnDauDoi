@@ -29,6 +29,8 @@ public class UserJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GioiTinh = new javax.swing.ButtonGroup();
+        VaiTro = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tabs = new javax.swing.JTabbedPane();
@@ -84,10 +86,12 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel5.setText("Mật Khẩu:");
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
+        GioiTinh.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jRadioButton1.setText("Nam");
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
+        VaiTro.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jRadioButton2.setText("Nhân Viên");
 
@@ -101,12 +105,14 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel9.setText("Giới Tính:");
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
+        GioiTinh.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jRadioButton3.setText("Nữ");
 
         jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
+        VaiTro.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jRadioButton4.setText("Trưởng Phòng");
+        jRadioButton4.setText("Quản Lý");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Xác Nhận Mật Khẩu:");
@@ -134,7 +140,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/moi.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
         jButton4.setText("Mới");
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
@@ -390,6 +396,8 @@ public class UserJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup GioiTinh;
+    private javax.swing.ButtonGroup VaiTro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
