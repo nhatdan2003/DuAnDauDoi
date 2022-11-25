@@ -4,14 +4,21 @@
  */
 package UIAdmin;
 
+import DAO.AccountDao;
+import Entity.Account;
+import Utils.MsgBox;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
-
+    
 /**
  *
  * @author dantr
  */
 public class UserJFrame extends javax.swing.JFrame {
-
+    
+    AccountDao dao = new AccountDao();
+    int row = -1;
     /**
      * Creates new form NewJFrame
      */
@@ -37,17 +44,16 @@ public class UserJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtMatKhau = new javax.swing.JPasswordField();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        rdogender = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
-        txtMauKhau1 = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtSDT = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        rdonhanvien = new javax.swing.JRadioButton();
         txtHoTen = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,6 +67,7 @@ public class UserJFrame extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        txtusername = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblUser = new javax.swing.JTable();
@@ -83,12 +90,12 @@ public class UserJFrame extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Mật Khẩu:");
+        jLabel5.setText("Username:");
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        GioiTinh.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jRadioButton1.setText("Nam");
+        rdogender.setBackground(new java.awt.Color(255, 255, 255));
+        GioiTinh.add(rdogender);
+        rdogender.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        rdogender.setText("Nam");
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         VaiTro.add(jRadioButton2);
@@ -109,13 +116,13 @@ public class UserJFrame extends javax.swing.JFrame {
         jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jRadioButton3.setText("Nữ");
 
-        jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
-        VaiTro.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jRadioButton4.setText("Quản Lý");
+        rdonhanvien.setBackground(new java.awt.Color(255, 255, 255));
+        VaiTro.add(rdonhanvien);
+        rdonhanvien.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        rdonhanvien.setText("Quản Lý");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("Xác Nhận Mật Khẩu:");
+        jLabel4.setText("Password:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Địa Chỉ:");
@@ -123,41 +130,53 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel8.setText("Vai Trò:");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/plus.png"))); // NOI18N
         jButton1.setText("Thêm ");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/update.png"))); // NOI18N
         jButton2.setText("Sửa");
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
         jButton3.setText("Xóa");
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
         jButton4.setText("Mới");
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setText("|<<");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setText("<<");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setText(">>|");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
-        jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton8.setText(">>");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -169,15 +188,14 @@ public class UserJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtMauKhau1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                                        .addComponent(txtMatKhau, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtHoTen, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                                    .addComponent(txtHoTen)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton4)
+                                        .addComponent(rdonhanvien)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2)))
+                                        .addComponent(jRadioButton2))
+                                    .addComponent(txtusername))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -195,7 +213,7 @@ public class UserJFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(rdogender)
                                         .addGap(18, 18, 18)
                                         .addComponent(jRadioButton3)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -208,7 +226,7 @@ public class UserJFrame extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton5)
                         .addGap(18, 18, 18)
                         .addComponent(jButton6)
@@ -235,27 +253,27 @@ public class UserJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMauKhau1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
+                    .addComponent(rdonhanvien)
                     .addComponent(jRadioButton2))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
+                    .addComponent(rdogender)
                     .addComponent(jRadioButton3))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -285,6 +303,11 @@ public class UserJFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUserMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblUser);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -359,6 +382,34 @@ public class UserJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 1) {
+            this.row = tblUser.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblUserMouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        first();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        prev();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        next();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        last();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -418,28 +469,97 @@ public class UserJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JRadioButton rdogender;
+    private javax.swing.JRadioButton rdonhanvien;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblUser;
     private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHoTen;
-    private javax.swing.JPasswordField txtMatKhau;
-    private javax.swing.JTextField txtMauKhau1;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtSDT;
+    private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 // khai báo model table
     private DefaultTableModel model;
     // set table
      public void initModel() {
         model = new DefaultTableModel();
-        String[] cols = new String[]{"Họ và Tên ", "Mật Khẩu", "Giới Tính", "Ngày Sinh", "Số Điện Thoại", "Email", "Địa Chỉ","Vai Trò"};
+        String[] cols = new String[]{"Fullname","Username", "Password", "Gender", "Birthday", "Phone", "Email", "Address","Role"};
         model.setColumnIdentifiers(cols);
         tblUser.setModel(model);
+        setLocationRelativeTo(null);
+        fillTable();
     }// set tblUser
+     
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+        model.setRowCount(0);
+        try {
+            List<Account> list = dao.selectAll();
+            for (Account ac : list) {
+                Object[] row = {ac.getFullName(), ac.getUserName(), ac.getPassWord(),ac.isGender()? "Nam" : "Nữ",
+                    ac.getBirthDay(),ac.getPhone(),ac.getEmail(),ac.getAddRess(),ac.isRole()? "Nhân Viên" : "Quản Lý"
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+    
+    void last() {
+        this.row = tblUser.getRowCount() - 1;
+    }
+
+    void next() {
+        if (this.row < tblUser.getRowCount() - 1) {
+            this.row++;
+        }
+    }
+
+    void prev() {
+        if (this.row > 0) {
+            this.row--;
+        }
+    }
+
+    void first() {
+        this.row = 0;
+    }
+    
+    void edit() {
+        String manv = (String) tblUser.getValueAt(this.row, 1);
+        Account ac = dao.selectById(manv);
+        this.setForm(ac);
+        tabs.setSelectedIndex(0);
+    }
+    
+    void setForm(Account ac) {
+        ArrayList<Account> list = new ArrayList<>();
+        System.out.println(list);
+        txtHoTen.setText(ac.getFullName());
+        txtusername.setText(ac.getUserName());
+        txtPassword.setText(ac.getPassWord());
+        txtSDT.setText(ac.getPhone());
+        txtDiaChi.setText(ac.getAddRess());
+        txtEmail.setText(ac.getEmail());
+        rdonhanvien.setSelected(!ac.isRole());
+        rdogender.setSelected(!ac.isGender());
+    }
+    
+    Account getForm() {
+        Account ac = new Account();
+        ac.setFullName(txtHoTen.getText());
+        ac.setUserName(txtusername.getText());
+        ac.setPassWord(txtPassword.getText());
+        ac.setAddRess(txtDiaChi.getText());
+        ac.setPhone(txtSDT.getText());
+        ac.setEmail(txtEmail.getText());
+        return ac;
+    }
 
 }// end class

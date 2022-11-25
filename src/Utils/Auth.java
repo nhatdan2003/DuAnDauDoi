@@ -14,6 +14,6 @@ public class Auth {
 	  }
 	  
 	  public static boolean isAdmin() {
-	    return (isLogin() && userName.getRole());
+	    return (isLogin() && userName.isRole());
 	  }
 	}

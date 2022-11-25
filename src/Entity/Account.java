@@ -7,6 +7,7 @@ import java.util.Date;
  * @author haoireal
  */
 public class Account {
+        String fullName;
 	String userName;
 	String passWord;
 	Boolean gender;
@@ -16,69 +17,79 @@ public class Account {
 	String addRess;
 	Boolean role;
 
-	public String getUserName() {
-		return userName;
-	}
+    public String getFullName() {
+        return fullName;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-	public String getPassWord() {
-		return passWord;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public Boolean getGender() {
-		return gender;
-	}
+    public String getPassWord() {
+        return passWord;
+    }
 
-	public void setGender(Boolean gender) {
-		this.gender = gender;
-	}
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
 
-	public Date getBirthDay() {
-		return birthDay;
-	}
+    public Boolean isGender() {
+        return gender;
+    }
 
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
-	}
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public Date getBirthDay() {
+        return birthDay;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public String getAddRess() {
-		return addRess;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setAddRess(String addRess) {
-		this.addRess = addRess;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public Boolean getRole() {
-		return role;
-	}
+    public String getAddRess() {
+        return addRess;
+    }
 
-	public void setRole(Boolean role) {
-		this.role = role;
-	}
+    public void setAddRess(String addRess) {
+        this.addRess = addRess;
+    }
+
+    public Boolean isRole() {
+        return role;
+    }
+
+    public void setRole(Boolean role) {
+        this.role = role;
+    }
+
+	
 	
 	@Override
     public String toString() {

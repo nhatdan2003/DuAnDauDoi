@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class AccountDao extends DAO<Account, String>{
     //Câu lenh SQL
-    String INSERT_SQL = "INSERT INTO ACCOUNT(Username,Password,Gender,Birthday,Phone,Email,Address,Role)VALUES (?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE ACCOUNT SET Password = ?,Gender = ?, Birthday = ?, Phone = ?, Email = ?, Address = ?, Role = ? WHERE Username = ?";
+    String INSERT_SQL = "INSERT INTO ACCOUNT(Fullname,Username,Password,Gender,Birthday,Phone,Email,Address,Role)VALUES (?,?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE ACCOUNT SET Fullname = ?, Password = ?, Gender = ?, Birthday = ?, Phone = ?, Email = ?, Address = ?, Role = ? WHERE Username = ?";
     String DELETE_SQL = "DELETE FROM ACCOUNT WHERE Username = ?";
     String SELECT_ALL_SQL = "SELECT * FROM ACCOUNT";
     String SELECT_BY_ID_SQL = "SELECT * FROM ACCOUNT WHERE Username = ?";
@@ -25,13 +25,13 @@ public class AccountDao extends DAO<Account, String>{
     //insert du lieu vao database
     @Override
     public void insert(Account entity) {
-        XJDBC.update(INSERT_SQL,entity.getUserName(),entity.getPassWord(),entity.getGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.getRole());
+        XJDBC.update(INSERT_SQL,entity.getFullName(),entity.getUserName(),entity.getPassWord(),entity.isGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.isRole());
     }
 
     //update du lieu vao database
     @Override
     public void update(Account entity) {
-        XJDBC.update(UPDATE_SQL,entity.getPassWord(),entity.getGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.getRole(),entity.getUserName());
+        XJDBC.update(UPDATE_SQL,entity.getFullName(),entity.getPassWord(),entity.isGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.isRole(),entity.getUserName());
     }
     
     //delete du lieu co ma truyen vao
@@ -64,6 +64,7 @@ public class AccountDao extends DAO<Account, String>{
             ResultSet rs = XJDBC.query(sql, args);
             while(rs.next()){
                 Account entity = new Account();
+                entity.setFullName(rs.getString("Fullname"));
                 entity.setUserName(rs.getString("Username"));
                 entity.setPassWord(rs.getString("Password"));
                 entity.setGender(rs.getBoolean("Gender"));
