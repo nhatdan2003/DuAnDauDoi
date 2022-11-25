@@ -245,6 +245,9 @@
           <Dimension value="[111, 51]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPromo">
       <Properties>

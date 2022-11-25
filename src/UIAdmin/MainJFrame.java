@@ -6,6 +6,7 @@ package UIAdmin;
 
 import Utils.Auth;
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,7 +22,7 @@ public class MainJFrame extends javax.swing.JFrame {
 		init(true, true);
 	}
 
-	MainJFrame(OderJFrame aThis, boolean b) {
+	MainJFrame(JFrame aThis, boolean b) {
 		initComponents();
 		initBack();
 	}
@@ -125,6 +126,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnMenu.setMaximumSize(new java.awt.Dimension(111, 51));
                 btnMenu.setMinimumSize(new java.awt.Dimension(111, 51));
                 btnMenu.setPreferredSize(new java.awt.Dimension(111, 51));
+                btnMenu.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnMenuActionPerformed(evt);
+                        }
+                });
 
                 btnPromo.setBackground(new java.awt.Color(255, 153, 255));
                 btnPromo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -208,6 +214,11 @@ public class MainJFrame extends javax.swing.JFrame {
 		openOrder();
         }//GEN-LAST:event_btnOrderActionPerformed
 
+        private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+                // TODO add your handling code here:
+		openMenu();
+        }//GEN-LAST:event_btnMenuActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -276,8 +287,11 @@ public class MainJFrame extends javax.swing.JFrame {
 	}
 
 	private void PhamGiaHao(){
-		if (rootPaneCheckingEnabled) {
-			
-		}//endif
+	
+	}
+
+	private void openMenu() {
+		new ProductSearchJFrame(this, true).setVisible(true);
+		this.dispose();
 	}
 }

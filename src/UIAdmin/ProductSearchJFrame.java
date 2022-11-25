@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import Entity.*;
 import Utils.*;
+import UIAdmin.*;
 import java.awt.Component;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -32,6 +33,11 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 	int row = -1;
 	private JFileChooser fileChooser;
 	public ProductSearchJFrame() {
+		initComponents();
+		init();
+	}
+
+	ProductSearchJFrame(MainJFrame aThis, boolean b) {
 		initComponents();
 		init();
 	}
@@ -65,6 +71,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                 btnAdd = new javax.swing.JButton();
                 btnUpdate = new javax.swing.JButton();
                 btnDelete = new javax.swing.JButton();
+                btnBack = new javax.swing.JButton();
                 tabList = new javax.swing.JPanel();
                 btnShowAll = new javax.swing.JButton();
                 cboType1 = new javax.swing.JComboBox<>();
@@ -222,6 +229,20 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                         }
                 });
 
+                btnBack.setBackground(new java.awt.Color(255, 153, 255));
+                btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBack.setForeground(new java.awt.Color(255, 255, 255));
+                btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
+                btnBack.setText("BACK");
+                btnBack.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnBack.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnBack.setPreferredSize(new java.awt.Dimension(111, 51));
+                btnBack.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBackActionPerformed(evt);
+                        }
+                });
+
                 javax.swing.GroupLayout tabProductLayout = new javax.swing.GroupLayout(tabProduct);
                 tabProduct.setLayout(tabProductLayout);
                 tabProductLayout.setHorizontalGroup(
@@ -231,14 +252,15 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                 .addGroup(tabProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jScrollPane2)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabProductLayout.createSequentialGroup()
-                                                .addGap(110, 110, 110)
-                                                .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
                                         .addGroup(tabProductLayout.createSequentialGroup()
                                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
@@ -284,13 +306,14 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(tabProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
                                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE))
+                                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+                                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE))
                                 .addContainerGap())
                 );
 
@@ -383,7 +406,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                 .addComponent(btnShowAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cboType1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
                 );
                 tabListLayout.setVerticalGroup(
                         tabListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +416,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                         .addComponent(cboType1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnShowAll, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                 );
@@ -466,10 +489,12 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
         private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
                 // TODO add your handling code here:
+		update();
         }//GEN-LAST:event_btnUpdateActionPerformed
 
         private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
                 // TODO add your handling code here:
+		delete();
         }//GEN-LAST:event_btnDeleteActionPerformed
 
         private void btnShowAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowAllActionPerformed
@@ -491,6 +516,11 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                 // TODO add your handling code here:
 		setProductImage();
         }//GEN-LAST:event_lbImageMouseClicked
+
+        private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+                // TODO add your handling code here:
+		btnBack();
+        }//GEN-LAST:event_btnBackActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -529,6 +559,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnAdd;
+        private javax.swing.JButton btnBack;
         private javax.swing.JButton btnDelete;
         private javax.swing.JButton btnNew;
         private javax.swing.JButton btnShowAll;
@@ -576,7 +607,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 			}
 
 		});
-		
+		clearFrom();
 		updateStaTus();
 	}
 	
@@ -594,18 +625,61 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		
 	}
 	
+	//hàm detete
+	private void delete(){
+		if (!Auth.isAdmin()) {
+			MsgBox.alert(this, "you don't have the right to DELETE!");
+		} else if (MsgBox.confirm(this, "Are you sure for DELETE!")) {
+			String idpd = txtIDProduct.getText();
+			try {
+				this.dao.delete(idpd);
+
+				fillToTable();
+				clearFrom();
+				MsgBox.alert(this, "DELETE is success!");
+			} catch (Exception e) {
+				MsgBox.alert(this, "DELETE is fail!!");
+
+			}
+		}
+	}
+	
+	//hàm update 
+	private void update(){
+		
+		if(!(valiDateForm("oao", txtProductName.getText(), txtPrice.getText())).isBlank()){
+			MsgBox.alert(this,valiDateForm("oao", txtProductName.getText(), txtPrice.getText()));
+		}else{
+			try {
+				Product model = this.getForm();
+				this.dao.update(model);
+				fillToTable();
+				clearFrom();
+				MsgBox.alert(this, "UPDATE is success!");
+			} catch (Exception e) {
+				System.out.println(e);
+				MsgBox.alert(this, "UPDATE is fail!");
+			}
+		}
+	}
+	
 	//hàm thêm product
 	private void insert(){
-		Product model = this.getForm();
-		try {
+		
+		if(!(valiDateForm(txtIDProduct.getText(), txtProductName.getText(), txtPrice.getText())).isBlank()){
+			MsgBox.alert(this,valiDateForm(txtIDProduct.getText(), txtProductName.getText(), txtPrice.getText()));
+		}else{
+			try {
+				Product model = this.getForm();
 				this.dao.insert(model);
 				fillToTable();
 				clearFrom();
-				MsgBox.alert(this, "Thêm mới thành công!");
+				MsgBox.alert(this, "INSERT is success!");
 			} catch (Exception e) {
 				System.out.println(e);
-				MsgBox.alert(this, "Thêm mới thất bại!");
+				MsgBox.alert(this, "INSERT is fail!");
 			}
+		}
 		
 	}
 	
@@ -630,9 +704,11 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 	//Chỉnh lại trật tự Jframe
 	private void updateStaTus(){
 		boolean edit = (this.row >= 0);
+		txtIDProduct.setEditable(!edit);
 		this.btnAdd.setEnabled(!edit);
 		this.btnUpdate.setEnabled(edit);
 		this.btnDelete.setEnabled(edit);
+		
 	}
 	
 	
@@ -733,7 +809,8 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		Product pd = new Product();
 		setForm(pd);
 		this.row = -1;
-			
+		lbImage.setIcon(null);
+		txtIDProduct.requestFocus();
 		fillCboType();
 		updateStaTus();
 	}
@@ -746,6 +823,47 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 			this.lbImage.setIcon(icon);
 			this.lbImage.setToolTipText(file.getName());
 		}
+	}
+	
+	//hàm kiểm lỗi form
+	
+	private String valiDateForm(String idProduct,String productName, String price){
+		String rs = "";
+		
+		if(idProduct.isBlank()){
+			rs += "ID Product is empty!";
+			return rs;
+		}
+		List<Product> list = this.dao.selectAll();
+			for (Product pd : list) {
+				if(idProduct.equalsIgnoreCase(pd.getIdProduct())){
+					rs += "ID Product be not the same!";
+					return rs;
+				}
+				
+			}
+		if(productName.isBlank()){
+			rs += "ProductName is empty!";
+			return rs;
+		}
+		
+		if(price.isBlank()){
+			rs += "Price is empty!";
+			return rs;
+		}
+		try {
+			Double.parseDouble(price);
+		} catch (Exception e) {
+			rs += "Price is not a number!";
+			return rs;
+		}
+		
+		return rs;
+	}
+
+	private void btnBack() {
+		this.dispose();    
+		new MainJFrame(this, true).setVisible(true);
 	}
 	
 }

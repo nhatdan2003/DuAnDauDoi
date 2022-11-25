@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 public class ProductDAO extends DAO<Product, String> {
 
 	String INSERT_SQL = "INSERT INTO Product(IDProduct,ProductName,IDType,Price,Image,Description)VALUES(?,?,?,?,?,?)";
-	String UPDATE_SQL = "UPDATE Product SET ProductName = ?,TypePro =?,Price = ?,Image =?,Description = ? where IDProduct = ?";
+	String UPDATE_SQL = "UPDATE Product SET ProductName = ?,IDType =?,Price = ?,Image =?,Description = ? where IDProduct = ?";
 	String DELETE_SQL = "DELETE FROM Product WHERE IDProduct =?";
 	String SELECT_ALL_SQL = "SELECT * FROM Product";
 	String SELETE_BY_ID_SQL = "SELECT * FROM Product WHERE IDProduct = ?";
