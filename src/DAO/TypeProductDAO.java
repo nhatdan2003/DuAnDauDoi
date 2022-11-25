@@ -17,7 +17,7 @@ public class TypeProductDAO extends DAO<ProductType, String> {
 	String UPDATE_SQL = "UPDATE ProductType SET NameType = ? where IDType = ?";
 	String DELETE_SQL = "DELETE FROM ProductType WHERE IDProduct =?";
 	String SELECT_ALL_SQL = "SELECT * FROM ProductType";
-	String SELETE_BY_ID_SQL = "SELECT * FROM ProductType WHERE IDProduct = ?";
+	String SELETE_BY_ID_SQL = "SELECT * FROM ProductType WHERE IDType = ?";
 
 	@Override
 	public void insert(ProductType entity) {
@@ -35,7 +35,8 @@ public class TypeProductDAO extends DAO<ProductType, String> {
 
 	@Override
 	public ProductType selectById(String id) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		List<ProductType> list = selectBySql(SELETE_BY_ID_SQL, new Object[]{id});
+		return (list.size() > 0) ? list.get(0) : null;
 	}
 
 	@Override

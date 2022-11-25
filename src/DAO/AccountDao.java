@@ -15,27 +15,32 @@ import java.util.List;
  * @author KietHV
  */
 public class AccountDao extends DAO<Account, String>{
+    //Câu lenh SQL
     String INSERT_SQL = "INSERT INTO ACCOUNT(Username,Password,Gender,Birthday,Phone,Email,Address,Role)VALUES (?,?,?,?,?,?,?,?)";
     String UPDATE_SQL = "UPDATE ACCOUNT SET Password = ?,Gender = ?, Birthday = ?, Phone = ?, Email = ?, Address = ?, Role = ? WHERE Username = ?";
     String DELETE_SQL = "DELETE FROM ACCOUNT WHERE Username = ?";
     String SELECT_ALL_SQL = "SELECT * FROM ACCOUNT";
     String SELECT_BY_ID_SQL = "SELECT * FROM ACCOUNT WHERE Username = ?";
 
+    //insert du lieu vao database
     @Override
     public void insert(Account entity) {
         XJDBC.update(INSERT_SQL,entity.getUserName(),entity.getPassWord(),entity.getGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.getRole());
     }
 
+    //update du lieu vao database
     @Override
     public void update(Account entity) {
         XJDBC.update(UPDATE_SQL,entity.getPassWord(),entity.getGender(),entity.getBirthDay(),entity.getPhone(),entity.getEmail(),entity.getAddRess(),entity.getRole(),entity.getUserName());
     }
-
+    
+    //delete du lieu co ma truyen vao
     @Override
     public void delete(String id) {
         XJDBC.update(DELETE_SQL,id);
     }
 
+    //tim theo ma
     @Override
     public Account selectById(String id) {
         List<Account> list = this.selectBySql(SELECT_BY_ID_SQL, id);
@@ -45,11 +50,13 @@ public class AccountDao extends DAO<Account, String>{
         return list.get(0);
     }
 
+    //lay tat ca dieu lieu trong table account trong database
     @Override
     public List<Account> selectAll() {
         return this.selectBySql(SELECT_ALL_SQL);
     }
 
+    //tao list va gan du lieu vao doi tuong
     @Override
     protected List<Account> selectBySql(String sql, Object... args) {
         List<Account> list = new ArrayList<>();

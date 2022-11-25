@@ -15,12 +15,14 @@ import javax.swing.JFrame;
  */
 public class ProductDAO extends DAO<Product, String> {
 
-	String INSERT_SQL = "INSERT INTO Product(IDProduct,ProductName,TypePro,Price,Image,Description)VALUES(?,?,?,?,?,?)";
+	String INSERT_SQL = "INSERT INTO Product(IDProduct,ProductName,IDType,Price,Image,Description)VALUES(?,?,?,?,?,?)";
 	String UPDATE_SQL = "UPDATE Product SET ProductName = ?,TypePro =?,Price = ?,Image =?,Description = ? where IDProduct = ?";
 	String DELETE_SQL = "DELETE FROM Product WHERE IDProduct =?";
 	String SELECT_ALL_SQL = "SELECT * FROM Product";
 	String SELETE_BY_ID_SQL = "SELECT * FROM Product WHERE IDProduct = ?";
-	String SEARCH_BY_SQL = "SELECT * FROM Product WHERE ProductName LIKE ? OR Price = ?";
+	String SELETE_BY_TYPE = "SELECT * FROM Product WHERE IDType = ?";
+	String SEARCH_BY_SQL = "SELECT * FROM Product WHERE IDProduct LIKE ? OR ProductName LIKE ? OR Price = ?";
+	
 
 	@Override
 	public void insert(Product model) {
@@ -63,9 +65,14 @@ public class ProductDAO extends DAO<Product, String> {
 	public List<Product> searchSQL(String key, double num){
 		return selectBySql(SEARCH_BY_SQL, new Object[]{
 			"%"+key+"%",
+			"%"+key+"%",
+			
 			num
 
 		});
+	}
+	public List<Product> selectByType(String key){
+		return selectBySql(SELETE_BY_TYPE, new Object[]{key});
 	}
 	
 	@Override
