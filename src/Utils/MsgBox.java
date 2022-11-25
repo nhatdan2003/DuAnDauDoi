@@ -12,6 +12,7 @@ public class MsgBox {
     public static void alert(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, 
                 "DiamondPlace", JOptionPane.INFORMATION_MESSAGE);
+	
     }
     /**
      * Hiển thị thông báo và yêu cầu người dùng xác nhận

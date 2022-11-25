@@ -48,15 +48,16 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                 btnDoiMK = new javax.swing.JButton();
                 btnChange = new javax.swing.JButton();
                 btnCancel = new javax.swing.JButton();
+                jLabel1 = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
                 jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
                 jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-                jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+                jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
                 jLabel8.setForeground(new java.awt.Color(179, 0, 134));
-                jLabel8.setText("ĐỔI MẬT KHẨU");
+                jLabel8.setText("CHANGE PASSWORD");
 
                 btnThoat.setBorder(null);
                 btnThoat.setContentAreaFilled(false);
@@ -74,19 +75,24 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                         }
                 });
 
-                txtMKCu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtMKCu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtMKCu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
 
-                txtMKXacNhan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtMKXacNhan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtMKXacNhan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
 
-                txtMKMoi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtMKMoi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtMKMoi.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
+                txtMKMoi.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                txtMKMoiActionPerformed(evt);
+                        }
+                });
 
-                jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jLabel4.setText("Tên đăng nhập:");
+                jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                jLabel4.setText("Username:");
 
-                txtTenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtTenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtTenDangNhap.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
                 txtTenDangNhap.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,14 +100,14 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                         }
                 });
 
-                jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jLabel5.setText("Mật khẩu cũ:");
+                jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                jLabel5.setText("Old Password:");
 
-                jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jLabel6.setText("Mật khẩu mới:");
+                jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                jLabel6.setText("New Password:");
 
-                jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jLabel7.setText("Xác nhận mật khẩu:");
+                jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                jLabel7.setText("Confirm new password:");
 
                 btnDoiMK.setBorder(null);
                 btnDoiMK.setContentAreaFilled(false);
@@ -119,7 +125,9 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                         }
                 });
 
+                btnChange.setBackground(new java.awt.Color(255, 102, 255));
                 btnChange.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnChange.setForeground(new java.awt.Color(255, 255, 255));
                 btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/change.png"))); // NOI18N
                 btnChange.setText("CHANGE");
                 btnChange.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +136,9 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                         }
                 });
 
+                btnCancel.setBackground(new java.awt.Color(255, 102, 255));
                 btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnCancel.setForeground(new java.awt.Color(255, 255, 255));
                 btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Cancel.png"))); // NOI18N
                 btnCancel.setText("CANCEL");
                 btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -137,68 +147,91 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                         }
                 });
 
+                jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(255, 0, 255));
+                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jLabel1.setText("----------------------------------------------------------------------------------------------");
+
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
                 jPanel1Layout.setHorizontalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel5)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(btnChange)
-                                                .addGap(37, 37, 37)
-                                                .addComponent(btnDoiMK)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(84, 84, 84)
-                                                .addComponent(btnThoat))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtMKXacNhan, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                                                .addComponent(txtMKMoi, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtMKCu, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.Alignment.LEADING)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addContainerGap()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addComponent(jLabel7)
+                                                                                .addGap(13, 13, 13)
+                                                                                .addComponent(btnDoiMK)
+                                                                                .addGap(216, 216, 216)
+                                                                                .addComponent(btnThoat))
+                                                                        .addComponent(jLabel8)
+                                                                        .addComponent(jLabel5)
+                                                                        .addComponent(jLabel6))
+                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                        .addComponent(txtMKXacNhan)
+                                                        .addComponent(txtMKCu)
+                                                        .addComponent(txtMKMoi)
+                                                        .addComponent(txtTenDangNhap)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(jLabel4))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(75, 75, 75)
+                                                                .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addContainerGap())
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                 );
                 jPanel1Layout.setVerticalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
                                 .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel1)
+                                .addGap(32, 32, 32)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
-                                .addGap(17, 17, 17)
-                                .addComponent(txtMKCu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtMKCu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel6)
-                                .addGap(10, 10, 10)
-                                .addComponent(txtMKMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtMKMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(btnDoiMK, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                                                .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtMKXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(btnDoiMK, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(btnChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(23, Short.MAX_VALUE))
+                                .addComponent(txtMKXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(19, 19, 19))
                 );
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,6 +282,10 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         LogOut();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+        private void txtMKMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMKMoiActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_txtMKMoiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -296,6 +333,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         private javax.swing.JButton btnChange;
         private javax.swing.JButton btnDoiMK;
         private javax.swing.JButton btnThoat;
+        private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel4;
         private javax.swing.JLabel jLabel5;
         private javax.swing.JLabel jLabel6;
@@ -320,13 +358,13 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
                     if(mkmoi.equals(mkxacnhan)){
                         ac.setPassWord(mkmoi);
                         dao.update(ac);
-                        MsgBox.alert(this, "Doi mat khau thanh cong!");
+                        MsgBox.alert(this, "Change password is success!");
                         clearForm();
                         return;
                     }
                 }
             }
-            MsgBox.alert(this, "Username hoac password không đúng!");
+            MsgBox.alert(this, "Username or password is incorrect!");
         } catch (Exception e) {
             MsgBox.alert(this, "Loi truy van du lieu!");
         }
@@ -334,7 +372,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     }
     
     private void LogOut(){
-        if(MsgBox.confirm(this,"Bạn muốn thoat khoi form doi mat khau?")){
+        if(MsgBox.confirm(this,"Do you want to exit?")){
             System.exit(0);
         }
     }

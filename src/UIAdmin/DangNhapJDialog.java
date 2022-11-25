@@ -55,13 +55,13 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 
                 lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logoAppM.png"))); // NOI18N
 
-                lblUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                lblUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 lblUser.setText("UserName:");
 
-                jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jLabel1.setText("Password:");
 
-                ckhRemember.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+                ckhRemember.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 ckhRemember.setText("Remember Me?");
                 ckhRemember.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +69,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                         }
                 });
 
-                txtTenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtTenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtTenDangNhap.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
                 txtTenDangNhap.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +77,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                         }
                 });
 
-                txtMatKhau.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                txtMatKhau.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 txtMatKhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(179, 0, 134)));
                 txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,55 +107,57 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(lblLogo)
-                                .addGap(39, 39, 39)
+                                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(ckhRemember)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                                                .addComponent(txtMatKhau, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(txtTenDangNhap)
+                                        .addComponent(txtMatKhau)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(btnLogIn)
-                                                .addGap(70, 70, 70)
-                                                .addComponent(btnCancel)))
-                                .addContainerGap(24, Short.MAX_VALUE))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel1)
+                                                        .addComponent(ckhRemember))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(btnLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
+                                .addContainerGap())
                 );
                 jPanel1Layout.setVerticalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(66, 66, 66)
                                                 .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(22, 22, 22)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
                                                 .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(ckhRemember)
-                                                .addGap(18, 18, 18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(btnLogIn)
-                                                        .addComponent(btnCancel)))
-                                        .addComponent(lblLogo))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                        .addComponent(btnCancel))))
+                                .addContainerGap())
                 );
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
@@ -245,7 +247,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         // End of variables declaration//GEN-END:variables
 
     private void logOut() {
-        if(MsgBox.confirm(this,"Bạn muốn kết thúc ứng dụng?")){
+        if(MsgBox.confirm(this,"Do you want to exit?")){
             System.exit(0);
         }
     }
@@ -255,9 +257,9 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         String matKhau = new String(txtMatKhau.getPassword());
         Account ac = dao.selectById(username);
         if(ac == null){
-            MsgBox.alert(this,"Sai tên đăng nhập!");
+            MsgBox.alert(this,"Username is incorrect!");
         }else if(!matKhau.equals(ac.getPassWord())){
-            MsgBox.alert(this,"Sai mật khẩu!");
+            MsgBox.alert(this,"Password is incorrect!");
         }else{
             Auth.userName = ac;
 	    
