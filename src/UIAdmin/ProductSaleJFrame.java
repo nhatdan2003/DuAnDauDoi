@@ -55,17 +55,17 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 tblProSale.setForeground(new java.awt.Color(255, 102, 255));
                 tblProSale.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
-                                {null, null, null, null, null},
-                                {null, null, null, null, null},
-                                {null, null, null, null, null},
-                                {null, null, null, null, null}
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null}
                         },
                         new String [] {
-                                "IDOrder", "IDProduct", "ProductName", "Quantity Sold", "Turnover"
+                                "IDProduct", "ProductName", "Quantity Sold", "Turnover"
                         }
                 ) {
                         boolean[] canEdit = new boolean [] {
-                                false, false, false, false, false
+                                false, false, false, false
                         };
 
                         public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -250,7 +250,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 		try {
 			List<Turnover> list = dao.selectALL();
 			for (Turnover dt : list) {
-				Object[] row = {dt.getIdOrder(),dt.getIDProduct(), dt.getProductName(), dt.getQuantitySold(), dt.getTurnover()};
+				Object[] row = {dt.getIDProduct(), dt.getProductName(), dt.getQuantitySold(), dt.getTurnover()};
 				model.addRow(row);
 			}
 		} catch (Exception e) {

@@ -10,7 +10,6 @@ package Entity;
  */
 public class Turnover {
 
-	String idOrder;
 	private String IDProduct;
 	private String ProductName;
 	private int QuantitySold;
@@ -19,22 +18,13 @@ public class Turnover {
 	public Turnover() {
 	}
 
-	public Turnover(String idOrder,String IDProduct, String ProductName, int QuantitySold, Double Turnover) {
-		this.idOrder = idOrder;
+	public Turnover(String IDProduct, String ProductName, int QuantitySold, Double Turnover) {
 		this.IDProduct = IDProduct;
 		this.ProductName = ProductName;
 		this.QuantitySold = QuantitySold;
 		this.Turnover = Turnover;
 	}
 
-	public String getIdOrder() {
-		return idOrder;
-	}
-
-	public void setIdOrder(String idOrder) {
-		this.idOrder = idOrder;
-	}
-	
 	public String getIDProduct() {
 		return IDProduct;
 	}

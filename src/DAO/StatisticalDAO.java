@@ -19,7 +19,6 @@ import java.util.List;
 public class StatisticalDAO {
     
     String Select_all = "	select \n" +
-"		oddt.IDOrder,\n" +
 "		pro.IDProduct,\n" +
 "		pro.ProductName,\n" +
 "		SUM(oddt.Quantity) as 'Soluong',\n" +
@@ -28,7 +27,7 @@ public class StatisticalDAO {
 "		join OrderDetails oddt on oddt.IDProduct = pro.IDProduct\n" +
 "		join [Order] od on od.IDOrder = oddt.IDOrder\n" +
 "\n" +
-"	group by pro.IDProduct,pro.ProductName,oddt.IDOrder";
+"	group by pro.IDProduct,pro.ProductName";
     
     private List<Object[]> getListOfArray(String sql,String[] cols, Object...args){
         try {
@@ -51,7 +50,7 @@ public class StatisticalDAO {
     //get doanh thu
     public List<Object[]> getTurnover(Date DateOrder){
         String sql = "{CALL sp_DoanhThu(?)}"; //cau lenh sql
-        String[] cols = {"IDOrder","IDProduct","ProductName","Soluong","DoanhThu"};
+        String[] cols = {"IDProduct","ProductName","Soluong","DoanhThu"};
         return getListOfArray(sql, cols,DateOrder);
     }
     
@@ -61,7 +60,6 @@ public class StatisticalDAO {
             ResultSet rs = XJDBC.query(sql, args);
             while(rs.next()){
                 Turnover entity = new Turnover();
-		entity.setIdOrder(rs.getString("IDOrder"));
                 entity.setIDProduct(rs.getString("IDProduct"));
                 entity.setProductName(rs.getString("ProductName"));
                 entity.setQuantitySold(rs.getInt("Soluong"));

@@ -88,6 +88,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 tabProduct.setBackground(new java.awt.Color(255, 255, 255));
 
+                jPanel2.setBackground(new java.awt.Color(255, 255, 255));
                 jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 jPanel2.setToolTipText("");
                 jPanel2.setMaximumSize(new java.awt.Dimension(130, 139));
@@ -95,6 +96,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 lbImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 lbImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/khoaitaychien.jpg"))); // NOI18N
+                lbImage.setText("Select image");
                 lbImage.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
                                 lbImageMouseClicked(evt);
