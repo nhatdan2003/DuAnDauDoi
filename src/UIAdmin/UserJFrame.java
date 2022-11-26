@@ -6,19 +6,21 @@ package UIAdmin;
 
 import DAO.AccountDao;
 import Entity.Account;
+import Utils.Auth;
 import Utils.MsgBox;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-    
+
 /**
  *
  * @author dantr
  */
 public class UserJFrame extends javax.swing.JFrame {
-    
+
     AccountDao dao = new AccountDao();
     int row = -1;
+
     /**
      * Creates new form NewJFrame
      */
@@ -44,29 +46,29 @@ public class UserJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        rdogender = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rdoNam = new javax.swing.JRadioButton();
+        rdoquanly = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtSDT = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        rdoNu = new javax.swing.JRadioButton();
         rdonhanvien = new javax.swing.JRadioButton();
         txtHoTen = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtDiaChi = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnthem = new javax.swing.JButton();
+        btnsua = new javax.swing.JButton();
+        btnxoa = new javax.swing.JButton();
+        btnmoi = new javax.swing.JButton();
+        btnfirst = new javax.swing.JButton();
+        btnprev = new javax.swing.JButton();
+        btnlast = new javax.swing.JButton();
+        btnnext = new javax.swing.JButton();
         txtusername = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -92,15 +94,15 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Username:");
 
-        rdogender.setBackground(new java.awt.Color(255, 255, 255));
-        GioiTinh.add(rdogender);
-        rdogender.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        rdogender.setText("Nam");
+        rdoNam.setBackground(new java.awt.Color(255, 255, 255));
+        GioiTinh.add(rdoNam);
+        rdoNam.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        rdoNam.setText("Nam");
 
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        VaiTro.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jRadioButton2.setText("Nhân Viên");
+        rdoquanly.setBackground(new java.awt.Color(255, 255, 255));
+        VaiTro.add(rdoquanly);
+        rdoquanly.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        rdoquanly.setText("Quản Lý");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Số Điện Thoại:");
@@ -111,15 +113,15 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel9.setText("Giới Tính:");
 
-        jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
-        GioiTinh.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jRadioButton3.setText("Nữ");
+        rdoNu.setBackground(new java.awt.Color(255, 255, 255));
+        GioiTinh.add(rdoNu);
+        rdoNu.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        rdoNu.setText("Nữ");
 
         rdonhanvien.setBackground(new java.awt.Color(255, 255, 255));
         VaiTro.add(rdonhanvien);
         rdonhanvien.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        rdonhanvien.setText("Quản Lý");
+        rdonhanvien.setText("Nhân Viên");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Password:");
@@ -130,51 +132,71 @@ public class UserJFrame extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel8.setText("Vai Trò:");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/plus.png"))); // NOI18N
-        jButton1.setText("Thêm ");
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/update.png"))); // NOI18N
-        jButton2.setText("Sửa");
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
-        jButton3.setText("Xóa");
-
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
-        jButton4.setText("Mới");
-
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setText("|<<");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnthem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnthem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/plus.png"))); // NOI18N
+        btnthem.setText("Thêm ");
+        btnthem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnthemActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton6.setText("<<");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnsua.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/update.png"))); // NOI18N
+        btnsua.setText("Sửa");
+        btnsua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnsuaActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton7.setText(">>|");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnxoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnxoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
+        btnxoa.setText("Xóa");
+        btnxoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnxoaActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton8.setText(">>");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnmoi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnmoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
+        btnmoi.setText("Mới");
+        btnmoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnmoiActionPerformed(evt);
+            }
+        });
+
+        btnfirst.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnfirst.setText("|<<");
+        btnfirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfirstActionPerformed(evt);
+            }
+        });
+
+        btnprev.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnprev.setText("<<");
+        btnprev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprevActionPerformed(evt);
+            }
+        });
+
+        btnlast.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnlast.setText(">>|");
+        btnlast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlastActionPerformed(evt);
+            }
+        });
+
+        btnnext.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnnext.setText(">>");
+        btnnext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnextActionPerformed(evt);
             }
         });
 
@@ -194,7 +216,7 @@ public class UserJFrame extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(rdonhanvien)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2))
+                                        .addComponent(rdoquanly))
                                     .addComponent(txtusername))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,27 +235,27 @@ public class UserJFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(rdogender)
+                                        .addComponent(rdoNam)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton3)))
+                                        .addComponent(rdoNu)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnthem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnsua)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnxoa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(btnmoi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton6)
+                        .addComponent(btnfirst)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnprev)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnnext)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
+                        .addComponent(btnlast)
                         .addGap(48, 48, 48))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -268,23 +290,23 @@ public class UserJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdonhanvien)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rdoquanly))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdogender)
-                    .addComponent(jRadioButton3))
+                    .addComponent(rdoNam)
+                    .addComponent(rdoNu))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton8)
-                    .addComponent(jButton7))
+                    .addComponent(btnthem)
+                    .addComponent(btnsua)
+                    .addComponent(btnxoa)
+                    .addComponent(btnmoi)
+                    .addComponent(btnfirst)
+                    .addComponent(btnprev)
+                    .addComponent(btnnext)
+                    .addComponent(btnlast))
                 .addGap(0, 0, 0))
         );
 
@@ -390,25 +412,45 @@ public class UserJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblUserMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnfirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfirstActionPerformed
         // TODO add your handling code here:
         first();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnfirstActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnprevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprevActionPerformed
         // TODO add your handling code here:
         prev();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnprevActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnextActionPerformed
         // TODO add your handling code here:
         next();
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnnextActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnlastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlastActionPerformed
         // TODO add your handling code here:
         last();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnlastActionPerformed
+
+    private void btnmoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoiActionPerformed
+        // TODO add your handling code here:
+        clearForm();
+    }//GEN-LAST:event_btnmoiActionPerformed
+
+    private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
+        // TODO add your handling code here:
+        insert();
+    }//GEN-LAST:event_btnthemActionPerformed
+
+    private void btnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxoaActionPerformed
+        // TODO add your handling code here:
+        delete();
+    }//GEN-LAST:event_btnxoaActionPerformed
+
+    private void btnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuaActionPerformed
+        // TODO add your handling code here:
+        update();
+    }//GEN-LAST:event_btnsuaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,14 +491,14 @@ public class UserJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GioiTinh;
     private javax.swing.ButtonGroup VaiTro;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnfirst;
+    private javax.swing.JButton btnlast;
+    private javax.swing.JButton btnmoi;
+    private javax.swing.JButton btnnext;
+    private javax.swing.JButton btnprev;
+    private javax.swing.JButton btnsua;
+    private javax.swing.JButton btnthem;
+    private javax.swing.JButton btnxoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -469,11 +511,11 @@ public class UserJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JRadioButton rdogender;
+    private javax.swing.JRadioButton rdoNam;
+    private javax.swing.JRadioButton rdoNu;
     private javax.swing.JRadioButton rdonhanvien;
+    private javax.swing.JRadioButton rdoquanly;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblUser;
     private javax.swing.JTextField txtDiaChi;
@@ -485,24 +527,28 @@ public class UserJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 // khai báo model table
     private DefaultTableModel model;
+
     // set table
-     public void initModel() {
+    public void initModel() {
         model = new DefaultTableModel();
-        String[] cols = new String[]{"Fullname","Username", "Password", "Gender", "Birthday", "Phone", "Email", "Address","Role"};
+        String[] cols = new String[]{"Fullname", "Username", "Password", "Gender", "Birthday", "Phone", "Email", "Address", "Role"};
         model.setColumnIdentifiers(cols);
         tblUser.setModel(model);
         setLocationRelativeTo(null);
         fillTable();
+        row = -1;
+        updateStatus();
+        selectradio();
     }// set tblUser
-     
+
     void fillTable() {
         DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
         model.setRowCount(0);
         try {
             List<Account> list = dao.selectAll();
             for (Account ac : list) {
-                Object[] row = {ac.getFullName(), ac.getUserName(), ac.getPassWord(),ac.isGender()? "Nam" : "Nữ",
-                    ac.getBirthDay(),ac.getPhone(),ac.getEmail(),ac.getAddRess(),ac.isRole()? "Nhân Viên" : "Quản Lý"
+                Object[] row = {ac.getFullName(), ac.getUserName(), ac.getPassWord(), ac.isGender() ? "Nam" : "Nữ",
+                    ac.getBirthDay(), ac.getPhone(), ac.getEmail(), ac.getAddRess(), ac.isRole() ? "Nhân Viên" : "Quản Lý"
                 };
                 model.addRow(row);
             }
@@ -510,56 +556,229 @@ public class UserJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
-    
+
     void last() {
         this.row = tblUser.getRowCount() - 1;
+        this.edit();
     }
 
     void next() {
         if (this.row < tblUser.getRowCount() - 1) {
             this.row++;
+            this.edit();
         }
     }
 
     void prev() {
         if (this.row > 0) {
             this.row--;
+            this.edit();
         }
     }
 
     void first() {
         this.row = 0;
+        this.edit();
     }
-    
+
     void edit() {
         String manv = (String) tblUser.getValueAt(this.row, 1);
         Account ac = dao.selectById(manv);
         this.setForm(ac);
         tabs.setSelectedIndex(0);
+        this.updateStatus();
     }
-    
+
     void setForm(Account ac) {
         ArrayList<Account> list = new ArrayList<>();
         System.out.println(list);
         txtHoTen.setText(ac.getFullName());
         txtusername.setText(ac.getUserName());
         txtPassword.setText(ac.getPassWord());
-        txtSDT.setText(ac.getPhone());
+        txtSDT.setText(String.valueOf(ac.getPhone()));
         txtDiaChi.setText(ac.getAddRess());
         txtEmail.setText(ac.getEmail());
-        rdonhanvien.setSelected(!ac.isRole());
-        rdogender.setSelected(!ac.isGender());
+        rdonhanvien.setSelected(ac.isRole());
+        rdoquanly.setSelected(!ac.isRole());
+        rdoNam.setSelected(ac.isGender());
+        rdoNu.setSelected(!ac.isGender());
     }
-    
+
     Account getForm() {
         Account ac = new Account();
         ac.setFullName(txtHoTen.getText());
         ac.setUserName(txtusername.getText());
         ac.setPassWord(txtPassword.getText());
         ac.setAddRess(txtDiaChi.getText());
-        ac.setPhone(txtSDT.getText());
+        ac.setPhone(Integer.parseInt(txtSDT.getText()));
         ac.setEmail(txtEmail.getText());
+        ac.setGender(rdonhanvien.isSelected());
+        ac.setRole(rdoNam.isSelected());
         return ac;
+    }
+
+    void updateStatus() {
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tblUser.getRowCount() - 1);
+
+        txtusername.setEditable(!edit);
+        btnthem.setEnabled(!edit);
+        btnsua.setEnabled(edit);
+        btnxoa.setEnabled(edit);
+
+        btnfirst.setEnabled(edit && !first);
+        btnprev.setEnabled(edit && !first);
+        btnnext.setEnabled(edit && !last);
+        btnlast.setEnabled(edit && !last);
+    }
+
+    void clearForm() {
+        txtHoTen.setText("");
+        txtusername.setText("");
+        txtPassword.setText("");
+        txtDiaChi.setText("");
+        txtSDT.setText("");
+        txtEmail.setText("");
+        selectradio();
+        this.row = -1;
+        this.updateStatus();
+    }
+
+    void selectradio() {
+        rdoNam.setSelected(true);
+        rdonhanvien.setSelected(true);
+    }
+
+    void insert() {
+        if (validateInsert() == true) {
+            Account ac = getForm();
+            try {
+                dao.insert(ac);
+                this.fillTable();
+                this.clearForm();
+                MsgBox.alert(this, "Thêm mới thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Thêm mới thất bại!");
+            }
+        }
+    }
+
+    void delete() {
+        String manv = txtusername.getText();
+        if (manv.equals(Auth.userName.getUserName())) {
+            MsgBox.alert(this, "Bạn không được xóa chính bạn!");
+        } else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này?")) {
+            try {
+                dao.delete(manv);
+                this.fillTable();
+                this.clearForm();
+                MsgBox.alert(this, "Xóa thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xóa thất bại!");
+            }
+        }
+    }
+
+    void update() {
+        if (ValidateUpdate() == true) {
+            Account ac = getForm();
+            try {
+                dao.update(ac);
+                this.fillTable();
+                MsgBox.alert(this, "Cập nhật thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Cập nhật thất bại!");
+            }
+        }
+    }
+
+    boolean validateInsert() {
+        if (txtHoTen.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập họ và tên nhân viên!");
+            return false;
+        }
+        if (txtusername.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập Username!");
+            return false;
+        }
+        if (txtPassword.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập mật khẩu!");
+            return false;
+        }
+        if (txtSDT.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập số điện thoại!");
+            return false;
+        }
+        try {
+            Integer.parseInt(txtSDT.getText());
+        } catch (Exception e) {
+            MsgBox.alert(this, "Vui lòng nhập số điện thoại là số!");
+            return false;
+        }
+        if (txtSDT.getText().length() > 10 || txtSDT.getText().length() < 10) {
+            MsgBox.alert(this, "Số điện thoại tối đa 10 số!");
+            return false;
+        }
+        if (!txtSDT.getText().matches("[0][0-9]{9}")) {
+            MsgBox.alert(this, "Nhập sai định dạng số diện thoại!");
+            return false;
+        }
+        if (txtEmail.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập Email!");
+            return false;
+        }
+        if (!txtEmail.getText().matches("^\\w+@\\w+(.\\w+){1,2}")) {
+            MsgBox.alert(this, "Vui lòng nhập đúng định dạng Email");
+            return false;
+        }
+        if (txtDiaChi.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập địa chỉ!");
+            return false;
+        }
+        return true;
+    }
+
+    boolean ValidateUpdate() {
+        if (txtHoTen.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập họ và tên nhân viên!");
+            return false;
+        }
+        if (txtPassword.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập mật khẩu!");
+            return false;
+        }
+        if (txtSDT.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập số điện thoại!");
+        }
+        try {
+            Integer.parseInt(txtSDT.getText());
+        } catch (Exception e) {
+            MsgBox.alert(this, "Vui lòng nhập số điện thoại là số!");
+            return false;
+        }
+        if (txtSDT.getText().length() > 10 || txtSDT.getText().length() < 10) {
+            MsgBox.alert(this, "Số điện thoại tối đa 10 số!");
+            return false;
+        }
+        if (!txtSDT.getText().matches("[0][0-9]{9}")) {
+            MsgBox.alert(this, "Nhập sai định dạng số diện thoại!");
+            return false;
+        }
+        if (txtEmail.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập Email");
+            return false;
+        }
+        if (!txtEmail.getText().matches("^\\w+@\\w+(.\\w+){1,2}")) {
+            MsgBox.alert(this, "Vui lòng nhập đúng định dạng Email");
+            return false;
+        }
+        if (txtDiaChi.getText().equals("")) {
+            MsgBox.alert(this, "Vui lòng nhập địa chỉ!");
+            return false;
+        }
+
+        return true;
     }
 
 }// end class

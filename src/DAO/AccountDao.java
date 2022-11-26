@@ -69,7 +69,7 @@ public class AccountDao extends DAO<Account, String>{
                 entity.setPassWord(rs.getString("Password"));
                 entity.setGender(rs.getBoolean("Gender"));
                 entity.setBirthDay(rs.getDate("Birthday"));
-                entity.setPhone(rs.getString("Phone"));
+                entity.setPhone(rs.getInt("Phone"));
                 entity.setEmail(rs.getString("Email"));
                 entity.setAddRess(rs.getString("Address"));
                 entity.setRole(rs.getBoolean("Role"));

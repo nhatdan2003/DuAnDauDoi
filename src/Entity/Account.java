@@ -12,7 +12,7 @@ public class Account {
 	String passWord;
 	Boolean gender;
 	Date birthDay;
-	String phone;
+	int phone;
 	String email;
 	String addRess;
 	Boolean role;
@@ -57,11 +57,11 @@ public class Account {
         this.birthDay = birthDay;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
