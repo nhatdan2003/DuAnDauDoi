@@ -603,7 +603,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		cboType1.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent event) {
-				if (event.getStateChange() == ItemEvent.SELECTED) {
+				if (event.getStateChange() == ItemEvent.SELECTED ) {
 					fillToTableCbo();
 
 				}
@@ -611,6 +611,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
 		});
 		clearFrom();
+		fillToTable();
 		updateStaTus();
 
 	}
