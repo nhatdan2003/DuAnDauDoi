@@ -8,6 +8,7 @@ import java.awt.Color;
 import Utils.*;
 import DAO.*;
 import Entity.*;
+import javax.swing.JFrame;
 
 /**
  *
@@ -52,14 +53,21 @@ public class OderJFrame extends javax.swing.JFrame {
                 btnBan10 = new javax.swing.JButton();
                 btnBan11 = new javax.swing.JButton();
                 btnBan12 = new javax.swing.JButton();
+                btnBack = new javax.swing.JButton();
                 btnBan13 = new javax.swing.JButton();
                 btnBan14 = new javax.swing.JButton();
                 btnBan15 = new javax.swing.JButton();
-                btnBack = new javax.swing.JButton();
+                btnBan16 = new javax.swing.JButton();
+                btnBan17 = new javax.swing.JButton();
+                btnBan18 = new javax.swing.JButton();
+                btnBan19 = new javax.swing.JButton();
+                btnBan20 = new javax.swing.JButton();
+                jLabel1 = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setTitle("Diamonds Place - ODER");
                 setBackground(new java.awt.Color(255, 255, 255));
+                setPreferredSize(new java.awt.Dimension(1451, 680));
                 addWindowListener(new java.awt.event.WindowAdapter() {
                         public void windowOpened(java.awt.event.WindowEvent evt) {
                                 formWindowOpened(evt);
@@ -70,7 +78,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logoAppMain.png"))); // NOI18N
 
-                lblUser.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+                lblUser.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
                 lblUser.setForeground(new java.awt.Color(255, 153, 255));
                 lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 lblUser.setText("jLabel2");
@@ -80,7 +88,7 @@ public class OderJFrame extends javax.swing.JFrame {
                 jPanel1Layout.setHorizontalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(46, Short.MAX_VALUE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblLogo)
                                 .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -91,21 +99,27 @@ public class OderJFrame extends javax.swing.JFrame {
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(lblLogo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                                .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                 );
 
                 btnBan1.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan1.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan1.setText("Ban 1");
+                btnBan1.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan1.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan1.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan2.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan2.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan2.setText("Ban 2");
+                btnBan2.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan2.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan2.setPreferredSize(new java.awt.Dimension(100, 60));
                 btnBan2.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 btnBan2ActionPerformed(evt);
@@ -113,80 +127,202 @@ public class OderJFrame extends javax.swing.JFrame {
                 });
 
                 btnBan3.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan3.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan3.setText("Ban 3");
+                btnBan3.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan3.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan3.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan4.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan4.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan4.setText("Ban 4");
+                btnBan4.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan4.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan4.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan5.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan5.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan5.setText("Ban 5");
+                btnBan5.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan5.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan5.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan6.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan6.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan6.setText("Ban 6");
+                btnBan6.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan6.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan6.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan7.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan7.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan7.setText("Ban 7");
+                btnBan7.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan7.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan7.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan8.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan8.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan8.setText("Ban 8");
+                btnBan8.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan8.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan8.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan8.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan8ActionPerformed(evt);
+                        }
+                });
 
                 btnBan9.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan9.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan9.setText("Ban 9");
+                btnBan9.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan9.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan9.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan9.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan9ActionPerformed(evt);
+                        }
+                });
 
                 btnBan10.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan10.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan10.setText("Ban 10");
+                btnBan10.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan10.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan10.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan10.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan10ActionPerformed(evt);
+                        }
+                });
 
                 btnBan11.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan11.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan11.setText("Ban 11");
+                btnBan11.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan11.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan11.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBan12.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnBan12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 btnBan12.setForeground(new java.awt.Color(255, 255, 255));
                 btnBan12.setText("Ban 12");
-
-                btnBan13.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                btnBan13.setForeground(new java.awt.Color(255, 255, 255));
-                btnBan13.setText("Ban 13");
-
-                btnBan14.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                btnBan14.setForeground(new java.awt.Color(255, 255, 255));
-                btnBan14.setText("Ban 14");
-
-                btnBan15.setBackground(new java.awt.Color(255, 153, 255));
-                btnBan15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                btnBan15.setForeground(new java.awt.Color(255, 255, 255));
-                btnBan15.setText("Ban 15");
+                btnBan12.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan12.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan12.setPreferredSize(new java.awt.Dimension(100, 60));
 
                 btnBack.setBackground(new java.awt.Color(255, 255, 255));
-                btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                btnBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                 btnBack.setForeground(new java.awt.Color(255, 153, 255));
                 btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
                 btnBack.setText("BACK");
+                btnBack.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBack.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBack.setPreferredSize(new java.awt.Dimension(154, 38));
                 btnBack.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 btnBackActionPerformed(evt);
                         }
                 });
+
+                btnBan13.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan13.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan13.setText("Ban 13");
+                btnBan13.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan13.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan13.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan13.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan13ActionPerformed(evt);
+                        }
+                });
+
+                btnBan14.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan14.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan14.setText("Ban 14");
+                btnBan14.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan14.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan14.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan14.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan14ActionPerformed(evt);
+                        }
+                });
+
+                btnBan15.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan15.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan15.setText("Ban 15");
+                btnBan15.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan15.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan15.setPreferredSize(new java.awt.Dimension(100, 60));
+
+                btnBan16.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan16.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan16.setText("Ban 16");
+                btnBan16.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan16.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan16.setPreferredSize(new java.awt.Dimension(100, 60));
+
+                btnBan17.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan17.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan17.setText("Ban 17");
+                btnBan17.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan17.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan17.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan17.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan17ActionPerformed(evt);
+                        }
+                });
+
+                btnBan18.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan18.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan18.setText("Ban 18");
+                btnBan18.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan18.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan18.setPreferredSize(new java.awt.Dimension(100, 60));
+                btnBan18.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBan18ActionPerformed(evt);
+                        }
+                });
+
+                btnBan19.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan19.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan19.setText("Ban 19");
+                btnBan19.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan19.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan19.setPreferredSize(new java.awt.Dimension(100, 60));
+
+                btnBan20.setBackground(new java.awt.Color(255, 153, 255));
+                btnBan20.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                btnBan20.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan20.setText("Ban 20");
+                btnBan20.setMaximumSize(new java.awt.Dimension(154, 38));
+                btnBan20.setMinimumSize(new java.awt.Dimension(154, 38));
+                btnBan20.setPreferredSize(new java.awt.Dimension(100, 60));
+
+                jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(255, 0, 255));
+                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jLabel1.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
@@ -195,39 +331,58 @@ public class OderJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(btnBan4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan7, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(30, 30, 30)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGroup(layout.createSequentialGroup()
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                                .addGroup(layout.createSequentialGroup()
+                                                                                        .addComponent(btnBan9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(btnBan10, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                                .addComponent(btnBan5, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                                                                .addComponent(btnBan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                                .addComponent(btnBan2, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                                                                .addComponent(btnBan6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                .addGroup(layout.createSequentialGroup()
+                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                                .addComponent(btnBan7, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                                                                .addComponent(btnBan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                                .addComponent(btnBan4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                                                                .addComponent(btnBan8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                        .addComponent(btnBan11, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(btnBan12, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(btnBan5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(btnBan6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(btnBan2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                                                                .addComponent(btnBan3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(btnBan8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(btnBan9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(btnBan11, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(btnBan12, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(btnBan13, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(btnBan14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(btnBan15, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(btnBan16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addGap(0, 0, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnBan13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(30, 30, 30)
-                                                .addComponent(btnBan14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btnBan15, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(btnBan17, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnBan18, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnBan19, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnBan20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE))
                                 .addContainerGap())
                 );
                 layout.setVerticalGroup(
@@ -236,36 +391,45 @@ public class OderJFrame extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnBan1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(40, 40, 40)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnBan4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(40, 40, 40)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnBan7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(40, 40, 40)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnBan10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnBan12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(btnBan14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                                                        .addComponent(btnBan1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnBan2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnBan3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnBan4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(btnBan7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                                        .addComponent(btnBan6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnBan5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnBan8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(btnBan9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnBan10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                .addComponent(btnBan13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(btnBan15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(31, 31, 31)
-                                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addComponent(btnBan11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(btnBan12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(btnBan15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                                                                .addComponent(btnBan13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(btnBan14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(btnBan16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(btnBan19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                                                                .addComponent(btnBan17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(btnBan18, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(btnBan20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addContainerGap())))
                 );
 
                 pack();
@@ -285,6 +449,34 @@ public class OderJFrame extends javax.swing.JFrame {
                btnBack();
                
         }//GEN-LAST:event_btnBackActionPerformed
+
+        private void btnBan9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan9ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan9ActionPerformed
+
+        private void btnBan8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan8ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan8ActionPerformed
+
+        private void btnBan10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan10ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan10ActionPerformed
+
+        private void btnBan13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan13ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan13ActionPerformed
+
+        private void btnBan14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan14ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan14ActionPerformed
+
+        private void btnBan17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan17ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan17ActionPerformed
+
+        private void btnBan18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBan18ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnBan18ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,7 +525,12 @@ public class OderJFrame extends javax.swing.JFrame {
         private javax.swing.JButton btnBan13;
         private javax.swing.JButton btnBan14;
         private javax.swing.JButton btnBan15;
+        private javax.swing.JButton btnBan16;
+        private javax.swing.JButton btnBan17;
+        private javax.swing.JButton btnBan18;
+        private javax.swing.JButton btnBan19;
         private javax.swing.JButton btnBan2;
+        private javax.swing.JButton btnBan20;
         private javax.swing.JButton btnBan3;
         private javax.swing.JButton btnBan4;
         private javax.swing.JButton btnBan5;
@@ -341,6 +538,7 @@ public class OderJFrame extends javax.swing.JFrame {
         private javax.swing.JButton btnBan7;
         private javax.swing.JButton btnBan8;
         private javax.swing.JButton btnBan9;
+        private javax.swing.JLabel jLabel1;
         private javax.swing.JPanel jPanel1;
         private javax.swing.JLabel lblLogo;
         private javax.swing.JLabel lblUser;
@@ -349,11 +547,13 @@ public class OderJFrame extends javax.swing.JFrame {
 	private void init() {
 		this.getContentPane().setBackground( Color.WHITE ); // set backgrounf
 		lblUser.setText(String.valueOf(Auth.userName));
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	}
 
 	private void btnBack() {
 		this.dispose();    
 		new MainJFrame(this, true).setVisible(true);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	}
         
        
