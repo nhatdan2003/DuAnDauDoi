@@ -356,7 +356,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                 });
 
                 tblSearchProduct.setBackground(new java.awt.Color(255, 255, 255));
-                tblSearchProduct.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                tblSearchProduct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 tblSearchProduct.setForeground(new java.awt.Color(255, 102, 255));
                 tblSearchProduct.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
@@ -377,7 +377,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                 return canEdit [columnIndex];
                         }
                 });
-                tblSearchProduct.setRowHeight(25);
+                tblSearchProduct.setRowHeight(35);
                 tblSearchProduct.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
                                 tblSearchProductMouseClicked(evt);

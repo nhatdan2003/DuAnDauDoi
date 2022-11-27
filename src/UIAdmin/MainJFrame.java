@@ -155,6 +155,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnUser.setMaximumSize(new java.awt.Dimension(400, 80));
                 btnUser.setMinimumSize(new java.awt.Dimension(400, 80));
                 btnUser.setPreferredSize(new java.awt.Dimension(400, 150));
+                btnUser.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnUserActionPerformed(evt);
+                        }
+                });
 
                 jButton1.setBackground(new java.awt.Color(255, 255, 255));
                 jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -227,6 +232,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 // TODO add your handling code here:
 		openDoanhThu();
         }//GEN-LAST:event_btnSalesActionPerformed
+
+        private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+                // TODO add your handling code here:
+		openUser();
+        }//GEN-LAST:event_btnUserActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -309,6 +319,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
 	private void openDoanhThu() {
 		new ProductSaleJFrame(this, true).setVisible(true);
+		this.dispose();
+	}
+
+	private void openUser() {
+		new UserJFrame(this, true).setVisible(true);
 		this.dispose();
 	}
 }
