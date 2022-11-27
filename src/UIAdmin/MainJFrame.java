@@ -118,6 +118,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnSales.setMaximumSize(new java.awt.Dimension(400, 80));
                 btnSales.setMinimumSize(new java.awt.Dimension(400, 80));
                 btnSales.setPreferredSize(new java.awt.Dimension(400, 150));
+                btnSales.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnSalesActionPerformed(evt);
+                        }
+                });
 
                 btnMenu.setBackground(new java.awt.Color(255, 153, 255));
                 btnMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -218,6 +223,11 @@ public class MainJFrame extends javax.swing.JFrame {
 		openMenu();
         }//GEN-LAST:event_btnMenuActionPerformed
 
+        private void btnSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesActionPerformed
+                // TODO add your handling code here:
+		openDoanhThu();
+        }//GEN-LAST:event_btnSalesActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -294,6 +304,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
 	private void openMenu() {
 		new ProductSearchJFrame(this, true).setVisible(true);
+		this.dispose();
+	}
+
+	private void openDoanhThu() {
+		new ProductSaleJFrame(this, true).setVisible(true);
 		this.dispose();
 	}
 }

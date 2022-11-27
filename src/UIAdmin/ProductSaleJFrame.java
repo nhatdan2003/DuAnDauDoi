@@ -30,6 +30,11 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 		init();
 	}
 
+	ProductSaleJFrame(MainJFrame aThis, boolean b) {
+		initComponents();
+		init();
+	}
+
 	/**
 	 * This method is called from within the constructor to initialize the
 	 * form. WARNING: Do NOT modify this code. The content of this method is
@@ -46,6 +51,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 jLabel1 = new javax.swing.JLabel();
                 btnTim = new javax.swing.JButton();
                 btnShowAll = new javax.swing.JButton();
+                btnBack = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +97,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 jLabel1.setText("DATE");
 
                 btnTim.setBackground(new java.awt.Color(255, 153, 255));
-                btnTim.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnTim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 btnTim.setForeground(new java.awt.Color(255, 255, 255));
                 btnTim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Search.png"))); // NOI18N
                 btnTim.setText("SEARCH");
@@ -105,7 +111,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 });
 
                 btnShowAll.setBackground(new java.awt.Color(255, 153, 255));
-                btnShowAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                btnShowAll.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 btnShowAll.setForeground(new java.awt.Color(255, 255, 255));
                 btnShowAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
                 btnShowAll.setText("SHOW ALL");
@@ -118,6 +124,20 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                         }
                 });
 
+                btnBack.setBackground(new java.awt.Color(255, 255, 255));
+                btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                btnBack.setForeground(new java.awt.Color(255, 153, 255));
+                btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
+                btnBack.setText("BACK");
+                btnBack.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnBack.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnBack.setPreferredSize(new java.awt.Dimension(111, 51));
+                btnBack.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBackActionPerformed(evt);
+                        }
+                });
+
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
                 jPanel1Layout.setHorizontalGroup(
@@ -127,11 +147,13 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jdtDateOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnShowAll, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                .addContainerGap())
+                                .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnShowAll, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(jScrollPane1)
                 );
                 jPanel1Layout.setVerticalGroup(
@@ -139,12 +161,13 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnTim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnShowAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jdtDateOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE))
-                                        .addComponent(btnShowAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
@@ -179,6 +202,11 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 // TODO add your handling code here:
 		fillTableTurnoverAll();
         }//GEN-LAST:event_btnShowAllActionPerformed
+
+        private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+                // TODO add your handling code here:
+		btnBack();
+        }//GEN-LAST:event_btnBackActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -216,6 +244,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 	}
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnBack;
         private javax.swing.JButton btnShowAll;
         private javax.swing.JButton btnTim;
         private javax.swing.JLabel jLabel1;
@@ -262,6 +291,11 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 		} catch (Exception e) {
 			MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
 		}
+	}
+
+	private void btnBack() {
+		this.dispose();    
+		new MainJFrame(this, true).setVisible(true);
 	}
 
 }
