@@ -5,42 +5,46 @@ package Entity;
  * @author haoireal
  */
 public class Promotions {
-	String idPromo;
-	String namePromo;
-	double discountPromo;
-	String description;
 
-	public String getIdPromo() {
-		return idPromo;
-	}
+    String idPromo;
+    String namePromo;
+    double discountPromo;
+    String description;
 
-	public void setIdPromo(String idPromo) {
-		this.idPromo = idPromo;
-	}
+    public String getIdPromo() {
+        return idPromo;
+    }
 
-	public String getNamePromo() {
-		return namePromo;
-	}
+    public void setIdPromo(String idPromo) {
+        this.idPromo = idPromo;
+    }
 
-	public void setNamePromo(String namePromo) {
-		this.namePromo = namePromo;
-	}
+    public String getNamePromo() {
+        return namePromo;
+    }
 
-	public double getDiscountPromo() {
-		return discountPromo;
-	}
+    public void setNamePromo(String namePromo) {
+        this.namePromo = namePromo;
+    }
 
-	public void setDiscountPromo(double discountPromo) {
-		this.discountPromo = discountPromo;
-	}
+    public double getDiscountPromo() {
+        return discountPromo;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setDiscountPromo(double discountPromo) {
+        this.discountPromo = discountPromo;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return namePromo;
+    }
 }
