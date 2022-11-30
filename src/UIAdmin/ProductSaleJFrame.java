@@ -98,7 +98,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 
                 btnTim.setBackground(new java.awt.Color(255, 153, 255));
                 btnTim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnTim.setForeground(new java.awt.Color(255, 255, 255));
+                btnTim.setForeground(new java.awt.Color(0, 0, 0));
                 btnTim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Search.png"))); // NOI18N
                 btnTim.setText("SEARCH");
                 btnTim.setMaximumSize(new java.awt.Dimension(111, 51));
@@ -112,7 +112,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 
                 btnShowAll.setBackground(new java.awt.Color(255, 153, 255));
                 btnShowAll.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnShowAll.setForeground(new java.awt.Color(255, 255, 255));
+                btnShowAll.setForeground(new java.awt.Color(0, 0, 0));
                 btnShowAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
                 btnShowAll.setText("SHOW ALL");
                 btnShowAll.setMaximumSize(new java.awt.Dimension(111, 51));

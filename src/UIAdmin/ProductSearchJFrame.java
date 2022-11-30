@@ -176,7 +176,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 btnNew.setBackground(new java.awt.Color(255, 153, 255));
                 btnNew.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnNew.setForeground(new java.awt.Color(255, 255, 255));
+                btnNew.setForeground(new java.awt.Color(0, 0, 0));
                 btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Sale (2).png"))); // NOI18N
                 btnNew.setText("NEW");
                 btnNew.setMaximumSize(new java.awt.Dimension(111, 51));
@@ -190,7 +190,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 btnAdd.setBackground(new java.awt.Color(255, 153, 255));
                 btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+                btnAdd.setForeground(new java.awt.Color(0, 0, 0));
                 btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/plus.png"))); // NOI18N
                 btnAdd.setText("ADD");
                 btnAdd.setMaximumSize(new java.awt.Dimension(111, 51));
@@ -204,7 +204,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 btnUpdate.setBackground(new java.awt.Color(255, 153, 255));
                 btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+                btnUpdate.setForeground(new java.awt.Color(0, 0, 0));
                 btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/update.png"))); // NOI18N
                 btnUpdate.setText("UPDATE");
                 btnUpdate.setMaximumSize(new java.awt.Dimension(111, 51));
@@ -218,7 +218,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 
                 btnDelete.setBackground(new java.awt.Color(255, 153, 255));
                 btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+                btnDelete.setForeground(new java.awt.Color(0, 0, 0));
                 btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
                 btnDelete.setText("DELETE");
                 btnDelete.setMaximumSize(new java.awt.Dimension(111, 51));
@@ -230,9 +230,9 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                         }
                 });
 
-                btnBack.setBackground(new java.awt.Color(255, 153, 255));
+                btnBack.setBackground(new java.awt.Color(255, 255, 255));
                 btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                btnBack.setForeground(new java.awt.Color(255, 255, 255));
+                btnBack.setForeground(new java.awt.Color(255, 0, 255));
                 btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
                 btnBack.setText("BACK");
                 btnBack.setMaximumSize(new java.awt.Dimension(111, 51));

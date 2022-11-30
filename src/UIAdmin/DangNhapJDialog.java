@@ -85,6 +85,9 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                         }
                 });
 
+                btnLogIn.setBackground(new java.awt.Color(255, 153, 255));
+                btnLogIn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                btnLogIn.setForeground(new java.awt.Color(0, 0, 0));
                 btnLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/login.png"))); // NOI18N
                 btnLogIn.setText("LOGIN");
                 btnLogIn.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +96,9 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                         }
                 });
 
+                btnCancel.setBackground(new java.awt.Color(255, 153, 255));
+                btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                btnCancel.setForeground(new java.awt.Color(0, 0, 0));
                 btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
                 btnCancel.setText("Cancel");
                 btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -142,10 +148,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                                                 .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(ckhRemember)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnLogIn)
-                                                        .addComponent(btnCancel))))
+                                                        .addComponent(btnLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap())
                 );
 

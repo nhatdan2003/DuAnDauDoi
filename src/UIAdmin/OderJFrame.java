@@ -107,7 +107,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan1.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan1.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan1.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan1.setText("Ban 1");
                 btnBan1.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan1.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -115,7 +115,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan2.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan2.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan2.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan2.setText("Ban 2");
                 btnBan2.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan2.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -128,7 +128,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan3.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan3.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan3.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan3.setText("Ban 3");
                 btnBan3.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan3.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -136,7 +136,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan4.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan4.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan4.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan4.setText("Ban 4");
                 btnBan4.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan4.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -144,7 +144,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan5.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan5.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan5.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan5.setText("Ban 5");
                 btnBan5.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan5.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -152,7 +152,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan6.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan6.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan6.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan6.setText("Ban 6");
                 btnBan6.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan6.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -160,7 +160,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan7.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan7.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan7.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan7.setText("Ban 7");
                 btnBan7.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan7.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -168,7 +168,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan8.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan8.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan8.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan8.setText("Ban 8");
                 btnBan8.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan8.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -181,7 +181,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan9.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan9.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan9.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan9.setText("Ban 9");
                 btnBan9.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan9.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -194,7 +194,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan10.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan10.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan10.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan10.setText("Ban 10");
                 btnBan10.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan10.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -207,7 +207,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan11.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan11.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan11.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan11.setText("Ban 11");
                 btnBan11.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan11.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -215,7 +215,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan12.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan12.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan12.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan12.setText("Ban 12");
                 btnBan12.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan12.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -237,7 +237,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan13.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan13.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan13.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan13.setText("Ban 13");
                 btnBan13.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan13.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -250,7 +250,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan14.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan14.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan14.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan14.setText("Ban 14");
                 btnBan14.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan14.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -263,7 +263,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan15.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan15.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan15.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan15.setText("Ban 15");
                 btnBan15.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan15.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -271,7 +271,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan16.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan16.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan16.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan16.setText("Ban 16");
                 btnBan16.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan16.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -279,7 +279,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan17.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan17.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan17.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan17.setText("Ban 17");
                 btnBan17.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan17.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -292,7 +292,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan18.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan18.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan18.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan18.setText("Ban 18");
                 btnBan18.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan18.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -305,7 +305,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan19.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan19.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan19.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan19.setText("Ban 19");
                 btnBan19.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan19.setMinimumSize(new java.awt.Dimension(154, 38));
@@ -313,7 +313,7 @@ public class OderJFrame extends javax.swing.JFrame {
 
                 btnBan20.setBackground(new java.awt.Color(255, 153, 255));
                 btnBan20.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                btnBan20.setForeground(new java.awt.Color(255, 255, 255));
+                btnBan20.setForeground(new java.awt.Color(0, 0, 0));
                 btnBan20.setText("Ban 20");
                 btnBan20.setMaximumSize(new java.awt.Dimension(154, 38));
                 btnBan20.setMinimumSize(new java.awt.Dimension(154, 38));

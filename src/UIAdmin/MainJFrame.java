@@ -89,7 +89,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
                 btnOrder.setBackground(new java.awt.Color(255, 153, 255));
                 btnOrder.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnOrder.setForeground(new java.awt.Color(255, 255, 255));
+                btnOrder.setForeground(new java.awt.Color(0, 0, 0));
                 btnOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
                 btnOrder.setText("ORDER");
                 btnOrder.setMaximumSize(new java.awt.Dimension(400, 80));
@@ -103,7 +103,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
                 btnBill.setBackground(new java.awt.Color(255, 153, 255));
                 btnBill.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnBill.setForeground(new java.awt.Color(255, 255, 255));
+                btnBill.setForeground(new java.awt.Color(0, 0, 0));
                 btnBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Bill.png"))); // NOI18N
                 btnBill.setText("BILL");
                 btnBill.setMaximumSize(new java.awt.Dimension(400, 80));
@@ -112,7 +112,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
                 btnSales.setBackground(new java.awt.Color(255, 153, 255));
                 btnSales.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnSales.setForeground(new java.awt.Color(255, 255, 255));
+                btnSales.setForeground(new java.awt.Color(0, 0, 0));
                 btnSales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Sale (2).png"))); // NOI18N
                 btnSales.setText("SALES");
                 btnSales.setMaximumSize(new java.awt.Dimension(400, 80));
@@ -126,7 +126,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
                 btnMenu.setBackground(new java.awt.Color(255, 153, 255));
                 btnMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnMenu.setForeground(new java.awt.Color(255, 255, 255));
+                btnMenu.setForeground(new java.awt.Color(0, 0, 0));
                 btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Search.png"))); // NOI18N
                 btnMenu.setText("MENU");
                 btnMenu.setMaximumSize(new java.awt.Dimension(400, 80));
@@ -140,16 +140,21 @@ public class MainJFrame extends javax.swing.JFrame {
 
                 btnPromo.setBackground(new java.awt.Color(255, 153, 255));
                 btnPromo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnPromo.setForeground(new java.awt.Color(255, 255, 255));
+                btnPromo.setForeground(new java.awt.Color(0, 0, 0));
                 btnPromo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/promo (1).png"))); // NOI18N
                 btnPromo.setText("PROMO");
                 btnPromo.setMaximumSize(new java.awt.Dimension(400, 80));
                 btnPromo.setMinimumSize(new java.awt.Dimension(400, 80));
                 btnPromo.setPreferredSize(new java.awt.Dimension(400, 150));
+                btnPromo.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnPromoActionPerformed(evt);
+                        }
+                });
 
                 btnUser.setBackground(new java.awt.Color(255, 153, 255));
                 btnUser.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                btnUser.setForeground(new java.awt.Color(255, 255, 255));
+                btnUser.setForeground(new java.awt.Color(0, 0, 0));
                 btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/User (1).png"))); // NOI18N
                 btnUser.setText("USER");
                 btnUser.setMaximumSize(new java.awt.Dimension(400, 80));
@@ -238,6 +243,11 @@ public class MainJFrame extends javax.swing.JFrame {
 		openUser();
         }//GEN-LAST:event_btnUserActionPerformed
 
+        private void btnPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromoActionPerformed
+                // TODO add your handling code here:
+		openPromo();
+        }//GEN-LAST:event_btnPromoActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -324,6 +334,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
 	private void openUser() {
 		new UserJFrame(this, true).setVisible(true);
+		this.dispose();
+	}
+
+	private void openPromo() {
+		new PromoJFrame(this, true).setVisible(true);
 		this.dispose();
 	}
 }

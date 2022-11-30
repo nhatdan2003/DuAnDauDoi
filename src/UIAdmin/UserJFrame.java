@@ -172,7 +172,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnthem.setBackground(new java.awt.Color(255, 153, 255));
                 btnthem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnthem.setForeground(new java.awt.Color(255, 255, 255));
+                btnthem.setForeground(new java.awt.Color(0, 0, 0));
                 btnthem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/plus.png"))); // NOI18N
                 btnthem.setText("Add");
                 btnthem.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +183,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnsua.setBackground(new java.awt.Color(255, 153, 255));
                 btnsua.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnsua.setForeground(new java.awt.Color(255, 255, 255));
+                btnsua.setForeground(new java.awt.Color(0, 0, 0));
                 btnsua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/update.png"))); // NOI18N
                 btnsua.setText("Update");
                 btnsua.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +194,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnxoa.setBackground(new java.awt.Color(255, 153, 255));
                 btnxoa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnxoa.setForeground(new java.awt.Color(255, 255, 255));
+                btnxoa.setForeground(new java.awt.Color(0, 0, 0));
                 btnxoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete.png"))); // NOI18N
                 btnxoa.setText("Delete");
                 btnxoa.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnmoi.setBackground(new java.awt.Color(255, 153, 255));
                 btnmoi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnmoi.setForeground(new java.awt.Color(255, 255, 255));
+                btnmoi.setForeground(new java.awt.Color(0, 0, 0));
                 btnmoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/List (2).png"))); // NOI18N
                 btnmoi.setText("New");
                 btnmoi.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +216,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnfirst.setBackground(new java.awt.Color(255, 153, 255));
                 btnfirst.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnfirst.setForeground(new java.awt.Color(255, 255, 255));
+                btnfirst.setForeground(new java.awt.Color(0, 0, 0));
                 btnfirst.setText("|<<");
                 btnfirst.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,7 +226,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnprev.setBackground(new java.awt.Color(255, 153, 255));
                 btnprev.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnprev.setForeground(new java.awt.Color(255, 255, 255));
+                btnprev.setForeground(new java.awt.Color(0, 0, 0));
                 btnprev.setText("<<");
                 btnprev.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +236,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnlast.setBackground(new java.awt.Color(255, 153, 255));
                 btnlast.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnlast.setForeground(new java.awt.Color(255, 255, 255));
+                btnlast.setForeground(new java.awt.Color(0, 0, 0));
                 btnlast.setText(">>|");
                 btnlast.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,7 +246,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
                 btnnext.setBackground(new java.awt.Color(255, 153, 255));
                 btnnext.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                btnnext.setForeground(new java.awt.Color(255, 255, 255));
+                btnnext.setForeground(new java.awt.Color(0, 0, 0));
                 btnnext.setText(">>");
                 btnnext.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,12 +304,10 @@ public class UserJFrame extends javax.swing.JFrame {
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                                         .addComponent(jLabel4)
-                                                                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                                                                        .addComponent(jLabel3)
                                                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                                                 .addComponent(jLabel8)
                                                                                 .addGap(18, 18, 18)
@@ -318,7 +316,8 @@ public class UserJFrame extends javax.swing.JFrame {
                                                                                 .addGap(65, 65, 65)
                                                                                 .addComponent(rdonhanvien))
                                                                         .addComponent(jLabel5)
-                                                                        .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(txtusername, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                                                                        .addComponent(txtHoTen))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,9 +345,11 @@ public class UserJFrame extends javax.swing.JFrame {
                                         .addComponent(jLabel6)
                                         .addComponent(jLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(3, 3, 3)
+                                                .addComponent(txtHoTen)))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
