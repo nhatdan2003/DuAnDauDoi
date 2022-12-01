@@ -346,6 +346,7 @@ public class MainJFrame extends javax.swing.JFrame {
 	}
         
         private void logout(){
-                
-        }
+                new DangNhapJDialog(this, true).setVisible(true);
+
+	}
 }
