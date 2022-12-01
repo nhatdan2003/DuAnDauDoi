@@ -285,7 +285,12 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 		try {
 			List<Turnover> list = dao.selectALL();
 			for (Turnover dt : list) {
-				Object[] row = {dt.getIDProduct(), dt.getProductName(), dt.getQuantitySold(), dt.getTurnover()};
+				Object[] row = {
+					dt.getIDProduct(), 
+					dt.getProductName(), 
+					dt.getQuantitySold(), 
+					dt.getTurnover()
+				};
 				model.addRow(row);
 			}
 		} catch (Exception e) {

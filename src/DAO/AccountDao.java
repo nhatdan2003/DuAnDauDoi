@@ -10,10 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author KietHV
- */
+
 public class AccountDao extends DAO<Account, String>{
     //Câu lenh SQL
     String INSERT_SQL = "INSERT INTO ACCOUNT(Fullname,Username,Password,Gender,Birthday,Phone,Email,Address,Role)VALUES (?,?,?,?,?,?,?,?,?)";
