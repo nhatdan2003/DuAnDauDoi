@@ -5,7 +5,9 @@
 package UIAdmin;
 
 import Utils.Auth;
+import Utils.MsgBox;
 import java.awt.Color;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /**
@@ -23,6 +25,11 @@ public class MainJFrame extends javax.swing.JFrame {
 	}
 
 	MainJFrame(JFrame aThis, boolean b) {
+		initComponents();
+		initBack();
+	}
+
+	MainJFrame(JDialog aThis, boolean b) {
 		initComponents();
 		initBack();
 	}
@@ -227,28 +234,28 @@ public class MainJFrame extends javax.swing.JFrame {
         }//GEN-LAST:event_btnOrderActionPerformed
 
         private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-                // TODO add your handling code here:
+		// TODO add your handling code here:
 		openMenu();
         }//GEN-LAST:event_btnMenuActionPerformed
 
         private void btnSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesActionPerformed
-                // TODO add your handling code here:
+		// TODO add your handling code here:
 		openDoanhThu();
         }//GEN-LAST:event_btnSalesActionPerformed
 
         private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
-                // TODO add your handling code here:
+		// TODO add your handling code here:
 		openUser();
         }//GEN-LAST:event_btnUserActionPerformed
 
         private void btnPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromoActionPerformed
-                // TODO add your handling code here:
+		// TODO add your handling code here:
 		openPromo();
         }//GEN-LAST:event_btnPromoActionPerformed
 
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
-        // TODO add your handling code here:
-        logout();
+	    // TODO add your handling code here:
+	    logout();
     }//GEN-LAST:event_btnlogoutActionPerformed
 
 	/**
@@ -306,23 +313,23 @@ public class MainJFrame extends javax.swing.JFrame {
 		new DangNhapJDialog(this, true).setVisible(a);
 		lblUser.setText(String.valueOf(Auth.userName));
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		
+
 	}
 
-	private void initBack(){ 
-				this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	private void initBack() {
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 		lblUser.setText(String.valueOf(Auth.userName));
 		this.getContentPane().setBackground(Color.WHITE);
 	}
-	
+
 	private void openOrder() {
 		new OderJFrame(this, true).setVisible(true);
 		this.dispose();
 	}
 
-	private void PhamGiaHao(){
-	
+	private void PhamGiaHao() {
+
 	}
 
 	private void openMenu() {
@@ -344,9 +351,11 @@ public class MainJFrame extends javax.swing.JFrame {
 		new PromoJFrame(this, true).setVisible(true);
 		this.dispose();
 	}
-        
-        private void logout(){
-                new DangNhapJDialog(this, true).setVisible(true);
+
+	private void logout() {
+		this.dispose();
+		new MainJFrame().setVisible(true);
+		
 
 	}
 }
