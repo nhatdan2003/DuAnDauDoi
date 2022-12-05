@@ -12,6 +12,15 @@ public class Order {
 	Date timeOrder;
 	String userName;
 	String idTable;
+	Boolean statusTable;
+
+	public Boolean getStatusTable() {
+		return statusTable;
+	}
+
+	public void setStatusTable(Boolean statusTable) {
+		this.statusTable = statusTable;
+	}
 
 	public String getIdOrder() {
 		return idOrder;

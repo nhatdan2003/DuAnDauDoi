@@ -60,6 +60,10 @@ public class Product {
 	public void setDescreption(String descreption) {
 		this.descreption = descreption;
 	}
-
+	
+	 @Override
+	public String toString() {
+        return idProduct + " ¦ " + productName + " ¦ " + price;
+    }
 	
 }

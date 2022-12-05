@@ -237,6 +237,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 1"/>
+        <Property name="toolTipText" type="java.lang.String" value="B1"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -247,6 +248,9 @@
           <Dimension value="[100, 60]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBan1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnBan2">
       <Properties>
@@ -260,6 +264,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 2"/>
+        <Property name="toolTipText" type="java.lang.String" value="B2"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -286,6 +291,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 3"/>
+        <Property name="toolTipText" type="java.lang.String" value="B3"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -309,6 +315,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 4"/>
+        <Property name="toolTipText" type="java.lang.String" value="B4"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -332,6 +339,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 5"/>
+        <Property name="toolTipText" type="java.lang.String" value="B5"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -355,6 +363,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 6"/>
+        <Property name="toolTipText" type="java.lang.String" value="B6"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -378,6 +387,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 7"/>
+        <Property name="toolTipText" type="java.lang.String" value="B7"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -401,6 +411,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 8"/>
+        <Property name="toolTipText" type="java.lang.String" value="B8"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -427,6 +438,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 9"/>
+        <Property name="toolTipText" type="java.lang.String" value="B9"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -453,6 +465,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 10"/>
+        <Property name="toolTipText" type="java.lang.String" value="B10"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -479,6 +492,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 11"/>
+        <Property name="toolTipText" type="java.lang.String" value="B11"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -502,6 +516,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 12"/>
+        <Property name="toolTipText" type="java.lang.String" value="B12"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -554,6 +569,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 13"/>
+        <Property name="toolTipText" type="java.lang.String" value="B13"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -580,6 +596,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 14"/>
+        <Property name="toolTipText" type="java.lang.String" value="B14"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -606,6 +623,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 15"/>
+        <Property name="toolTipText" type="java.lang.String" value="B15"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -629,6 +647,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 16"/>
+        <Property name="toolTipText" type="java.lang.String" value="B16"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -652,6 +671,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 17"/>
+        <Property name="toolTipText" type="java.lang.String" value="B17"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -678,6 +698,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 18"/>
+        <Property name="toolTipText" type="java.lang.String" value="B18"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -704,6 +725,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 19"/>
+        <Property name="toolTipText" type="java.lang.String" value="B19"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
@@ -727,6 +749,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ban 20"/>
+        <Property name="toolTipText" type="java.lang.String" value="B20"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 38]"/>
         </Property>
