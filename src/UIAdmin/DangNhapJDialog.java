@@ -5,7 +5,9 @@
 package UIAdmin;
 
 import DAO.AccountDao;
+import DAO.TheLastLoginDAO;
 import Entity.Account;
+import Entity.TheLastLogin;
 import Utils.Auth;
 import Utils.MsgBox;
 import java.util.prefs.Preferences;
@@ -17,6 +19,7 @@ import java.util.prefs.Preferences;
 public class DangNhapJDialog extends javax.swing.JDialog {
 
 	AccountDao dao = new AccountDao();
+        TheLastLoginDAO daotll = new TheLastLoginDAO();
 	Preferences pre;
 	boolean rememberpre;
 	boolean rt;
@@ -26,12 +29,14 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 	 */
 	public DangNhapJDialog() {
 		initComponents();
+                setRemember();
 		rememberMe();
 	}
 
 	public DangNhapJDialog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
+                setRemember();
 		rememberMe();
 	}
 
@@ -282,8 +287,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 			MsgBox.alert(this, "Password is incorrect!");
 			return;
 
-		}
-		if (checkRememberMe() == true) {
+		}else if (checkRememberMe() == true) {
 			Auth.userName = ac;
 		}
 		this.dispose();
@@ -303,13 +307,15 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 		if (ckhRemember.isSelected()) {
 			pre.put("User", txtTenDangNhap.getText());
 			pre.put("Password", txtMatKhau.getText());
-			pre.putBoolean("rememberMe", true);
+                        daotll.update(true);
+//			pre.putBoolean("rememberMe", true);
 			rt = true;
 			//if nay set gia tri cho bien pre bang gia tri da nhap
 		} else if (!ckhRemember.isSelected()) {
 			pre.put("User", "");
 			pre.put("Password", "");
-			pre.putBoolean("rememberMe", false);
+                        daotll.update(false);
+//			pre.putBoolean("rememberMe", false);
 			//if nay set gia tri cho bien pre la rong
 			boolean check = MsgBox.confirm(this, "You definitely don't want to save your account for the next login?");
 			//kiem tra lua chon nguoi dung neu dung thi vao main
@@ -321,4 +327,13 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 		}
 		return rt;
 	}
+        
+        private void setRemember(){
+        TheLastLogin tll = daotll.selectAllLogin();
+        if(tll.isRemember()==true){
+            ckhRemember.setSelected(true);
+        }else{
+            ckhRemember.setSelected(false);
+        }
+    }
 }
