@@ -312,8 +312,8 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 			rt = true;
 			//if nay set gia tri cho bien pre bang gia tri da nhap
 		} else if (!ckhRemember.isSelected()) {
-			pre.put("User", "");
-			pre.put("Password", "");
+			pre.put("User", "User");
+			pre.put("Password", "Password");
                         daotll.update(false);
 //			pre.putBoolean("rememberMe", false);
 			//if nay set gia tri cho bien pre la rong
