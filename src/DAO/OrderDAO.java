@@ -16,7 +16,7 @@ public class OrderDAO extends DAO<Order, String>{
 	String INSERT_SQL = "INSERT INTO [Order](IDOrder,DateOrder,TimeOrder,Username,IDTable,StatusTable)VALUES(?,?,?,?,?,?)";
 	String UPDATE_SQL = "UPDATE [Order] SET OrderName = ?,IDType =?,Price = ?,Image =?,Description = ? where IDOrder = ?";
 	String DELETE_SQL = "DELETE FROM [Order] WHERE IDOrder =?";
-	String SELECT_ALL_SQL = "SELECT * FROM [Order]";
+	String SELECT_ORDER_ALL_SQL = "SELECT * FROM [Order]";
 	String SELETE_BY_ID_SQL = "SELECT * FROM [Order] WHERE IDOrder = ?";
 	@Override
 	public void insert(Order entity) {
@@ -40,7 +40,7 @@ public class OrderDAO extends DAO<Order, String>{
 
 	@Override
 	public List<Order> selectAll() {
-		return selectBySql(SELECT_ALL_SQL, new Object[0]);
+		return selectBySql(SELECT_ORDER_ALL_SQL, new Object[0]);
 	}
 
 	@Override
