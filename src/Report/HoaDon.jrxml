@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95b60f4c-72bc-4556-9afc-04cc0210929d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     Account."Fullname" AS Account_Fullname
+FROM
+     "dbo"."Account" Account]]>
+	</queryString>
+	<field name="Account_Fullname" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="171" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="64" width="100" height="20" uuid="f7b47935-2808-455a-9412-e06b4dc8ea6e"/>
+				<text><![CDATA[HÓA ĐON THANH TOÁN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="215" y="104" width="100" height="20" uuid="2ece7239-b462-4401-9a7a-d827f0a069af"/>
+				<textFieldExpression><![CDATA[$F{Account_Fullname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="282" splitType="Stretch"/>
+	</detail>
+	<summary>
+		<band height="299" splitType="Stretch"/>
+	</summary>
+</jasperReport>
