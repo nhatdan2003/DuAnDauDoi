@@ -1,5 +1,7 @@
 package Entity;
 
+import java.util.Date;
+
 /**
  *
  * @author haoireal
@@ -10,6 +12,15 @@ public class OrderDetails {
 	String idOrder;
 	int quantity;
 	double totalPrice;
+	Date timeOD;
+
+	public Date getTimeOD() {
+		return timeOD;
+	}
+
+	public void setTimeOD(Date timeOD) {
+		this.timeOD = timeOD;
+	}
 
 	public int getIdOrderDetails() {
 		return idOrderDetails;

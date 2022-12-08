@@ -373,7 +373,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     
     private void LogOut(){
         if(MsgBox.confirm(this,"Do you want to exit?")){
-            System.exit(0);
+            this.dispose();
         }
     }
 

@@ -12,8 +12,9 @@ import java.util.List;
 public class TableDAO extends DAO<Table, String>{
 
 	
-	String SELECT_ALL_SQL = "SELECT * FROM Table";
-	String SELETE_BY_ID_SQL = "SELECT * FROM Table WHERE IDTable = ?";
+	String SELECT_ALL_SQL = "SELECT * FROM [Table]";
+	String SELETE_BY_ID_SQL = "SELECT * FROM [Table] WHERE IDTable = ?";
+	String SELETE_BY_NAME_SQL = "SELECT * FROM [Table] WHERE NameTable = ?";
 	
 	@Override
 	public void insert(Table entity) {
@@ -35,6 +36,11 @@ public class TableDAO extends DAO<Table, String>{
 		return (list.size() > 0) ? list.get(0) : null;
 	}
 
+	public Table selectByName(String name) {
+		List<Table> list = selectBySql(SELETE_BY_NAME_SQL, new Object[]{name});
+		return (list.size() > 0) ? list.get(0) : null;
+	}
+	
 	@Override
 	public List<Table> selectAll() {
 		return selectBySql(SELECT_ALL_SQL, new Object[0]);

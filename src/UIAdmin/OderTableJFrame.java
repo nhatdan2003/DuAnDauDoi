@@ -28,6 +28,10 @@ public class OderTableJFrame extends javax.swing.JFrame {
 	TypeProductDAO typeDao = new TypeProductDAO();
 	ProductDAO pdDAO = new ProductDAO();
 	PromotionDAO promoDAO = new PromotionDAO();
+	TableDAO tbDAO = new TableDAO();
+	OrderDAO odDAO = new OrderDAO();
+	OrderDetailDAO oddDAO = new OrderDetailDAO();
+
 	static JComboBox<Promotions> cboPro = new JComboBox<>();
 	private List<Product> pdList;
 
@@ -39,7 +43,9 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
 	DefaultTableModel tblModel;
 
-	private static int row = -1;
+	private static int row = -1;//Kiểm tra TABLE có selected chưa
+	private static int addMenu = -1; //kiểm tra JLIST có selected chưa
+	private static boolean save = true;//kiểm tra có save chưa 
 
 	public OderTableJFrame() {
 		initComponents();
@@ -49,6 +55,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
 	OderTableJFrame(String tableID, boolean b) {
 		initComponents();
+		init();
 	}
 
 	/**
@@ -86,7 +93,6 @@ public class OderTableJFrame extends javax.swing.JFrame {
                 ListMenu = new javax.swing.JList<>();
                 btnRemove = new javax.swing.JButton();
                 btnPromo = new javax.swing.JButton();
-                btnSave = new javax.swing.JButton();
                 btnBack = new javax.swing.JButton();
                 btnCash = new javax.swing.JButton();
                 jPanel4 = new javax.swing.JPanel();
@@ -119,12 +125,12 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
                 lblBan.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
                 lblBan.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-                lblBan.setText("Ban x");
+                lblBan.setText("ORDER");
 
                 lblUserName.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
                 lblUserName.setForeground(new java.awt.Color(255, 102, 255));
                 lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-                lblUserName.setText("UserName");
+                lblUserName.setText("kiethv");
 
                 lblDate.setBackground(new java.awt.Color(204, 204, 204));
                 lblDate.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
@@ -258,6 +264,11 @@ public class OderTableJFrame extends javax.swing.JFrame {
                 btnDeleteBill.setForeground(new java.awt.Color(0, 0, 0));
                 btnDeleteBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Xoa (1).png"))); // NOI18N
                 btnDeleteBill.setText("DELETE BILL");
+                btnDeleteBill.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnDeleteBillActionPerformed(evt);
+                        }
+                });
 
                 txtSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 txtSearch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(179, 0, 134)));
@@ -295,10 +306,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
                 tblOder.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 tblOder.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
-                                {null, null, null, null, null},
-                                {null, null, null, null, null},
-                                {null, null, null, null, null},
-                                {null, null, null, null, null}
+
                         },
                         new String [] {
                                 "ID", "ProductName", "Price", "Quantity", "Total"
@@ -316,6 +324,9 @@ public class OderTableJFrame extends javax.swing.JFrame {
                 tblOder.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
                                 tblOderMouseClicked(evt);
+                        }
+                        public void mouseReleased(java.awt.event.MouseEvent evt) {
+                                tblOderMouseReleased(evt);
                         }
                 });
                 jScrollPane1.setViewportView(tblOder);
@@ -336,17 +347,25 @@ public class OderTableJFrame extends javax.swing.JFrame {
                 ListMenu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 ListMenu.setForeground(new java.awt.Color(255, 51, 255));
                 ListMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                ListMenuMouseClicked(evt);
+                        }
                         public void mouseReleased(java.awt.event.MouseEvent evt) {
                                 ListMenuMouseReleased(evt);
                         }
                 });
                 jScrollPane3.setViewportView(ListMenu);
 
-                btnRemove.setBackground(new java.awt.Color(255, 153, 255));
+                btnRemove.setBackground(new java.awt.Color(255, 153, 153));
                 btnRemove.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 btnRemove.setForeground(new java.awt.Color(0, 0, 0));
                 btnRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/REMOVE.PNG"))); // NOI18N
                 btnRemove.setText("REMOVE");
+                btnRemove.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRemoveActionPerformed(evt);
+                        }
+                });
 
                 btnPromo.setBackground(new java.awt.Color(255, 153, 255));
                 btnPromo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -359,28 +378,27 @@ public class OderTableJFrame extends javax.swing.JFrame {
                         }
                 });
 
-                btnSave.setBackground(new java.awt.Color(255, 153, 255));
-                btnSave.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                btnSave.setForeground(new java.awt.Color(0, 0, 0));
-                btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Save.png"))); // NOI18N
-                btnSave.setText("SAVE");
-                btnSave.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btnSaveActionPerformed(evt);
-                        }
-                });
-
                 btnBack.setBackground(new java.awt.Color(255, 255, 255));
                 btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 btnBack.setForeground(new java.awt.Color(255, 0, 255));
                 btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
                 btnBack.setText("BACK");
+                btnBack.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBackActionPerformed(evt);
+                        }
+                });
 
                 btnCash.setBackground(new java.awt.Color(51, 255, 51));
                 btnCash.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 btnCash.setForeground(new java.awt.Color(0, 0, 0));
                 btnCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/cash.png"))); // NOI18N
                 btnCash.setText("CASH");
+                btnCash.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnCashActionPerformed(evt);
+                        }
+                });
 
                 jPanel4.setBackground(new java.awt.Color(255, 255, 255));
                 jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -452,11 +470,8 @@ public class OderTableJFrame extends javax.swing.JFrame {
                                                         .addComponent(btnAddTo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(btnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                        .addComponent(btnDeleteBill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                        .addComponent(btnDeleteBill, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                                                                        .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(btnCash, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -465,7 +480,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
                                                                                 .addGap(0, 0, Short.MAX_VALUE)
                                                                                 .addComponent(btnPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(btnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                         .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -503,21 +518,19 @@ public class OderTableJFrame extends javax.swing.JFrame {
                                                                 .addComponent(btnUp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(btnDown, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                                .addGap(14, 14, 14)
                                                 .addComponent(btnAddTo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                                                                        .addComponent(btnQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(btnDeleteBill, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(btnPromo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                                                        .addComponent(btnPromo, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                                                                        .addComponent(btnQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addComponent(btnCash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGap(6, 6, 6))
@@ -533,6 +546,8 @@ public class OderTableJFrame extends javax.swing.JFrame {
         private void ListMenuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListMenuMouseReleased
 		// TODO add your handling code here:
 		Product pd = pdList.get(ListMenu.getSelectedIndex());
+		addMenu = ListMenu.getSelectedIndex();
+		updateStatus();
 		setImage(pd);
 
         }//GEN-LAST:event_ListMenuMouseReleased
@@ -549,11 +564,8 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
         private void btnQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuantityActionPerformed
 		// TODO add your handling code here:
+		resetQuantity();
         }//GEN-LAST:event_btnQuantityActionPerformed
-
-        private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-		// TODO add your handling code here:
-        }//GEN-LAST:event_btnSaveActionPerformed
 
         private void lbImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbImageMouseClicked
 		// TODO add your handling code here:
@@ -590,6 +602,40 @@ public class OderTableJFrame extends javax.swing.JFrame {
 		row = tblOder.getSelectedRow();
 		updateStatus();
         }//GEN-LAST:event_tblOderMouseClicked
+
+        private void ListMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListMenuMouseClicked
+		// TODO add your handling code here:
+
+        }//GEN-LAST:event_ListMenuMouseClicked
+
+        private void tblOderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOderMouseReleased
+		// TODO add your handling code here:
+		row = tblOder.getSelectedRow();
+		updateStatus();
+        }//GEN-LAST:event_tblOderMouseReleased
+
+        private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+		// TODO add your handling code here:
+		removeMenuFromTable();
+        }//GEN-LAST:event_btnRemoveActionPerformed
+
+        private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+		// TODO add your handling code here:
+		btnBack();
+        }//GEN-LAST:event_btnBackActionPerformed
+
+        private void btnDeleteBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteBillActionPerformed
+		// TODO add your handling code here:
+		resetOrDeleteOrder();
+		updateStatus();
+        }//GEN-LAST:event_btnDeleteBillActionPerformed
+
+        private void btnCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCashActionPerformed
+                // TODO add your handling code here:
+		saveOrder(); //!IMPORTANT 
+		resetOrDeleteOrder();
+		updateStatus();
+        }//GEN-LAST:event_btnCashActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -636,7 +682,6 @@ public class OderTableJFrame extends javax.swing.JFrame {
         private javax.swing.JButton btnPromo;
         private javax.swing.JButton btnQuantity;
         private javax.swing.JButton btnRemove;
-        private javax.swing.JButton btnSave;
         private javax.swing.JButton btnShowAll;
         private javax.swing.JButton btnUp;
         private javax.swing.JComboBox<String> cboType1;
@@ -670,6 +715,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 		this.getContentPane().setBackground(Color.WHITE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		lblDate.setText(XDate.toString(XDate.now(), "dd-MM-yyyy hh:mm aa"));
+		System.out.println(XDate.toDate(lblDate.getText().substring(0, lblDate.getText().indexOf(" ")), "dd-MM-yyyy").toString());
 		fillCboType();
 		fillCboPromo();
 		loadDataToJList();
@@ -688,11 +734,12 @@ public class OderTableJFrame extends javax.swing.JFrame {
 			public void itemStateChanged(ItemEvent event) {
 				if (event.getStateChange() == ItemEvent.SELECTED) {
 					fillToDiscount();
-
 				}
 			}
 
 		});
+		tblOder.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		System.out.println(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ")+1));
 	}
 
 	private void setImage(Product pd) {
@@ -734,6 +781,10 @@ public class OderTableJFrame extends javax.swing.JFrame {
 				} else {
 
 					quantity = Integer.parseInt(sl);
+					if (quantity < 0) {
+						MsgBox.alert(this, "Wrong!");
+						return;
+					}
 					j++;
 				}
 				try {
@@ -746,7 +797,8 @@ public class OderTableJFrame extends javax.swing.JFrame {
 						odCart.removeProduct(pdDTO.getPd().getIdProduct());
 						row = -1;
 					}
-
+					row = -1;
+					addMenu = -1;
 					fillToTable();
 					updateStatus();
 
@@ -798,7 +850,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 				updateStatus();
 				return;
 			}
-			
+
 			fillToTable();
 			tblOder.setRowSelectionInterval(row, row);
 			updateStatus();
@@ -910,6 +962,124 @@ public class OderTableJFrame extends javax.swing.JFrame {
 		updateStatus();
 	}
 
+	private void fillCboPromoToDiscount() {
+		fillCboPromo();
+		MsgBox.cbobox(this, "Select promotions", cboPro);
+	}
+
+	private void removeMenuFromTable() {
+		if (MsgBox.confirm(this, "Are you sure for REMOVE")) {
+			String idPd = tblOder.getValueAt(this.row, 0).toString();
+			odCart.removeProduct(idPd);
+			fillToTable();
+		}
+
+	}
+
+	private void resetQuantity() {
+		String idPd = tblOder.getValueAt(this.row, 0).toString();
+		try {
+			int quantity = 0;
+			String sl = MsgBox.prompt(this, "ENTER Quantity:");
+
+			if (sl.isBlank()) {
+				return;
+			} else {
+
+				quantity = Integer.parseInt(sl);
+				if (quantity < 0) {
+					MsgBox.alert(this, "Wrong!");
+					return;
+				}
+			}
+			try {
+				Product pd = pdDAO.selectById(idPd);
+
+				ProductDTO pdDTO = new ProductDTO(pd, quantity);
+
+				odCart.getCartDetails().get(pdDTO.getPd().getIdProduct()).setQuantity(quantity);
+
+				if (odCart.getCartDetails().get(pdDTO.getPd().getIdProduct()).getQuantity() <= 0) {
+					odCart.removeProduct(pdDTO.getPd().getIdProduct());
+					row = -1;
+				}
+				row = -1;
+				addMenu = -1;
+				fillToTable();
+				updateStatus();
+
+			} catch (Exception e) {
+				MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+			}
+		} catch (Exception e) {
+			return;
+		}
+	}
+
+	//Lấy đối tượng ORDERDETAILS
+	private List<OrderDetails> getOrderDetails(String idOrder) {
+		List<OrderDetails> oddList = new ArrayList<>();
+		for (int i = 0; i < tblOder.getRowCount(); i++) {
+			OrderDetails odd = new OrderDetails();
+			odd.setIdProduct(tblOder.getValueAt(i, 0).toString());
+			odd.setIdOrder(idOrder);
+			odd.setQuantity(Integer.parseInt(tblOder.getValueAt(i, 3).toString()));
+			odd.setTotalPrice(MoneyFormater.DoubleFormat(tblOder.getValueAt(i, 4).toString()));
+			odd.setTimeOD(XDate.toDate(lblDate.getText().substring(0, lblDate.getText().indexOf(" ")), "dd-MM-yyyy"));
+
+			oddList.add(odd);
+
+		}
+
+		return oddList;
+	}
+
+	//Lấy đối tượng ORDER
+	private Order getOrder() {
+		List<Order> listOD = new ArrayList<>();
+		listOD = odDAO.selectAll();
+		Order od = new Order();
+		od.setIdOrder("DH" + (listOD.size() + 1));
+		od.setDateOrder(XDate.toDate(lblDate.getText().substring(0, lblDate.getText().indexOf(" ")), "dd-MM-yyyy"));
+		od.setTimeOrder(lblDate.getText().substring(lblDate.getText().indexOf(" "), lblDate.getText().lastIndexOf(" ")));
+		od.setIdPromo(cboPro.getSelectedItem().toString().substring(0, cboPro.getSelectedItem().toString().indexOf(" ")));
+		od.setTotalPrice(MoneyFormater.DoubleFormat(lblTotal.getText()));
+		od.setUserName(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ")+1));
+
+		return od;
+	}
+
+	//Lưu hoá đơn lên DATABASE
+	private void saveOrder() {
+		//kiểm tra hoá đơn đã tồn tại trong database hay chưa
+		try {
+			Order od = getOrder();
+			odDAO.insert(od);
+			try {
+				List<OrderDetails> oddList = getOrderDetails(od.getIdOrder());
+				System.out.println(oddList.toString());
+				oddDAO.insertLIST(oddList);
+				save = true;
+				MsgBox.alert(this, "Success!");
+			} catch (Exception e) {
+				MsgBox.alert(this, "loi OrderDetail ne");
+				System.out.println(e);
+			}
+
+		} catch (Exception e) {
+			MsgBox.alert(this, "loi Order ne");
+			System.out.println(e);
+		}
+	}
+
+	//DELETE ORDER OR RESETỎRDER
+	private void resetOrDeleteOrder() {
+		if (MsgBox.confirm(this, "Are you sure for DELETE this Order")) {
+			odCart = new orderCart();
+			fillToTable();
+		}
+	}
+
 	//FILL DỮ LIỆU LÊN CÁC LABEL
 	private void updateStatus() {
 		//Set User
@@ -932,14 +1102,20 @@ public class OderTableJFrame extends javax.swing.JFrame {
 		lblTotal.setText(MoneyFormater.VNDFormat(total));
 		lblTotal1.setText(MoneyFormater.VNDFormat(total));
 		//SETUP các button
+		save = false;
 		boolean edit = (this.row >= 0);
+		boolean them = (this.addMenu >= 0);
 		this.btnDown.setEnabled(edit);
+		this.btnUp.setEnabled(edit);
+		this.btnRemove.setEnabled(edit);
+		this.btnQuantity.setEnabled(edit);
+		this.btnAddTo.setEnabled(them);
 
 	}
 
-	private void fillCboPromoToDiscount() {
-		fillCboPromo();
-		MsgBox.cbobox(this, "Select promotions", cboPro);
+	private void btnBack() {
+		this.dispose();
+		new MainJFrame(this,true).setVisible(true);
 	}
 
 }

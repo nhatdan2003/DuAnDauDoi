@@ -13,19 +13,25 @@ import java.util.List;
  * @author haoireal
  */
 public class OrderDAO extends DAO<Order, String>{
-	String INSERT_SQL = "INSERT INTO [Order](IDOrder,DateOrder,TimeOrder,Username,IDTable,StatusTable)VALUES(?,?,?,?,?,?)";
-	String UPDATE_SQL = "UPDATE [Order] SET OrderName = ?,IDType =?,Price = ?,Image =?,Description = ? where IDOrder = ?";
+	String INSERT_SQL = "INSERT INTO [Order](IDOrder,DateOrder,TimeOrder,IDPromo,TotalPrice,Username)VALUES(?,?,?,?,?,?)";
+	String UPDATE_SQL = "UPDATE [Order] SET DateOrder = ?,TimeOrder =?,IDPromo = ?,Image =?,Description = ? where IDOrder = ?";
 	String DELETE_SQL = "DELETE FROM [Order] WHERE IDOrder =?";
 	String SELECT_ORDER_ALL_SQL = "SELECT * FROM [Order]";
 	String SELETE_BY_ID_SQL = "SELECT * FROM [Order] WHERE IDOrder = ?";
 	@Override
-	public void insert(Order entity) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	public void insert(Order model) {
+		XJDBC.update(INSERT_SQL, new Object[]{
+			model.getIdOrder(),
+			model.getDateOrder(),
+			model.getTimeOrder(),
+			model.getIdPromo(),
+			Double.valueOf(model.getTotalPrice()),
+			model.getUserName()});
 	}
 
 	@Override
 	public void update(Order entity) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		
 	}
 
 	@Override
@@ -53,13 +59,11 @@ public class OrderDAO extends DAO<Order, String>{
 				while (rs.next()) {
 					Order entity = new Order();
 					entity.setIdOrder(rs.getString("IDOrder"));
-					entity.setDateOrder(XDate.toDate(rs.getString("DateOrder"), "yyyy-DD-mm"));
-					entity.setTimeOrder(XDate.toDate(rs.getString("TimeOrder"), "HH:mm"));
+					entity.setDateOrder(XDate.toDate(rs.getString("DateOrder"), "yyyy-dd-MM"));
+					entity.setTimeOrder(rs.getString("TimeOrder"));
 					entity.setIdPromo(rs.getString("IDPromo"));
 					entity.setTotalPrice(rs.getDouble("TotalPrice"));
 					entity.setUserName(rs.getString("Username"));
-					entity.setIdTable(rs.getString("IDTable"));
-					entity.setStatusTable(rs.getBoolean("StatusTable"));
 					list.add(entity);
 				}
 			} finally {

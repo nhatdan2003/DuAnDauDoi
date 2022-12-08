@@ -31,7 +31,7 @@ public class MsgBox {
 	public static boolean confirm(Component parent, String message) {
 		int result = JOptionPane.showConfirmDialog(parent, message,
 			"DiamondPlace",
-			JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
 		return result == JOptionPane.YES_OPTION;
 	}
 

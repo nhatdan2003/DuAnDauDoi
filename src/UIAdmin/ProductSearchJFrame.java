@@ -80,6 +80,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                 txtSearch = new javax.swing.JTextField();
                 jScrollPane1 = new javax.swing.JScrollPane();
                 tblSearchProduct = new javax.swing.JTable();
+                btnBack1 = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -397,17 +398,33 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                         tblSearchProduct.getColumnModel().getColumn(4).setPreferredWidth(40);
                 }
 
+                btnBack1.setBackground(new java.awt.Color(255, 255, 255));
+                btnBack1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                btnBack1.setForeground(new java.awt.Color(255, 102, 255));
+                btnBack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
+                btnBack1.setText("BACK");
+                btnBack1.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnBack1.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnBack1.setPreferredSize(new java.awt.Dimension(111, 51));
+                btnBack1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBack1ActionPerformed(evt);
+                        }
+                });
+
                 javax.swing.GroupLayout tabListLayout = new javax.swing.GroupLayout(tabList);
                 tabList.setLayout(tabListLayout);
                 tabListLayout.setHorizontalGroup(
                         tabListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(tabListLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnShowAll, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cboType1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1371, Short.MAX_VALUE)
                 );
@@ -417,12 +434,14 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(tabListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(tabListLayout.createSequentialGroup()
+                                                .addGap(3, 3, 3)
                                                 .addComponent(btnShowAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE))
-                                        .addGroup(tabListLayout.createSequentialGroup()
-                                                .addGap(5, 5, 5)
-                                                .addComponent(txtSearch))
-                                        .addComponent(cboType1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabListLayout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cboType1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
@@ -527,6 +546,11 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		btnBack();
         }//GEN-LAST:event_btnBackActionPerformed
 
+        private void btnBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack1ActionPerformed
+                // TODO add your handling code here:
+		btnBack();
+        }//GEN-LAST:event_btnBack1ActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -565,6 +589,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnAdd;
         private javax.swing.JButton btnBack;
+        private javax.swing.JButton btnBack1;
         private javax.swing.JButton btnDelete;
         private javax.swing.JButton btnNew;
         private javax.swing.JButton btnShowAll;
@@ -613,6 +638,9 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		clearFrom();
 		fillToTable();
 		updateStaTus();
+		if(!Auth.isAdmin()){
+			jTabbedPane1.remove(0);
+		}
 
 	}
 

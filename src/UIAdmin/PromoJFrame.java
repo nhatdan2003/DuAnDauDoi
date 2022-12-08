@@ -66,6 +66,7 @@ public class PromoJFrame extends javax.swing.JFrame {
                 jPanel3 = new javax.swing.JPanel();
                 jScrollPane1 = new javax.swing.JScrollPane();
                 tblPromo = new javax.swing.JTable();
+                btnBack1 = new javax.swing.JButton();
                 jLabel1 = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -260,7 +261,7 @@ public class PromoJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -315,15 +316,33 @@ public class PromoJFrame extends javax.swing.JFrame {
                 });
                 jScrollPane1.setViewportView(tblPromo);
 
+                btnBack1.setBackground(new java.awt.Color(255, 255, 255));
+                btnBack1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+                btnBack1.setForeground(new java.awt.Color(255, 102, 255));
+                btnBack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Back.png"))); // NOI18N
+                btnBack1.setText("BACK");
+                btnBack1.setMaximumSize(new java.awt.Dimension(111, 51));
+                btnBack1.setMinimumSize(new java.awt.Dimension(111, 51));
+                btnBack1.setPreferredSize(new java.awt.Dimension(111, 51));
+                btnBack1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBack1ActionPerformed(evt);
+                        }
+                });
+
                 javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
                 jPanel3.setLayout(jPanel3Layout);
                 jPanel3Layout.setHorizontalGroup(
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1359, Short.MAX_VALUE)
+                        .addComponent(btnBack1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 jPanel3Layout.setVerticalGroup(
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
 
                 tabs.addTab("LIST", jPanel3);
@@ -420,6 +439,11 @@ public class PromoJFrame extends javax.swing.JFrame {
                 btnBack();
         }//GEN-LAST:event_btnBackActionPerformed
 
+        private void btnBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack1ActionPerformed
+                // TODO add your handling code here:
+		 btnBack();
+        }//GEN-LAST:event_btnBack1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -457,6 +481,7 @@ public class PromoJFrame extends javax.swing.JFrame {
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnBack;
+        private javax.swing.JButton btnBack1;
         private javax.swing.JButton btnFirst;
         private javax.swing.JButton btnLast;
         private javax.swing.JButton btnMoi;
@@ -502,6 +527,9 @@ public class PromoJFrame extends javax.swing.JFrame {
         updateStatus();
 
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	if(!Auth.isAdmin()){
+		tabs.remove(0);
+	}
     }// set tblPromo
 
     /// hiện các thuộc tính lên table
