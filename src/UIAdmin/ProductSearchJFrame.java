@@ -765,7 +765,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
 		try {
 			List<Product> list = this.dao.selectAll();
 			for (Product pd : list) {
-				Object[] row = {pd.getIdProduct(), pd.getProductName(), pd.getTypePro(), Double.valueOf(pd.getPrice()), pd.getDescreption()};
+				Object[] row = {pd.getIdProduct(), pd.getProductName(), pd.getTypePro(), MoneyFormater.VNDFormat(Double.valueOf(pd.getPrice())), pd.getDescreption()};
 				model.addRow(row);
 
 			}

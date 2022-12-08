@@ -1,5 +1,7 @@
 package Entity;
 
+import Utils.MoneyFormater;
+
 /**
  *
  * @author haoireal
@@ -60,10 +62,10 @@ public class Product {
 	public void setDescreption(String descreption) {
 		this.descreption = descreption;
 	}
-	
-	 @Override
+
+	@Override
 	public String toString() {
-        return idProduct + " ¦ " + productName + " ¦ " + price;
-    }
-	
+		return String.format("| %-7s| %40s   |   %s", idProduct, productName,MoneyFormater.VNDFormat(price));
+	}
+
 }

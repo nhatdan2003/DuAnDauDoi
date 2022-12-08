@@ -10,6 +10,8 @@ import java.util.Date;
  */
 public class XDate {
 	static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy");
+	static final SimpleDateFormat DATE_FORMATER_NOW = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+	
 		/**
 	 * Chuyển đổi String sang Date
 	 * @param date là String cần chuyển

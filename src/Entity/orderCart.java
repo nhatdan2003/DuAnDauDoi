@@ -33,7 +33,7 @@ public class orderCart {
         // nếu tồn tại SP trong giỏ hàng thì cộng thêm số lượng mua mới vào
         if (cartDetails.containsKey(idPd)) {
             // soLuong = soLuongCu + soLuongMoi
-            int quantity = cartDetails.get(idPd).getQuantity()+ pd.getQuantity();
+            int quantity = cartDetails.get(idPd).getQuantity() + pd.getQuantity();
             // cập nhật lại số lượng:
             cartDetails.get(idPd).setQuantity(quantity);
         } else { // nếu SP chưa có trong giỏ hàng thì put mới vào hashmap
@@ -49,4 +49,5 @@ public class orderCart {
             return false;
         }
     }
+	
 }

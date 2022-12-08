@@ -53,9 +53,10 @@ public class OrderDAO extends DAO<Order, String>{
 				while (rs.next()) {
 					Order entity = new Order();
 					entity.setIdOrder(rs.getString("IDOrder"));
-					
 					entity.setDateOrder(XDate.toDate(rs.getString("DateOrder"), "yyyy-DD-mm"));
 					entity.setTimeOrder(XDate.toDate(rs.getString("TimeOrder"), "HH:mm"));
+					entity.setIdPromo(rs.getString("IDPromo"));
+					entity.setTotalPrice(rs.getDouble("TotalPrice"));
 					entity.setUserName(rs.getString("Username"));
 					entity.setIdTable(rs.getString("IDTable"));
 					entity.setStatusTable(rs.getBoolean("StatusTable"));

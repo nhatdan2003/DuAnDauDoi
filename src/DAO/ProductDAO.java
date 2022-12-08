@@ -20,6 +20,7 @@ public class ProductDAO extends DAO<Product, String> {
 	String DELETE_SQL = "DELETE FROM Product WHERE IDProduct =?";
 	String SELECT_ALL_SQL = "SELECT * FROM Product";
 	String SELETE_BY_ID_SQL = "SELECT * FROM Product WHERE IDProduct = ?";
+	String SELETE_BY_NAME_SQL = "SELECT * FROM Product WHERE ProductName = ?";
 	String SELETE_BY_TYPE = "SELECT * FROM Product WHERE IDType = ?";
 	String SEARCH_BY_SQL = "SELECT * FROM Product WHERE IDProduct LIKE ? OR ProductName LIKE ? OR Price = ?";
 	
@@ -57,6 +58,11 @@ public class ProductDAO extends DAO<Product, String> {
 		return (list.size() > 0) ? list.get(0) : null;
 	}
 
+	public Product selectByName(String Name) {
+		List<Product> list = selectBySql(SELETE_BY_NAME_SQL, new Object[]{Name});
+		return (list.size() > 0) ? list.get(0) : null;
+	}
+	
 	@Override
 	public List<Product> selectAll() {
 		return selectBySql(SELECT_ALL_SQL, new Object[0]);

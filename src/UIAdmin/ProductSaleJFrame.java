@@ -6,6 +6,7 @@ package UIAdmin;
 
 import DAO.StatisticalDAO;
 import Entity.Turnover;
+import Utils.MoneyFormater;
 import Utils.MsgBox;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
@@ -289,7 +290,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
 					dt.getIDProduct(), 
 					dt.getProductName(), 
 					dt.getQuantitySold(), 
-					dt.getTurnover()
+					MoneyFormater.VNDFormat(dt.getTurnover())
 				};
 				model.addRow(row);
 			}

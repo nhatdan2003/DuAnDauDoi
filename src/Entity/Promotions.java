@@ -45,6 +45,6 @@ public class Promotions {
 
     @Override
     public String toString() {
-        return namePromo;
+        return namePromo + " | " + (discountPromo*100) +"%";
     }
 }

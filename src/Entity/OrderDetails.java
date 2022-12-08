@@ -9,7 +9,6 @@ public class OrderDetails {
 	String idProduct;
 	String idOrder;
 	int quantity;
-	String idPromo;
 	double totalPrice;
 
 	public int getIdOrderDetails() {
@@ -44,13 +43,6 @@ public class OrderDetails {
 		this.quantity = quantity;
 	}
 
-	public String getIdPromo() {
-		return idPromo;
-	}
-
-	public void setIdPromo(String idPromo) {
-		this.idPromo = idPromo;
-	}
 
 	public double getTotalPrice() {
 		return totalPrice;

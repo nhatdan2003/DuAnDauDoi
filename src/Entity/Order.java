@@ -10,6 +10,24 @@ public class Order {
 	String idOrder;
 	Date dateOrder;
 	Date timeOrder;
+	String idPromo;
+	Double totalPrice;
+
+	public String getIdPromo() {
+		return idPromo;
+	}
+
+	public void setIdPromo(String idPromo) {
+		this.idPromo = idPromo;
+	}
+
+	public Double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(Double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	String userName;
 	String idTable;
 	Boolean statusTable;
