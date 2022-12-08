@@ -29,9 +29,9 @@ public class MainJFrame extends javax.swing.JFrame {
 		initBack();
 	}
 
-	MainJFrame(JDialog aThis, boolean b) {
+	MainJFrame(boolean b) {
 		initComponents();
-		initBack();
+		initLogin();
 	}
 
 	/**
@@ -254,8 +254,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnlogoutActionPerformed
 
         private void lblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUserMouseClicked
-                // TODO add your handling code here:
-                changePassword();
+		// TODO add your handling code here:
+		changePassword();
         }//GEN-LAST:event_lblUserMouseClicked
 
 	/**
@@ -312,7 +312,7 @@ public class MainJFrame extends javax.swing.JFrame {
 		new DangNhapJDialog(this, true).setVisible(a);
 		lblUser.setText(String.valueOf(Auth.userName));
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		if(!Auth.isAdmin()){
+		if (!Auth.isAdmin()) {
 			btnUser.setEnabled(false);
 		}
 
@@ -323,7 +323,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
 		lblUser.setText(String.valueOf(Auth.userName));
 		this.getContentPane().setBackground(Color.WHITE);
-		if(!Auth.isAdmin()){
+		if (!Auth.isAdmin()) {
+			btnUser.setEnabled(false);
+		}
+	}
+
+	private void initLogin() {
+		this.getContentPane().setBackground(Color.WHITE);
+		new DangNhapJDialog(this, true).setVisible(true);
+		lblUser.setText(String.valueOf(Auth.userName));
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		if (!Auth.isAdmin()) {
 			btnUser.setEnabled(false);
 		}
 	}
@@ -359,12 +369,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
 	private void logout() {
 		this.dispose();
-		new MainJFrame().setVisible(true);
-		
+		new MainJFrame(false).setVisible(true);
 
 	}
 
 	private void changePassword() {
 		new DoiMatKhauJDialog(this, true).setVisible(true);
 	}
+
 }
