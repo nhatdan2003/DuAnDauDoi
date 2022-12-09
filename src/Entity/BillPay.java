@@ -9,15 +9,15 @@ package Entity;
  * @author dantr
  */
 public class BillPay {
-      String IDBillPay;
-    double toTal , pay, readyCash, payMents;
+
+    String IDBillPay;
+    double  pay, readyCash, payMents;
 
     public BillPay() {
     }
 
     public BillPay(String IDBillPay, double toTal, double pay, double readyCash, double payMents) {
-        this.IDBillPay = IDBillPay;
-        this.toTal = toTal;
+        this.IDBillPay = IDBillPay;      
         this.pay = pay;
         this.readyCash = readyCash;
         this.payMents = payMents;
@@ -29,14 +29,6 @@ public class BillPay {
 
     public void setIDBillPay(String IDBillPay) {
         this.IDBillPay = IDBillPay;
-    }
-
-    public double getToTal() {
-        return toTal;
-    }
-
-    public void setToTal(double toTal) {
-        this.toTal = toTal;
     }
 
     public double getPay() {
@@ -63,6 +55,4 @@ public class BillPay {
         this.payMents = payMents;
     }
 
-  
-  
 }

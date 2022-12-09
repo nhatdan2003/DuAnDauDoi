@@ -9,106 +9,79 @@ package Entity;
  * @author dantr
  */
 public class BillDetail {
-    String IDPayDetails,IDOrderDetails,Fullname,TableDetail,TimeNow,ProductName,ProductPrice,Quantity,IntoMoney;
-    double Promotion;
+
+    String IDorder,  DateOrder, TimeOrder, Username;
+    double SubTotal,DiscountPromo, Total;
 
     public BillDetail() {
     }
 
-    public BillDetail(String IDPayDetails, String IDOrderDetails, String Fullname, String TableDetail, String TimeNow, String ProductName, String ProductPrice, String Quantity, String IntoMoney, double Promotion) {
-        this.IDPayDetails = IDPayDetails;
-        this.IDOrderDetails = IDOrderDetails;
-        this.Fullname = Fullname;
-        this.TableDetail = TableDetail;
-        this.TimeNow = TimeNow;
-        this.ProductName = ProductName;
-        this.ProductPrice = ProductPrice;
-        this.Quantity = Quantity;
-        this.IntoMoney = IntoMoney;
-        this.Promotion = Promotion;
+    public BillDetail(String IDorder, String DateOrder, String TimeOrder, String Username, double SubTotal, double DiscountPromo, double Total) {
+        this.IDorder = IDorder;
+        this.DateOrder = DateOrder;
+        this.TimeOrder = TimeOrder;
+        this.Username = Username;
+        this.SubTotal = SubTotal;
+        this.DiscountPromo = DiscountPromo;
+        this.Total = Total;
     }
 
-    public String getIDPayDetails() {
-        return IDPayDetails;
+    public String getIDorder() {
+        return IDorder;
     }
 
-    public void setIDPayDetails(String IDPayDetails) {
-        this.IDPayDetails = IDPayDetails;
+    public void setIDorder(String IDorder) {
+        this.IDorder = IDorder;
     }
 
-    public String getIDOrderDetails() {
-        return IDOrderDetails;
+    public String getDateOrder() {
+        return DateOrder;
     }
 
-    public void setIDOrderDetails(String IDOrderDetails) {
-        this.IDOrderDetails = IDOrderDetails;
+    public void setDateOrder(String DateOrder) {
+        this.DateOrder = DateOrder;
     }
 
-    public String getFullname() {
-        return Fullname;
+    public String getTimeOrder() {
+        return TimeOrder;
     }
 
-    public void setFullname(String Fullname) {
-        this.Fullname = Fullname;
+    public void setTimeOrder(String TimeOrder) {
+        this.TimeOrder = TimeOrder;
     }
 
-    public String getTableDetail() {
-        return TableDetail;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setTableDetail(String TableDetail) {
-        this.TableDetail = TableDetail;
+    public void setUsername(String Username) {
+        this.Username = Username;
     }
 
-    public String getTimeNow() {
-        return TimeNow;
+    public double getSubTotal() {
+        return SubTotal;
     }
 
-    public void setTimeNow(String TimeNow) {
-        this.TimeNow = TimeNow;
+    public void setSubTotal(double SubTotal) {
+        this.SubTotal = SubTotal;
     }
 
-    public String getProductName() {
-        return ProductName;
+    public double getDiscountPromo() {
+        return DiscountPromo;
     }
 
-    public void setProductName(String ProductName) {
-        this.ProductName = ProductName;
+    public void setDiscountPromo(double DiscountPromo) {
+        this.DiscountPromo = DiscountPromo;
     }
 
-    public String getProductPrice() {
-        return ProductPrice;
+    public double getTotal() {
+        return Total;
     }
 
-    public void setProductPrice(String ProductPrice) {
-        this.ProductPrice = ProductPrice;
+    public void setTotal(double Total) {
+        this.Total = Total;
     }
 
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String Quantity) {
-        this.Quantity = Quantity;
-    }
-
-    public String getIntoMoney() {
-        return IntoMoney;
-    }
-
-    public void setIntoMoney(String IntoMoney) {
-        this.IntoMoney = IntoMoney;
-    }
-
-    public double getPromotion() {
-        return Promotion;
-    }
-
-    public void setPromotion(double Promotion) {
-        this.Promotion = Promotion;
-    }
-
+  
     
-   
-    
-}
+}// end class

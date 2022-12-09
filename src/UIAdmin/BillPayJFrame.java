@@ -4,6 +4,19 @@
  */
 package UIAdmin;
 
+import DAO.BillDetailsDAO;
+import Entity.*;
+import Utils.*;
+import DAO.*;
+import java.awt.Color;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.sql.Array;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author dantr
@@ -13,8 +26,12 @@ public class BillPayJFrame extends javax.swing.JFrame {
     /**
      * Creates new form BillPayJFrame
      */
+    private DefaultTableModel model;
+    private DefaultListModel listModel;
+
     public BillPayJFrame() {
         initComponents();
+        innitBill();
     }
 
     /**
@@ -28,11 +45,11 @@ public class BillPayJFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        List = new javax.swing.JList<>();
+        listOder = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        IblDOderDetails = new javax.swing.JLabel();
+        lblOrder = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtPay = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -56,13 +73,13 @@ public class BillPayJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        List.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        List.setModel(new javax.swing.AbstractListModel<String>() {
+        listOder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        listOder.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(List);
+        jScrollPane1.setViewportView(listOder);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("ID Oder:");
@@ -74,9 +91,9 @@ public class BillPayJFrame extends javax.swing.JFrame {
         lblTotal.setText("jLabel3");
         lblTotal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        IblDOderDetails.setBackground(new java.awt.Color(255, 255, 255));
-        IblDOderDetails.setText("jLabel4");
-        IblDOderDetails.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        lblOrder.setBackground(new java.awt.Color(255, 255, 255));
+        lblOrder.setText("DH010");
+        lblOrder.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Pay:");
@@ -97,7 +114,7 @@ public class BillPayJFrame extends javax.swing.JFrame {
         jLabel9.setText("Table:");
 
         lblTable.setBackground(new java.awt.Color(255, 255, 255));
-        lblTable.setText("jLabel10");
+        lblTable.setText("Ban 14");
         lblTable.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         btnPay.setBackground(new java.awt.Color(204, 0, 204));
@@ -147,7 +164,7 @@ public class BillPayJFrame extends javax.swing.JFrame {
                                     .addComponent(lblTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblTable, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                                    .addComponent(IblDOderDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(lblOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -160,7 +177,7 @@ public class BillPayJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(5, 5, 5)
-                                .addComponent(IblDOderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -258,8 +275,6 @@ public class BillPayJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IblDOderDetails;
-    private javax.swing.JList<String> List;
     private javax.swing.JButton btnPay;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -271,12 +286,69 @@ public class BillPayJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblOrder;
     private javax.swing.JLabel lblTable;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblTotal;
+    private javax.swing.JList<String> listOder;
     private javax.swing.JTextField txtDiscount;
     private javax.swing.JTextField txtPay;
     private javax.swing.JTextField txtPayments;
     private javax.swing.JTextField txtReadyCash;
     // End of variables declaration//GEN-END:variables
-}
+
+    BillDetailsDAO billDAO = new BillDetailsDAO();
+
+    void innitBill() {
+        String idTable = lblOrder.getText();
+        System.out.println(idTable + "ngu");
+
+        try {
+            BillDetail bill = billDAO.selectById(idTable);
+            System.out.println(bill);
+//            this.setForm(bill);
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    // đổ dữ liệu lên List
+    private void loadDataToJList() {
+
+//        try {
+//            billList = this.billDAO.selectAll();
+//            for (BillDetail bill : billList) {
+////				listModel.add(bill);
+//
+//            }
+//
+//            ListMenu.setModel(listModel);
+//            txtSearch.setText("");
+//            updateStatus();
+//        } catch (Exception e) {
+//            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+//        }
+    }
+
+    void setForm(BillDetail bill) {
+        ArrayList<BillDetail> list = new ArrayList<>();
+        lblOrder.setText(bill.getIDorder());
+//        lblTable.setText(bill.getNameTable());
+        lblTime.setText(bill.getTimeOrder());
+        lblTotal.setText(String.valueOf(bill.getSubTotal()));
+        txtDiscount.setText(String.valueOf(bill.getDiscountPromo()));
+        txtPay.setText(String.valueOf(bill.getTotal()));
+
+    }// set form
+
+    BillDetail getForm() {
+        BillDetail bill = new BillDetail();
+        lblOrder.setText(bill.getIDorder());
+//        lblTable.setText(bill.getNameTable());
+        lblTime.setText(bill.getTimeOrder());
+        lblTotal.setText(String.valueOf(bill.getTotal()));
+        return bill;
+    }
+}// end class

@@ -82,7 +82,7 @@
                                       <Component id="lblTotal" max="32767" attributes="0"/>
                                       <Component id="lblTime" max="32767" attributes="0"/>
                                       <Component id="lblTable" pref="304" max="32767" attributes="0"/>
-                                      <Component id="IblDOderDetails" max="32767" attributes="0"/>
+                                      <Component id="lblOrder" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -102,7 +102,7 @@
                               <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                                  <Component id="IblDOderDetails" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="lblOrder" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -161,7 +161,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="List">
+            <Component class="javax.swing.JList" name="listOder">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -211,12 +211,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="IblDOderDetails">
+        <Component class="javax.swing.JLabel" name="lblOrder">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
+            <Property name="text" type="java.lang.String" value="DH010"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                 <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
@@ -288,7 +288,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel10"/>
+            <Property name="text" type="java.lang.String" value="Ban 14"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                 <MatteColorBorder bottom="1" left="0" right="0" top="0"/>

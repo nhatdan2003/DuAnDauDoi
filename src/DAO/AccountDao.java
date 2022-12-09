@@ -18,6 +18,8 @@ public class AccountDao extends DAO<Account, String>{
     String DELETE_SQL = "DELETE FROM ACCOUNT WHERE Username = ?";
     String SELECT_ALL_SQL = "SELECT * FROM ACCOUNT";
     String SELECT_BY_ID_SQL = "SELECT * FROM ACCOUNT WHERE Username = ?";
+    
+    String SELECT_ID_LOGIN = "select Username, Password from account where  Username = ? ";
 
     //insert du lieu vao database
     @Override
@@ -79,4 +81,6 @@ public class AccountDao extends DAO<Account, String>{
         }
     }
     
-}
+    
+    
+}// end class
