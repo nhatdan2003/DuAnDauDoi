@@ -20,6 +20,11 @@ public class AccountDao extends DAO<Account, String>{
     String SELECT_BY_ID_SQL = "SELECT * FROM ACCOUNT WHERE Username = ?";
     
     String SELECT_ID_LOGIN = "select Username, Password from account where  Username = ? ";
+    
+    public List<Account> selectByKeyword(String keyword){
+        String sql = "SELECT * FROM Account WHERE fullname LIKE ?";
+        return this.selectBySql(sql,"%" + keyword + "%");
+    }
 
     //insert du lieu vao database
     @Override
