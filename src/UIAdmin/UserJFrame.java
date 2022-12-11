@@ -408,6 +408,8 @@ public class UserJFrame extends javax.swing.JFrame {
             }
         });
 
+        tblUser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblUser.setForeground(new java.awt.Color(255, 51, 255));
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
