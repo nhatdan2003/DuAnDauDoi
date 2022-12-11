@@ -459,6 +459,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
         setDateToChart();
     }
 
+    //Dữ liệu doanh thu theo tháng và năm lên table
     private void fillTableTurnover() {
         int Month;
         int Years;
@@ -678,6 +679,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
         }
     }
 
+    //Chỉnh sửa biểu đồ doanh thu theo năm
     private void setDateToChart() {
         String year = String.valueOf(jdtyearchart.getYear());
         lbltextjpn2.setText("Revenue chart of the year: " + year);

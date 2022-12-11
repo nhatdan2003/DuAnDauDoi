@@ -23,6 +23,8 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     public DoiMatKhauJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+	txtTenDangNhap.setEditable(false);
+	txtTenDangNhap.setText(Auth.userName.toString().substring(7));
     }
 
     /**

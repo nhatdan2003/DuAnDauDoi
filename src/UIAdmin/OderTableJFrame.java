@@ -31,6 +31,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 	TableDAO tbDAO = new TableDAO();
 	OrderDAO odDAO = new OrderDAO();
 	OrderDetailDAO oddDAO = new OrderDetailDAO();
+	BillDetailsDAO bdDAO = new BillDetailsDAO();
 
 	static JComboBox<Promotions> cboPro = new JComboBox<>();
 	private List<Product> pdList;
