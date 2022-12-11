@@ -22,6 +22,7 @@ import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
@@ -579,7 +580,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
             cellStyle1.setFillForegroundColor(IndexedColors.BLUE_GREY.getIndex());
             cellStyle1.setFillPattern(FillPatternType.SOLID_FOREGROUND);
             cellStyle1.setFont(headerFont);
-            
+
             CellStyle cellStyle2 = workBook.createCellStyle();
             cellStyle2.setAlignment(HorizontalAlignment.CENTER);
             cellStyle2.setBorderBottom(BorderStyle.THIN);
@@ -622,8 +623,6 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
             cell = row.createCell(3, CellType.STRING);
             cell.setCellValue("Turnover");
             cell.setCellStyle(cellStyle1);
-            
-            
 
             for (int i = 0; i < list.size(); i++) {
                 row = sheet.createRow(4 + i);
@@ -644,42 +643,46 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
                 cell.setCellValue(MoneyFormater.VNDFormat(list.get(i).getTurnover()));
                 cell.setCellStyle(style);
             }
-            row = sheet.createRow(list.size()+4);
+            row = sheet.createRow(list.size() + 4);
             cell = row.createCell(2, CellType.STRING);
             cell.setCellValue("Total");
             cell.setCellStyle(cellStyle2);
-            
+
             cell = row.createCell(3, CellType.NUMERIC);
             cell.setCellValue(lbltotal.getText());
             cell.setCellStyle(style);
 
             JFileChooser fc = new JFileChooser();
-            fc.showSaveDialog(this);
-            
-            File f = fc.getSelectedFile();
+            int check = fc.showSaveDialog(this);
+            if (check == JFileChooser.APPROVE_OPTION) {
+                File f = fc.getSelectedFile();
 //            File f = new File("listnhanvien.xlsx");
-            try {
-                FileOutputStream fos = new FileOutputStream(f);
-                workBook.write(fos);
-                fos.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+                try {
+                    FileOutputStream fos = new FileOutputStream(f);
+                    workBook.write(fos);
+                    fos.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                try {
+                    Desktop.getDesktop().open(f);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                MsgBox.alert(this, "file not saved!");
             }
-            try {
-                Desktop.getDesktop().open(f);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    private void setDateToChart(){
-        String  year = String.valueOf(jdtyearchart.getYear());
-        lbltextjpn2.setText("Revenue chart of the year: "+ year);
+
+    private void setDateToChart() {
+        String year = String.valueOf(jdtyearchart.getYear());
+        lbltextjpn2.setText("Revenue chart of the year: " + year);
         List<ChartTurnover> listItem = dao.getTurnoverChart(year);
-        if(listItem != null){
+        if (listItem != null) {
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
             for (ChartTurnover Ctu : listItem) {
                 dataset.addValue(Ctu.getTotalTurnoverMonth(), "Total turnover of Month", Ctu.getMonth());
@@ -687,7 +690,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
             JFreeChart chart = ChartFactory.createBarChart("revenue statistics", "Month", "Total Turnover", dataset);
             ChartPanel cpn = new ChartPanel(chart);
             cpn.setPreferredSize(new Dimension(jpnchart.getWidth(), 300));
-            
+
             jpnchart.removeAll();
             jpnchart.setLayout(new CardLayout());
             jpnchart.add(cpn);
