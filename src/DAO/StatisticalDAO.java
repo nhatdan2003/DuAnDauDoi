@@ -5,6 +5,7 @@
 package DAO;
 
 import Entity.ChartTurnover;
+import Entity.Order;
 import Entity.Turnover;
 import Utils.XJDBC;
 import java.sql.ResultSet;
@@ -94,6 +95,37 @@ public class StatisticalDAO {
                 ChartTurnover entity = new ChartTurnover();
                 entity.setMonth(rs.getString("Month_Order"));
                 entity.setTotalTurnoverMonth(rs.getDouble("Turnover_Order"));
+                list.add(entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public List<Order> selectALLOrder() {
+        return this.selectBySQLOrder("select * from [order]");
+    }
+    
+    public List<Order> getTurnoverorder(int Month, int years) {
+        String sql = "select IDorder, DateOrder,TimeOrder,IDPromo,TotalPrice,Username from [order] where month(DateOrder) = ? and year(DateOrder) = ?"; //cau lenh sql
+//        String[] cols = {"IDProduct","ProductName","Soluong","DoanhThu"};
+        return this.selectBySQLOrder(sql, Month, years);
+    }
+
+    protected List<Order> selectBySQLOrder(String sql, Object... args) {
+        List<Order> list = new ArrayList<>();
+        try {
+            ResultSet rs = XJDBC.query(sql, args);
+            while (rs.next()) {
+                Order entity = new Order();
+                entity.setIdOrder(rs.getString("IDOrder"));
+                entity.setDateOrder(rs.getDate("DateOrder"));
+                entity.setTimeOrder(rs.getString("TimeOrder"));
+                entity.setIdPromo(rs.getString("IDPromo"));
+                entity.setTotalPrice(rs.getDouble("TotalPrice"));
+                entity.setUserName(rs.getString("Username"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
