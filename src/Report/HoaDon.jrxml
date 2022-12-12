@@ -1,34 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95b60f4c-72bc-4556-9afc-04cc0210929d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95b60f4c-72bc-4556-9afc-04cc0210929d">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="60"/>
 	<queryString>
 		<![CDATA[SELECT
-     Account."Fullname" AS Account_Fullname
+     BillProduct."IDBillProduct" AS BillProduct_IDBillProduct,
+     BillProduct."IDOrder" AS BillProduct_IDOrder,
+     BillProduct."ProductName" AS BillProduct_ProductName,
+     BillProduct."Quantity" AS BillProduct_Quantity,
+     BillProduct."Price" AS BillProduct_Price,
+     BillProduct."IntoMoney" AS BillProduct_IntoMoney,
+     BillDetail."IDBillDetail" AS BillDetail_IDBillDetail,
+     BillDetail."IDOrder" AS BillDetail_IDOrder,
+     BillDetail."DateOrder" AS BillDetail_DateOrder,
+     BillDetail."TimeOrder" AS BillDetail_TimeOrder,
+     BillDetail."Username" AS BillDetail_Username,
+     BillDetail."SubTotal" AS BillDetail_SubTotal,
+     BillDetail."Total" AS BillDetail_Total,
+     BillDetail."DiscountPromotion" AS BillDetail_DiscountPromotion,
+     BillPay."IDBillPay" AS BillPay_IDBillPay,
+     BillPay."IDOrder" AS BillPay_IDOrder,
+     BillPay."pay" AS BillPay_pay,
+     BillPay."readyCash" AS BillPay_readyCash,
+     BillPay."payMents" AS BillPay_payMents
 FROM
-     "dbo"."Account" Account]]>
+     "dbo"."BillProduct" BillProduct,
+     "dbo"."BillDetail" BillDetail,
+     "dbo"."BillPay" BillPay]]>
 	</queryString>
-	<field name="Account_Fullname" class="java.lang.String"/>
+	<field name="BillProduct_IDBillProduct" class="java.lang.Integer"/>
+	<field name="BillProduct_IDOrder" class="java.lang.String"/>
+	<field name="BillProduct_ProductName" class="java.lang.String"/>
+	<field name="BillProduct_Quantity" class="java.lang.Integer"/>
+	<field name="BillProduct_Price" class="java.lang.Double"/>
+	<field name="BillProduct_IntoMoney" class="java.lang.Double"/>
+	<field name="BillDetail_IDBillDetail" class="java.lang.Integer"/>
+	<field name="BillDetail_IDOrder" class="java.lang.String"/>
+	<field name="BillDetail_DateOrder" class="java.lang.String"/>
+	<field name="BillDetail_TimeOrder" class="java.lang.String"/>
+	<field name="BillDetail_Username" class="java.lang.String"/>
+	<field name="BillDetail_SubTotal" class="java.lang.Double"/>
+	<field name="BillDetail_Total" class="java.lang.Double"/>
+	<field name="BillDetail_DiscountPromotion" class="java.lang.Double"/>
+	<field name="BillPay_IDBillPay" class="java.lang.Integer"/>
+	<field name="BillPay_IDOrder" class="java.lang.String"/>
+	<field name="BillPay_pay" class="java.lang.Double"/>
+	<field name="BillPay_readyCash" class="java.lang.Double"/>
+	<field name="BillPay_payMents" class="java.lang.Double"/>
+	<variable name="BillPay_payMents_1" class="java.lang.Double" resetType="Page" calculation="First">
+		<variableExpression><![CDATA[$F{BillPay_payMents}]]></variableExpression>
+	</variable>
+	<variable name="BillPay_pay_1" class="java.lang.Double" resetType="Page" calculation="First">
+		<variableExpression><![CDATA[$F{BillPay_pay}]]></variableExpression>
+	</variable>
+	<variable name="BillPay_readyCash_1" class="java.lang.Double" resetType="Page" calculation="First">
+		<variableExpression><![CDATA[$F{BillPay_readyCash}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
 		<band height="171" splitType="Stretch">
 			<staticText>
-				<reportElement x="177" y="64" width="100" height="20" uuid="f7b47935-2808-455a-9412-e06b4dc8ea6e"/>
-				<text><![CDATA[HÓA ĐON THANH TOÁN]]></text>
+				<reportElement x="112" y="19" width="148" height="20" uuid="68df5f45-438b-4417-860e-3bb3498c99e7"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[HÓA ĐƠN THANH TOÁN]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="215" y="104" width="100" height="20" uuid="2ece7239-b462-4401-9a7a-d827f0a069af"/>
-				<textFieldExpression><![CDATA[$F{Account_Fullname}]]></textFieldExpression>
+				<reportElement x="67" y="106" width="100" height="20" uuid="4749ee92-afde-40de-8ce1-eea2827c2313"/>
+				<textFieldExpression><![CDATA[$F{BillDetail_Username}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="67" y="74" width="100" height="20" uuid="e3546e16-df8b-46ac-9adb-cde4ed1effc4"/>
+				<textFieldExpression><![CDATA[$F{BillDetail_DateOrder}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="54" width="100" height="20" uuid="bb53051f-d179-4e0e-87c1-3c16ff833898"/>
+				<textFieldExpression><![CDATA[$F{BillProduct_IDOrder}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="41" y="151" width="57" height="20" uuid="0e38adea-01c0-47f3-a012-32f6037ca0f7"/>
+				<text><![CDATA[SL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="151" width="29" height="20" uuid="1d23879b-17cf-47f2-87f9-9a09d433bb9f"/>
+				<text><![CDATA[GIÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="151" width="100" height="20" uuid="584701d3-744b-46e4-850a-64527ec20ede"/>
+				<text><![CDATA[THÀNH TIỀN]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="282" splitType="Stretch"/>
+		<band height="282" splitType="Stretch">
+			<textField>
+				<reportElement x="41" y="28" width="319" height="20" uuid="ebbe9cd8-2937-4af9-aa51-5fd80818da6b"/>
+				<textFieldExpression><![CDATA[$F{BillProduct_ProductName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="67" width="57" height="20" uuid="3ae19f4e-233e-4642-b135-24d7f59e8d4f"/>
+				<textFieldExpression><![CDATA[$F{BillProduct_Price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="67" width="57" height="20" uuid="e674b036-6156-4ab7-ab45-c8fdd4e3446f"/>
+				<textFieldExpression><![CDATA[$F{BillProduct_Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="67" width="100" height="20" uuid="bcce9641-63ae-46da-9026-4c26f3e15833"/>
+				<textFieldExpression><![CDATA[$F{BillProduct_IntoMoney}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
-	<summary>
-		<band height="299" splitType="Stretch"/>
-	</summary>
+	<pageFooter>
+		<band height="102"/>
+	</pageFooter>
 </jasperReport>

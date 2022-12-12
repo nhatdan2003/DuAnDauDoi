@@ -4,9 +4,8 @@
  */
 package DAO;
 
-import Entity.BillDetail;
-import Entity.Promotions;
-import Utils.XJDBC;
+import Entity.*;
+import Utils.*;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +15,31 @@ import java.util.List;
  * @author dantr
  */
 public class BillDetailsDAO extends DAO<BillDetail, String> {
-    String SELETE_BY_IDOrder_SQL = "SELECT * FROM [Order] WHERE IDOrder = ?";
-    String SELETE_BY_ID_SQL = "SELECT * FROM BillDetail WHERE IDOrder like ?"; // sql tìm tất cả cá sp
-   String SELECT_ALL_properties_SQL = "SELECT * FROM BillDetail";
+    String INSERT_SQL = "INSERT INTO BillDetail(IDBillDetail,IDOrder,DateOrder,TimeOrder,Username,SubTotal,DiscountPromotion,Total,Pay,ReadyCash,PayMent)VALUES(?,?,?,?,?,?,?,?,?,?,?)"; // sql thêm dữ liệu
+//    String UPDATE_SQL = "UPDATE BillDetail SET IDBillDetail = ?,IDOrder =?,DateOrder = ?,TimeOrder = ?,Username = ?,SubTotal = ?,DiscountPromotion = ?,Total = ? where IDOrder = ?"; // sql cập nhập dữ liệu
+//    String DELETE_SQL = "DELETE FROM BillDetail WHERE IDOrder =?";// sql xóa dữ liệu
+    String SELECT_ALL_SQL = "SELECT * FROM BillDetail";// sql tìm tất cả
+    String SELETE_BY_ID_SQL = "SELECT * FROM BillDetail WHERE IDOrder = ?"; // sql tìm theo mã
+//    String SEARCH_BY_SQL = "SELECT * FROM Promotions WHERE IDProduct LIKE ? OR ProductName LIKE ? OR Price = ?";// sql tìm nhiều thành phần
+    
+    // thêm dữ liệu vào bảng qua bảng oderDetail
     @Override
-    public void insert(BillDetail entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void insert(BillDetail model) {
+        XJDBC.update(INSERT_SQL, 
+                    model.getIDBillDetail(),
+                    model.getIDorder(),
+                    model.getDateOrder(),
+                    model.getTimeOrder(),
+                    model.getUsername(),
+                    Double.valueOf(model.getSubTotal()),
+                    Double.valueOf(model.getDiscountPromom()),
+                    Double.valueOf(model.getTotal()),
+                    Double.valueOf(model.getTotal()),
+                    Double.valueOf(model.getTotal()),
+                    Double.valueOf(model.getTotal())
+                    
+        );
+
     }
 
     @Override
@@ -36,13 +54,13 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
 
     @Override
     public BillDetail selectById(String id) {
-        List<BillDetail> list = selectBySql(SELETE_BY_IDOrder_SQL, id);
+        List<BillDetail> list = selectBySql(SELECT_ALL_SQL, id);
         return (list.size() > 0) ? list.get(0) : null;
     }
 
     @Override
     public List<BillDetail> selectAll() {
-        return selectBySql(SELECT_ALL_properties_SQL, new Object[0]);
+        return selectBySql(SELECT_ALL_SQL, new Object[0]);
     }
 
     @Override
@@ -54,13 +72,17 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
                 rs = XJDBC.query(sql, args);
                 while (rs.next()) {
                     BillDetail bill = new BillDetail();
+                    bill.setIDBillDetail(rs.getString("IDBillDetail"));
                     bill.setIDorder(rs.getString("IDOrder"));
                     bill.setDateOrder(rs.getString("DateOrder"));
                     bill.setTimeOrder(rs.getString("TimeOrder"));
                     bill.setUsername(rs.getString("UserName"));
                     bill.setSubTotal(Double.parseDouble(rs.getString("SubTotal")));
-                    bill.setDiscountPromo(Double.valueOf(rs.getString("DiscountPromo")));
+                    bill.setDiscountPromom(Double.valueOf(rs.getString("DiscountPromo")));
                     bill.setTotal(Double.valueOf(rs.getString("Total")));
+                    bill.setPay(Double.valueOf(rs.getString("Pay")));
+                    bill.setReadyCash(Double.valueOf(rs.getString("ReadyCash")));
+                    bill.setPayMent(Double.valueOf(rs.getString("PayMent")));
                     list.add(bill);
                 }
             } finally {

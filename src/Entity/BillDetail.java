@@ -10,20 +10,32 @@ package Entity;
  */
 public class BillDetail {
 
-    String IDorder,  DateOrder, TimeOrder, Username;
-    double SubTotal,DiscountPromo, Total;
+    String IDBillDetail, IDorder,  DateOrder, TimeOrder, Username;
+    double SubTotal,DiscountPromom,Total ,pay, readyCash, payMent;
 
     public BillDetail() {
     }
 
-    public BillDetail(String IDorder, String DateOrder, String TimeOrder, String Username, double SubTotal, double DiscountPromo, double Total) {
+    public BillDetail(String IDBillDetail, String IDorder, String DateOrder, String TimeOrder, String Username, double SubTotal, double DiscountPromom, double Total, double pay, double readyCash, double payMent) {
+        this.IDBillDetail = IDBillDetail;
         this.IDorder = IDorder;
         this.DateOrder = DateOrder;
         this.TimeOrder = TimeOrder;
         this.Username = Username;
         this.SubTotal = SubTotal;
-        this.DiscountPromo = DiscountPromo;
+        this.DiscountPromom = DiscountPromom;
         this.Total = Total;
+        this.pay = pay;
+        this.readyCash = readyCash;
+        this.payMent = payMent;
+    }
+
+    public String getIDBillDetail() {
+        return IDBillDetail;
+    }
+
+    public void setIDBillDetail(String IDBillDetail) {
+        this.IDBillDetail = IDBillDetail;
     }
 
     public String getIDorder() {
@@ -66,12 +78,12 @@ public class BillDetail {
         this.SubTotal = SubTotal;
     }
 
-    public double getDiscountPromo() {
-        return DiscountPromo;
+    public double getDiscountPromom() {
+        return DiscountPromom;
     }
 
-    public void setDiscountPromo(double DiscountPromo) {
-        this.DiscountPromo = DiscountPromo;
+    public void setDiscountPromom(double DiscountPromom) {
+        this.DiscountPromom = DiscountPromom;
     }
 
     public double getTotal() {
@@ -82,6 +94,29 @@ public class BillDetail {
         this.Total = Total;
     }
 
-  
-    
+    public double getPay() {
+        return pay;
+    }
+
+    public void setPay(double pay) {
+        this.pay = pay;
+    }
+
+    public double getReadyCash() {
+        return readyCash;
+    }
+
+    public void setReadyCash(double readyCash) {
+        this.readyCash = readyCash;
+    }
+
+    public double getPayMent() {
+        return payMent;
+    }
+
+    public void setPayMent(double payMent) {
+        this.payMent = payMent;
+    }
+
+         
 }// end class

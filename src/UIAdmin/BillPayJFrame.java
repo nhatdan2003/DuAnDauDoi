@@ -6,15 +6,15 @@ package UIAdmin;
 
 import DAO.BillDetailsDAO;
 import Entity.*;
-import Utils.*;
+
 import DAO.*;
+import Utils.MsgBox;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.Array;
 import java.util.*;
 import javax.swing.*;
-import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,7 +27,6 @@ public class BillPayJFrame extends javax.swing.JFrame {
      * Creates new form BillPayJFrame
      */
     private DefaultTableModel model;
-    private DefaultListModel listModel;
 
     public BillPayJFrame() {
         initComponents();
@@ -44,8 +43,6 @@ public class BillPayJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listOder = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
@@ -63,6 +60,8 @@ public class BillPayJFrame extends javax.swing.JFrame {
         lblTime = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtDiscount = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblOrder = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -72,14 +71,6 @@ public class BillPayJFrame extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        listOder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        listOder.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listOder);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("ID Oder:");
@@ -132,13 +123,48 @@ public class BillPayJFrame extends javax.swing.JFrame {
 
         txtDiscount.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
+        tblOrder.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tblOrder);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -169,9 +195,8 @@ public class BillPayJFrame extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,8 +236,9 @@ public class BillPayJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtPayments, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(btnPay, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)))
+                        .addGap(36, 36, 36)
+                        .addComponent(btnPay, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
 
@@ -226,9 +252,9 @@ public class BillPayJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -285,12 +311,12 @@ public class BillPayJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblOrder;
     private javax.swing.JLabel lblTable;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblTotal;
-    private javax.swing.JList<String> listOder;
+    private javax.swing.JTable tblOrder;
     private javax.swing.JTextField txtDiscount;
     private javax.swing.JTextField txtPay;
     private javax.swing.JTextField txtPayments;
@@ -298,57 +324,54 @@ public class BillPayJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     BillDetailsDAO billDAO = new BillDetailsDAO();
+    BillProductDAO billProDAO = new BillProductDAO();
+
 
     void innitBill() {
-        String idTable = lblOrder.getText();
-        System.out.println(idTable + "ngu");
+//        tblOrder.setModel(model);
+//        setLocationRelativeTo(null);
+//        loadDataToJList();
 
-        try {
-            BillDetail bill = billDAO.selectById(idTable);
-            System.out.println(bill);
-//            this.setForm(bill);
-            
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
+          
     }
 
     // đổ dữ liệu lên List
     private void loadDataToJList() {
+        model = (DefaultTableModel) tblOrder.getModel();
+        model.setRowCount(0);
+        try {
+            List<BillProduct> list = billProDAO.selectAll();
+            for (BillProduct pro : list) {
+                Object[] row = {
+                   pro.getIDBillProduct(),pro.getIDOrder(), pro.getProductName(), pro.getQuantity(), pro.getPrice(), pro.getIntoMoney()
+                }; // end object
+                model.addRow(row);
+            }
 
-//        try {
-//            billList = this.billDAO.selectAll();
-//            for (BillDetail bill : billList) {
-////				listModel.add(bill);
-//
-//            }
-//
-//            ListMenu.setModel(listModel);
-//            txtSearch.setText("");
-//            updateStatus();
-//        } catch (Exception e) {
-//            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
-//        }
+        } catch (Exception e) {
+            System.out.println(e);
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+        }
+
     }
 
-    void setForm(BillDetail bill) {
-        ArrayList<BillDetail> list = new ArrayList<>();
-        lblOrder.setText(bill.getIDorder());
-//        lblTable.setText(bill.getNameTable());
-        lblTime.setText(bill.getTimeOrder());
-        lblTotal.setText(String.valueOf(bill.getSubTotal()));
-        txtDiscount.setText(String.valueOf(bill.getDiscountPromo()));
-        txtPay.setText(String.valueOf(bill.getTotal()));
-
-    }// set form
-
-    BillDetail getForm() {
-        BillDetail bill = new BillDetail();
-        lblOrder.setText(bill.getIDorder());
-//        lblTable.setText(bill.getNameTable());
-        lblTime.setText(bill.getTimeOrder());
-        lblTotal.setText(String.valueOf(bill.getTotal()));
-        return bill;
-    }
+//    void setForm(BillDetail bill) {
+//        ArrayList<BillDetail> list = new ArrayList<>();
+//        lblOrder.setText(bill.getIDorder());
+////        lblTable.setText(bill.getNameTable());
+//        lblTime.setText(bill.getTimeOrder());
+//        lblTotal.setText(String.valueOf(bill.getSubTotal()));
+//        txtDiscount.setText(String.valueOf(bill.getDiscountPromo()));
+//        txtPay.setText(String.valueOf(bill.getTotal()));
+//
+//    }// set form
+//
+//    BillDetail getForm() {
+//        BillDetail bill = new BillDetail();
+//        lblOrder.setText(bill.getIDorder());
+////        lblTable.setText(bill.getNameTable());
+//        lblTime.setText(bill.getTimeOrder());
+//        lblTotal.setText(String.valueOf(bill.getTotal()));
+//        return bill;
+//    }
 }// end class
