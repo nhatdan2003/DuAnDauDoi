@@ -8,13 +8,13 @@ import DAO.AccountDao;
 import DAO.TheLastLoginDAO;
 import Entity.Account;
 import Entity.TheLastLogin;
-import QR_CODE.LogIn_with_QR;
+//import QR_CODE.LogIn_with_QR;
 import Utils.Auth;
 import Utils.MsgBox;
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+//import com.github.sarxos.webcam.Webcam;
+//import com.github.sarxos.webcam.WebcamPanel;
+//import java.util.concurrent.Executor;
+//import java.util.concurrent.Executors;
 import java.util.prefs.Preferences;
 
 
