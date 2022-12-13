@@ -31,6 +31,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 	TableDAO tbDAO = new TableDAO();
 	OrderDAO odDAO = new OrderDAO();
 	OrderDetailDAO oddDAO = new OrderDetailDAO();
+	BillProductDAO bpDAO = new BillProductDAO();
 	BillDetailsDAO bdDAO = new BillDetailsDAO();
 
 	static JComboBox<Promotions> cboPro = new JComboBox<>();
@@ -632,9 +633,10 @@ public class OderTableJFrame extends javax.swing.JFrame {
         }//GEN-LAST:event_btnDeleteBillActionPerformed
 
         private void btnCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCashActionPerformed
-                // TODO add your handling code here:
-		saveOrder(); //!IMPORTANT 
-		resetOrDeleteOrder();
+		// TODO add your handling code here:
+		cashOrder(); //!IMPORTANT 
+		odCart = new orderCart();
+		fillToTable();
 		updateStatus();
         }//GEN-LAST:event_btnCashActionPerformed
 
@@ -740,7 +742,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
 		});
 		tblOder.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		System.out.println(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ")+1));
+		System.out.println(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ") + 1));
 	}
 
 	private void setImage(Product pd) {
@@ -1045,27 +1047,80 @@ public class OderTableJFrame extends javax.swing.JFrame {
 		od.setTimeOrder(lblDate.getText().substring(lblDate.getText().indexOf(" "), lblDate.getText().lastIndexOf(" ")));
 		od.setIdPromo(cboPro.getSelectedItem().toString().substring(0, cboPro.getSelectedItem().toString().indexOf(" ")));
 		od.setTotalPrice(MoneyFormater.DoubleFormat(lblTotal.getText()));
-		od.setUserName(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ")+1));
+		od.setUserName(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ") + 1));
 
 		return od;
 	}
 
+	//Lấy đổi tượng BillProduct
+	private List<BillProduct> getBillProduct(String idOrder) {
+		List<BillProduct> bpList = new ArrayList<>();
+		for (int i = 0; i < tblOder.getRowCount(); i++) {
+			BillProduct bp = new BillProduct();
+			bp.setIDOrder(idOrder);
+			bp.setProductName(tblOder.getValueAt(i, 1).toString());
+			bp.setQuantity(Integer.parseInt(tblOder.getValueAt(i, 3).toString()));
+			bp.setPrice(MoneyFormater.DoubleFormat(tblOder.getValueAt(i, 2).toString()));
+			bp.setIntoMoney(MoneyFormater.DoubleFormat(tblOder.getValueAt(i, 4).toString()));
+			bpList.add(bp);
+		}
+
+		return bpList;
+	}
+
+	//Lấy đối tượng BillDetail
+	private BillDetail getBillDetail(String idOrder) {
+		BillDetail bd = new BillDetail();
+		bd.setIDorder(idOrder);
+		bd.setTimeOrder(lblDate.getText().substring(lblDate.getText().indexOf(" "), lblDate.getText().lastIndexOf(" ")));
+		bd.setUsername(Auth.userName.toString().substring(Auth.userName.toString().lastIndexOf(" ") + 1));
+		bd.setDateOrder(XDate.toDate(lblDate.getText().substring(0, lblDate.getText().indexOf(" ")), "dd-MM-yyyy"));
+		bd.setSubTotal(MoneyFormater.DoubleFormat(lblSubTotal.getText()));
+		String idPromo = cboPro.getSelectedItem().toString().substring(0, cboPro.getSelectedItem().toString().indexOf(" "));
+		bd.setDiscountPromo(promoDAO.selectById(idPromo).getDiscountPromo());
+		bd.setTotal(MoneyFormater.DoubleFormat(lblTotal.getText()));
+		bd.setPay(0.0);
+		bd.setReadyCash(0.0);
+		bd.setPayMent(0.0);
+
+		return bd;
+	}
+
 	//Lưu hoá đơn lên DATABASE
-	private void saveOrder() {
+	private void cashOrder() {
 		//kiểm tra hoá đơn đã tồn tại trong database hay chưa
 		try {
+			//Tạo order và insert
 			Order od = getOrder();
 			odDAO.insert(od);
 			try {
+				//Tạo List OrderDetail và insert 
 				List<OrderDetails> oddList = getOrderDetails(od.getIdOrder());
-				System.out.println(oddList.toString());
 				oddDAO.insertLIST(oddList);
-				save = true;
-				MsgBox.alert(this, "Success!");
 			} catch (Exception e) {
-				MsgBox.alert(this, "loi OrderDetail ne");
 				System.out.println(e);
+				MsgBox.alert(this, "loi OrderDetail ne");
 			}
+			//Tạo List BillProduct và insert
+			try {
+				List<BillProduct> bpList = getBillProduct(od.getIdOrder());
+				bpDAO.insertLIST(bpList);
+			} catch (Exception e) {
+				System.out.println(e);
+				MsgBox.alert(this, "loi BillProduct ne");
+			}
+
+			try {
+				//Tạo BillDetail và insert
+				BillDetail bd = getBillDetail(od.getIdOrder());
+				bdDAO.insert(bd);
+			} catch (Exception e) {
+				System.out.println(e);
+				MsgBox.alert(this, "loi BillDetail ne");
+			}
+
+			save = true;
+			MsgBox.alert(this, "Success!");
 
 		} catch (Exception e) {
 			MsgBox.alert(this, "loi Order ne");
@@ -1116,7 +1171,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 
 	private void btnBack() {
 		this.dispose();
-		new MainJFrame(this,true).setVisible(true);
+		new MainJFrame(this, true).setVisible(true);
 	}
 
 }

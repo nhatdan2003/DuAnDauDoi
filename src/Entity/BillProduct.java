@@ -10,12 +10,13 @@ package Entity;
  */
 public class BillProduct {
      String IDBillProduct, IDOrder, ProductName;
-     double Quantity,Price,IntoMoney;
+     int Quantity;
+     double Price,IntoMoney;
 
     public BillProduct() {
     }
 
-    public BillProduct(String IDBillProduct, String IDOrder, String ProductName, double Quantity, double Price, double IntoMoney) {
+    public BillProduct(String IDBillProduct, String IDOrder, String ProductName, int Quantity, double Price, double IntoMoney) {
         this.IDBillProduct = IDBillProduct;
         this.IDOrder = IDOrder;
         this.ProductName = ProductName;
@@ -52,7 +53,7 @@ public class BillProduct {
         return Quantity;
     }
 
-    public void setQuantity(double Quantity) {
+    public void setQuantity(int Quantity) {
         this.Quantity = Quantity;
     }
 

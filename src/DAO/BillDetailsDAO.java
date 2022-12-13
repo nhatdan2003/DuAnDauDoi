@@ -15,7 +15,7 @@ import java.util.List;
  * @author dantr
  */
 public class BillDetailsDAO extends DAO<BillDetail, String> {
-    String INSERT_SQL = "INSERT INTO BillDetail(IDBillDetail,IDOrder,DateOrder,TimeOrder,Username,SubTotal,DiscountPromotion,Total,Pay,ReadyCash,PayMent)VALUES(?,?,?,?,?,?,?,?,?,?,?)"; // sql thêm dữ liệu
+    String INSERT_SQL = "INSERT INTO BillDetail(IDOrder,DateOrder,TimeOrder,Username,SubTotal,DiscountPromo,Total,Pay,ReadyCash,PayMents)VALUES(?,?,?,?,?,?,?,?,?,?)"; // sql thêm dữ liệu
 //    String UPDATE_SQL = "UPDATE BillDetail SET IDBillDetail = ?,IDOrder =?,DateOrder = ?,TimeOrder = ?,Username = ?,SubTotal = ?,DiscountPromotion = ?,Total = ? where IDOrder = ?"; // sql cập nhập dữ liệu
 //    String DELETE_SQL = "DELETE FROM BillDetail WHERE IDOrder =?";// sql xóa dữ liệu
     String SELECT_ALL_SQL = "SELECT * FROM BillDetail";// sql tìm tất cả
@@ -26,13 +26,12 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
     @Override
     public void insert(BillDetail model) {
         XJDBC.update(INSERT_SQL, 
-                    model.getIDBillDetail(),
                     model.getIDorder(),
                     model.getDateOrder(),
                     model.getTimeOrder(),
                     model.getUsername(),
                     Double.valueOf(model.getSubTotal()),
-                    Double.valueOf(model.getDiscountPromom()),
+                    Double.valueOf(model.getDiscountPromo()),
                     Double.valueOf(model.getTotal()),
                     Double.valueOf(model.getTotal()),
                     Double.valueOf(model.getTotal()),
@@ -74,11 +73,11 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
                     BillDetail bill = new BillDetail();
                     bill.setIDBillDetail(rs.getString("IDBillDetail"));
                     bill.setIDorder(rs.getString("IDOrder"));
-                    bill.setDateOrder(rs.getString("DateOrder"));
+                    bill.setDateOrder(XDate.toDate(rs.getString("DateOrder"), "yyyy-dd-MM"));
                     bill.setTimeOrder(rs.getString("TimeOrder"));
                     bill.setUsername(rs.getString("UserName"));
                     bill.setSubTotal(Double.parseDouble(rs.getString("SubTotal")));
-                    bill.setDiscountPromom(Double.valueOf(rs.getString("DiscountPromo")));
+                    bill.setDiscountPromo(Double.valueOf(rs.getString("DiscountPromo")));
                     bill.setTotal(Double.valueOf(rs.getString("Total")));
                     bill.setPay(Double.valueOf(rs.getString("Pay")));
                     bill.setReadyCash(Double.valueOf(rs.getString("ReadyCash")));
