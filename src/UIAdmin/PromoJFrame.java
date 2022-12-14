@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import Utils.Auth;
+import Utils.ShareHelper;
 
 /**
  *
@@ -513,6 +514,7 @@ public class PromoJFrame extends javax.swing.JFrame {
 
     // set table
     public void initModel() {
+        setIconImage(ShareHelper.APP_ICON);
         model = new DefaultTableModel(new Object[0][], (Object[]) new String[]{"IdPromo", "NamePromo", "DiscountPromo", "Description"}) {
             boolean[] canEdit = new boolean[]{false, false, false, false};
 

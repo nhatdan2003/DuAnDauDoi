@@ -10,6 +10,7 @@ import Entity.Order;
 import Entity.Turnover;
 import Utils.MoneyFormater;
 import Utils.MsgBox;
+import Utils.ShareHelper;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -505,6 +506,7 @@ public class ProductSaleJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void init() {
+        setIconImage(ShareHelper.APP_ICON);
         rdoorder.setSelected(true);
         fillTableTurnoverAll();
         setLocationRelativeTo(null);

@@ -711,7 +711,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
         // End of variables declaration//GEN-END:variables
 
 	private void init() {
-
+                                    setIconImage(ShareHelper.APP_ICON);
 		pdList = new ArrayList<>();
 		odCart = new orderCart();
 		listCart = new HashMap<>();

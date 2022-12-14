@@ -8,6 +8,7 @@ import DAO.AccountDao;
 import Entity.Account;
 import Utils.Auth;
 import Utils.MsgBox;
+import Utils.ShareHelper;
 import java.util.List;
 
 /**
@@ -349,6 +350,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         // End of variables declaration//GEN-END:variables
 
     private void ChangePassword(){
+        setIconImage(ShareHelper.APP_ICON);
         String username = txtTenDangNhap.getText();
         String matKhau = new String(txtMKCu.getText());
         String mkmoi = txtMKMoi.getText();

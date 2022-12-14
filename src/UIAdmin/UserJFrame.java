@@ -8,6 +8,7 @@ import DAO.AccountDao;
 import Entity.Account;
 import Utils.Auth;
 import Utils.MsgBox;
+import Utils.ShareHelper;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +86,6 @@ public class UserJFrame extends javax.swing.JFrame {
         tblUser = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("DIAMOND PLACE - USER");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -380,7 +380,7 @@ public class UserJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel9))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -470,7 +470,7 @@ public class UserJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 1353, Short.MAX_VALUE)
+                    .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1353, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
@@ -481,7 +481,7 @@ public class UserJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                    .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 606, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -664,6 +664,7 @@ public class UserJFrame extends javax.swing.JFrame {
 
     // set table
     public void initModel() {
+        setIconImage(ShareHelper.APP_ICON);
         model = new DefaultTableModel(new Object[0][], (Object[]) new String[]{"Fullname", "Username", "Password", "Gender", "Birthday", "Phone", "Email", "Address", "Role"}) {
             boolean[] canEdit = new boolean[]{false, false, false, false, false, false, false, false, false, false};
 

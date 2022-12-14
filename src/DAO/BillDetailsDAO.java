@@ -7,6 +7,7 @@ package DAO;
 import Entity.*;
 import Utils.*;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,28 +16,29 @@ import java.util.List;
  * @author dantr
  */
 public class BillDetailsDAO extends DAO<BillDetail, String> {
+
     String INSERT_SQL = "INSERT INTO BillDetail(IDOrder,DateOrder,TimeOrder,Username,SubTotal,DiscountPromo,Total,Pay,ReadyCash,PayMents)VALUES(?,?,?,?,?,?,?,?,?,?)"; // sql thêm dữ liệu
-//    String UPDATE_SQL = "UPDATE BillDetail SET IDBillDetail = ?,IDOrder =?,DateOrder = ?,TimeOrder = ?,Username = ?,SubTotal = ?,DiscountPromotion = ?,Total = ? where IDOrder = ?"; // sql cập nhập dữ liệu
-//    String DELETE_SQL = "DELETE FROM BillDetail WHERE IDOrder =?";// sql xóa dữ liệu
+    String UPDATE_SQL = "UPDATE BillDetail SET Pay = ?,ReadyCash = ?,PayMents = ? where IDOrder = ?"; // sql cập nhập dữ liệu
+    String DELETE_SQL = "DELETE FROM BillDetail WHERE IDOrder =?";// sql xóa dữ liệu
     String SELECT_ALL_SQL = "SELECT * FROM BillDetail";// sql tìm tất cả
     String SELETE_BY_ID_SQL = "SELECT * FROM BillDetail WHERE IDOrder = ?"; // sql tìm theo mã
 //    String SEARCH_BY_SQL = "SELECT * FROM Promotions WHERE IDProduct LIKE ? OR ProductName LIKE ? OR Price = ?";// sql tìm nhiều thành phần
-    
+    String SELECT_MAXID_SQL = "SELECT TOP 1  max(IDOrder) from BillDetail";
+
     // thêm dữ liệu vào bảng qua bảng oderDetail
     @Override
     public void insert(BillDetail model) {
-        XJDBC.update(INSERT_SQL, 
-                    model.getIDorder(),
-                    model.getDateOrder(),
-                    model.getTimeOrder(),
-                    model.getUsername(),
-                    Double.valueOf(model.getSubTotal()),
-                    Double.valueOf(model.getDiscountPromo()),
-                    Double.valueOf(model.getTotal()),
-                    Double.valueOf(model.getTotal()),
-                    Double.valueOf(model.getTotal()),
-                    Double.valueOf(model.getTotal())
-                    
+        XJDBC.update(INSERT_SQL,
+                model.getIDorder(),
+                model.getDateOrder(),
+                model.getTimeOrder(),
+                model.getUsername(),
+                Double.valueOf(model.getSubTotal()),
+                Double.valueOf(model.getDiscountPromo()),
+                Double.valueOf(model.getTotal()),
+                Double.valueOf(model.getPay()),
+                Double.valueOf(model.getReadyCash()),
+                Double.valueOf(model.getPayMent())
         );
 
     }
@@ -48,7 +50,7 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
 
     @Override
     public void delete(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         XJDBC.update(DELETE_SQL, id);
     }
 
     @Override
@@ -81,7 +83,7 @@ public class BillDetailsDAO extends DAO<BillDetail, String> {
                     bill.setTotal(Double.valueOf(rs.getString("Total")));
                     bill.setPay(Double.valueOf(rs.getString("Pay")));
                     bill.setReadyCash(Double.valueOf(rs.getString("ReadyCash")));
-                    bill.setPayMent(Double.valueOf(rs.getString("PayMent")));
+                    bill.setPayMent(Double.valueOf(rs.getString("PayMents")));
                     list.add(bill);
                 }
             } finally {
