@@ -291,17 +291,19 @@ public class BillPayJFrame extends javax.swing.JFrame {
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
         // TODO add your handling code here:
 //        updateBill();
-            update();
+        innitBill();
+        update();/// update bill detail
+        delete();// xóa món ăn trong database
     }//GEN-LAST:event_btnPayActionPerformed
 
     private void txtReadyCashKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReadyCashKeyReleased
         // TODO add your handling code here:
-         payBill();
+        payBill();
     }//GEN-LAST:event_txtReadyCashKeyReleased
 
     private void txtReadyCashKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReadyCashKeyTyped
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_txtReadyCashKeyTyped
 
     /**
@@ -441,18 +443,18 @@ public class BillPayJFrame extends javax.swing.JFrame {
 //        return bill;
 //    }
 
-//    private void InitHoaDon() throws JRException {
-//        Hashtable map = new Hashtable();
-//        try {
-//            JasperReport report = JasperCompileManager.compileReport("src\\Report\\HoaDon.jrxml");
-////            map.put("MaHD", idhd);
-//            JasperPrint p = JasperFillManager.fillReport(report, map);
-//            JasperViewer.viewReport(p, false);
-//            JasperExportManager.exportReportToPdfFile(p, "test.pdf");
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//    }
+    private void InitHoaDon()  {
+        Hashtable map = new Hashtable();
+        try {
+            JasperReport report = JasperCompileManager.compileReport("src\\Report\\HoaDon.jrxml");
+//            map.put("MaHD", idhd);
+            JasperPrint p = JasperFillManager.fillReport(report, map);
+            JasperViewer.viewReport(p, false);
+            JasperExportManager.exportReportToPdfFile(p, "test.pdf");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     void payBill() {
         Double tongTien = Double.valueOf(lblSubTotal.getText());
         Double discount = Double.valueOf(lblDiscount.getText());
@@ -472,27 +474,35 @@ public class BillPayJFrame extends javax.swing.JFrame {
 
     }
 
-     void update() {
+    void update() {
         BillDetail pro = getForm();
 //        if (valiDate() == true) {
-            try {
-                billDAO.update(pro);
+        try {
+            billDAO.update(pro);
 //                MsgBox.alert(this, "UPDATE is success!");
-            } catch (Exception e) {
+        } catch (Exception e) {
 //                MsgBox.alert(this, "UPDATE is fail!");
-            }// end try
+        }// end try
 //        }
 
     }// end update
 
     private BillDetail getForm() {
-          BillDetail pro = new BillDetail();
-         pro.setPay(Double.valueOf(txtPay.getText()) );
-         pro.setReadyCash(Double.valueOf(txtReadyCash.getText()) );
-         pro.setPayMent(Double.valueOf(txtPayments.getText()) );
-         
-          
-
+        BillDetail pro = new BillDetail();
+        pro.setPay(Double.valueOf(txtPay.getText()));
+        pro.setReadyCash(Double.valueOf(txtReadyCash.getText()));
+        pro.setPayMent(Double.valueOf(txtPayments.getText()));
         return pro;
+    }
+
+    private void delete() {
+        List<BillProduct> list = billProDAO.selectAll();
+        for (BillProduct pro : list) {
+            Object[] row = {
+                pro.getIDOrder()
+            }; // end object
+            String ID = (String) row[0];
+            billProDAO.delete(ID);
+        }
     }
 }// end class

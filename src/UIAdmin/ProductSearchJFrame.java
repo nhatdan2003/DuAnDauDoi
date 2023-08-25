@@ -681,7 +681,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
     //hàm update 
     private void update() {
 
-        if (!(valiDateForm("oao", txtProductName.getText(), txtPrice.getText())).isBlank()) {
+        if (!(valiDateForm("oao", txtProductName.getText(), txtPrice.getText())).isEmpty()) {
             MsgBox.alert(this, valiDateForm("oao", txtProductName.getText(), txtPrice.getText()));
         } else {
             try {
@@ -700,7 +700,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
     //hàm thêm product
     private void insert() {
 
-        if (!(valiDateForm(txtIDProduct.getText(), txtProductName.getText(), txtPrice.getText())).isBlank()) {
+        if (!(valiDateForm(txtIDProduct.getText(), txtProductName.getText(), txtPrice.getText())).isEmpty()) {
             MsgBox.alert(this, valiDateForm(txtIDProduct.getText(), txtProductName.getText(), txtPrice.getText()));
         } else {
             try {
@@ -857,7 +857,7 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
     private String valiDateForm(String idProduct, String productName, String price) {
         String rs = "";
 
-        if (idProduct.isBlank()) {
+        if (idProduct.isEmpty()) {
             rs += "ID Product is empty!";
             return rs;
         }
@@ -869,12 +869,12 @@ public class ProductSearchJFrame extends javax.swing.JFrame {
             }
 
         }
-        if (productName.isBlank()) {
+        if (productName.isEmpty()) {
             rs += "ProductName is empty!";
             return rs;
         }
 
-        if (price.isBlank()) {
+        if (price.isEmpty()) {
             rs += "Price is empty!";
             return rs;
         }

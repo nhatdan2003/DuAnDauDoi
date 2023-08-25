@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class BillProductDAO extends DAO<BillProduct, String> {
 
     String INSERT_SQL = "INSERT INTO BillProduct (IDOrder,ProductName,Quantity,Price,IntoMoney)VALUES(?,?,?,?,?)"; // sql thêm dữ liệu
+    String DELETE_SQL = "DELETE FROM BillDetail WHERE IDOrder =?";// sql xóa dữ liệu
     String SELECT_ALL_SQL = "SELECT * FROM BillProduct ";// sql tìm tất cả sản phẩm theo mã hóa đơn
     String SELETE_BY_ID_SQL = "SELECT * FROM BillProduct WHERE IDOrder like ?"; // sql tìm theo mã
 
@@ -45,7 +46,7 @@ public class BillProductDAO extends DAO<BillProduct, String> {
 
     @Override
     public void delete(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJDBC.update(DELETE_SQL, id);
     }
 
     public List<BillProduct> selectByIdList(String id) {

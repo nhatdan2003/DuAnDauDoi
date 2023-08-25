@@ -685,11 +685,11 @@ public class PromoJFrame extends javax.swing.JFrame {
 
     boolean valiDate() {
 
-        if (txtIDKhuyenMai.getText().isBlank()) {
+        if (txtIDKhuyenMai.getText().isEmpty()) {
             MsgBox.alert(this, "ID can not be empty!");
             return false;
         }
-        if (txtTenChuongTrinh.getText().isBlank()) {
+        if (txtTenChuongTrinh.getText().isEmpty()) {
             MsgBox.alert(this, "Program Name can not be empty!");
             return false;
         }
@@ -697,7 +697,7 @@ public class PromoJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "WRONG discount format!");
             return false;
         }
-        if (txtMoTa.getText().isBlank()) {
+        if (txtMoTa.getText().isEmpty()) {
             MsgBox.alert(this, "description Name can not be empty!");
             return false;
         }

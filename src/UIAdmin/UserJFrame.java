@@ -838,19 +838,19 @@ public class UserJFrame extends javax.swing.JFrame {
     }
 
     boolean validateInsert() {
-        if (txtHoTen.getText().isBlank()) {
+        if (txtHoTen.getText().isEmpty()) {
             MsgBox.alert(this, "Fullname can not be empty!");
             return false;
         }
-        if (txtusername.getText().isBlank()) {
+        if (txtusername.getText().isEmpty()) {
             MsgBox.alert(this, "Username can not be empty!");
             return false;
         }
-        if (txtPassword.getText().isBlank()) {
+        if (txtPassword.getText().isEmpty()) {
             MsgBox.alert(this, "Password can not be empty!");
             return false;
         }
-        if (txtSDT.getText().isBlank()) {
+        if (txtSDT.getText().isEmpty()) {
             MsgBox.alert(this, "Phone number can not be empty!");
             return false;
         }
@@ -858,7 +858,7 @@ public class UserJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "WRONG Phone number format!");
             return false;
         }
-        if (txtEmail.getText().isBlank()) {
+        if (txtEmail.getText().isEmpty()) {
             MsgBox.alert(this, "Email can not be empty!");
             return false;
         }
@@ -866,7 +866,7 @@ public class UserJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "WRONG Email format");
             return false;
         }
-        if (txtDiaChi.getText().isBlank()) {
+        if (txtDiaChi.getText().isEmpty()) {
             MsgBox.alert(this, "Address can not be empty!");
             return false;
         }
@@ -874,15 +874,15 @@ public class UserJFrame extends javax.swing.JFrame {
     }
 
     boolean ValidateUpdate() {
-        if (txtHoTen.getText().isBlank()) {
+        if (txtHoTen.getText().isEmpty()) {
             MsgBox.alert(this, "Fullname can not be empty!");
             return false;
         }
-        if (txtPassword.getText().isBlank()) {
+        if (txtPassword.getText().isEmpty()) {
             MsgBox.alert(this, "Password can not be empty!");
             return false;
         }
-        if (txtSDT.getText().isBlank()) {
+        if (txtSDT.getText().isEmpty()) {
             MsgBox.alert(this, "Phone number can not be empty!");
         }
 
@@ -890,7 +890,7 @@ public class UserJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "WRONG Phone number format!");
             return false;
         }
-        if (txtEmail.getText().isBlank()) {
+        if (txtEmail.getText().isEmpty()) {
             MsgBox.alert(this, "Email can not be empty!");
             return false;
         }
@@ -898,7 +898,7 @@ public class UserJFrame extends javax.swing.JFrame {
             MsgBox.alert(this, "WRONG Email format!");
             return false;
         }
-        if (txtDiaChi.getText().isBlank()) {
+        if (txtDiaChi.getText().isEmpty()) {
             MsgBox.alert(this, "Address can not be empty!");
             return false;
         }

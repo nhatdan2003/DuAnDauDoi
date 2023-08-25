@@ -74,6 +74,9 @@ public class XJDBC {
             throw new RuntimeException(e);
         }
     }
-
+    public static void main(String[] args) throws SQLException {
+         Connection conection = DriverManager.getConnection(dburl, username, password);
+        System.out.println(conection);
+    }
 }// end class
 

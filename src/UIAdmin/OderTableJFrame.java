@@ -779,7 +779,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 				int quantity = 0;
 				String sl = MsgBox.prompt(this, "ENTER Quantity:");
 
-				if (sl.isBlank()) {
+				if (sl.isEmpty()) {
 					return;
 				} else {
 
@@ -985,7 +985,7 @@ public class OderTableJFrame extends javax.swing.JFrame {
 			int quantity = 0;
 			String sl = MsgBox.prompt(this, "ENTER Quantity:");
 
-			if (sl.isBlank()) {
+			if (sl.isEmpty()) {
 				return;
 			} else {
 
